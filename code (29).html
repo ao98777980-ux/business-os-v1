@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STITCH-A08: CRM Pipeline & Deals Studio</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#8083ff",
+            "primary": "#c0c1ff",
+            "on-surface": "#e4e1ed",
+            "inverse-surface": "#e4e1ed",
+            "on-primary-container": "#0d0096",
+            "tertiary-container": "#009bd1",
+            "surface-container-lowest": "#0d0d16",
+            "outline-variant": "#464554",
+            "on-tertiary-container": "#002d40",
+            "on-error-container": "#ffdad6",
+            "on-secondary": "#3c0091",
+            "on-error": "#690005",
+            "surface-container-high": "#292932",
+            "secondary": "#d0bcff",
+            "surface-container-highest": "#34343d",
+            "secondary-fixed": "#e9ddff",
+            "secondary-container": "#571bc1",
+            "tertiary-fixed": "#c4e7ff",
+            "surface-variant": "#34343d",
+            "on-secondary-container": "#c4abff",
+            "surface-dim": "#13131b",
+            "background": "#13131b",
+            "tertiary": "#7bd0ff",
+            "secondary-fixed-dim": "#d0bcff",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "outline": "#908fa0",
+            "on-secondary-fixed": "#23005c",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "on-background": "#e4e1ed",
+            "surface-container-low": "#1b1b23",
+            "primary-fixed-dim": "#c0c1ff",
+            "surface-bright": "#393842",
+            "primary-fixed": "#e1e0ff",
+            "on-tertiary-fixed": "#001e2c",
+            "surface": "#13131b",
+            "on-primary-fixed": "#07006c",
+            "on-surface-variant": "#c7c4d7",
+            "surface-container": "#1f1f28",
+            "on-primary": "#1000a9",
+            "on-tertiary": "#00354a",
+            "inverse-primary": "#494bd6",
+            "error-container": "#93000a",
+            "error": "#ffb4ab",
+            "surface-tint": "#c0c1ff",
+            "on-tertiary-fixed-variant": "#004c69",
+            "on-secondary-fixed-variant": "#5516be",
+            "inverse-on-surface": "#302f39"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-2xl": "2rem",
+            "space-xl": "1.5rem",
+            "margin-md": "1.5rem",
+            "gutter-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "margin-lg": "2rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "display-lg": ["Inter"],
+            "metric-numeral-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Inter"],
+            "headline-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:on-primary-container overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-40 flex flex-col justify-between p-4 border-r border-outline-variant/30 bg-surface-container-low/80 backdrop-blur-2xl shadow-2xl">
+<div class="flex flex-col gap-6">
+<!-- Workspace Header -->
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest border border-outline-variant/40 flex items-center justify-center text-primary font-headline-sm">
+          VG
+        </div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-on-surface tracking-tight font-semibold">Vanguard Global</span>
+<span class="text-body-sm text-on-surface-variant">003VXA Enterprise Tier</span>
+</div>
+</div>
+<!-- Quick Create CTA -->
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#4f46e5] text-white font-headline-sm shadow-lg shadow-indigo-500/25 border border-white/20 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+        Quick Create
+      </button>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">dashboard</span>
+          Overview
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">check_circle</span>
+          Tasks
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">folder_special</span>
+          Projects
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-surface-container-high text-primary font-headline-sm border-l-2 border-primary transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">group</span>
+          CRM
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">payments</span>
+          Finance
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">movie</span>
+          Production
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">campaign</span>
+          Campaigns
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">auto_awesome</span>
+          AI Assistant
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+          Settings
+        </a>
+</nav>
+</div>
+<!-- Footer Profile -->
+<div class="pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-cover bg-center ring-1 ring-primary/40" data-alt="A professional headshot of an executive user with dark hair and tailored suit against a muted grey background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5KqqPmyL0ctdPTk5RcxwCpMHU9-6_i5v_tz1VTaLH6Xr8Bj5H46c7iaZfsKKHTB5s0O7_yXINplLMasKsnz59wBNbV1AmbudHmKXd_o_5uB96NvVNSejhSp17LudPgC-JMQasBeVptG3HS6DDrZASp-O2e0NPS7dwPy93IBtKeyEVBUphSRvRTBRtOP5RnwDGEjHMmXHwUAvM6vrmjdv5ojdpulsaWjnnVAhM-p7FCn4d4VXv5_ls46dhzfjQGfazRMmdpRtLwb60')"></div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface">Alex Mercer</span>
+<span class="text-label-sm text-on-surface-variant">Principal Director</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface">unfold_more</span>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="sticky top-0 right-0 h-16 z-30 flex items-center justify-between px-6 border-b border-outline-variant/20 bg-surface-container-low/70 backdrop-blur-2xl ml-64">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="text-headline-md text-on-surface font-bold tracking-tight">BusinessOS</span>
+<span class="text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">CRM Studio</span>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant/40"></div>
+<!-- Global Search -->
+<div class="relative flex items-center">
+<span class="absolute left-3 material-symbols-outlined text-outline" style="font-size: 18px;">search</span>
+<input class="w-80 bg-surface-container/50 border border-outline-variant/30 rounded-lg pl-9 pr-12 py-1.5 text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search deals, accounts, contacts..." type="text"/>
+<span class="absolute right-3 text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/20">Cmd+K</span>
+</div>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-surface-container/60 border border-outline-variant/30 px-3 py-1.5 rounded-lg text-body-sm font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>Timer: 01:24:08</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" style="font-size: 20px;">notifications</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" style="font-size: 20px;">tune</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+</button>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant/40"></div>
+<div class="w-9 h-9 rounded-full bg-cover bg-center ring-2 ring-primary/30" data-alt="Executive user profile avatar featuring a sharp professional portrait with online status indicator dot." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYIRZ6xMRuO7ZC3Q12KaqEtbR2PZVu3_LtTj5K_huHM6W8lFqw3HqD5EexjVjYsR8FqHFPfGpik97v5vuII5Zrlh54pF80olN2CEyeJAHqokZcjmygd5NGeSWXmTJhikTy8G3odzlHPRF-unKcy6Gp5ukp885FfXjkxn0Jl8PU1t4PC3xrx6P2HoVtLfNlrVg1rFJT48FkjPli_S_vfQDNV3lAQF2ujdva4cEYBX1Nq3hV_gJgXVhK154KlduAW58iNM84bBvnTlti')"></div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="ml-64 p-8 flex flex-col gap-6 pb-24 mr-[420px]">
+<!-- Breadcrumb & Top Bar Control -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span>Workspace</span>
+<span class="material-symbols-outlined" style="font-size: 14px;">chevron_right</span>
+<span>Sales Operations</span>
+<span class="material-symbols-outlined" style="font-size: 14px;">chevron_right</span>
+<span class="text-on-surface font-medium">Deals Pipeline</span>
+</div>
+<h1 class="text-headline-xl text-on-surface font-bold tracking-tight">Pipeline & Deals Studio</h1>
+</div>
+<!-- Tab Switcher -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl border border-outline-variant/30">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-primary font-headline-sm shadow-sm transition-all">Deals Pipeline</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md transition-all">Leads</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md transition-all">Contacts</button>
+</div>
+</div>
+<!-- Quick Filters & Actions Bar -->
+<div class="flex items-center justify-between gap-4 bg-surface-container-low/60 backdrop-blur-md p-4 rounded-xl border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Quick Filters:</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary border border-primary/30 text-body-sm font-medium flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 16px;">done</span>
+          All Deals
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-outline-variant/30 text-body-sm transition-all">
+          My Deals
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-outline-variant/30 text-body-sm transition-all">
+          High Value >$50k
+        </button>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-surface-container border border-outline-variant/30 rounded-lg p-0.5">
+<button class="p-1.5 rounded bg-surface-container-high text-primary">
+<span class="material-symbols-outlined" style="font-size: 18px;">view_kanban</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined" style="font-size: 18px;">table_chart</span>
+</button>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-headline-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+          New Deal
+        </button>
+</div>
+</div>
+<!-- Top KPI Row -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- KPI 1 -->
+<div class="bg-surface-container-low/70 backdrop-blur-xl border border-outline-variant/30 p-5 rounded-xl flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="text-label-md uppercase tracking-wider text-on-surface-variant">Total Pipeline Value</span>
+<span class="p-1.5 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 18px;">trending_up</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface bg-gradient-to-b from-white to-white/75 bg-clip-text text-transparent">$1.84M</span>
+<span class="text-body-sm text-emerald-400 font-medium flex items-center">+12.4%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-low/70 backdrop-blur-xl border border-outline-variant/30 p-5 rounded-xl flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-tertiary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="text-label-md uppercase tracking-wider text-on-surface-variant">Weighted Forecast</span>
+<span class="p-1.5 rounded-lg bg-tertiary/10 text-tertiary">
+<span class="material-symbols-outlined" style="font-size: 18px;">analytics</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface bg-gradient-to-b from-white to-white/75 bg-clip-text text-transparent">$1.22M</span>
+<span class="text-body-sm text-tertiary font-medium">66% Conv.</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[66%]"></div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-low/70 backdrop-blur-xl border border-outline-variant/30 p-5 rounded-xl flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="text-label-md uppercase tracking-wider text-on-surface-variant">Win Rate</span>
+<span class="p-1.5 rounded-lg bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined" style="font-size: 18px;">workspace_premium</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface bg-gradient-to-b from-white to-white/75 bg-clip-text text-transparent">68%</span>
+<span class="text-body-sm text-emerald-400 font-medium">+4.2%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[68%]"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-low/70 backdrop-blur-xl border border-outline-variant/30 p-5 rounded-xl flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="text-label-md uppercase tracking-wider text-on-surface-variant">Avg Deal Cycle</span>
+<span class="p-1.5 rounded-lg bg-primary-container/10 text-primary-container">
+<span class="material-symbols-outlined" style="font-size: 18px;">schedule</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface bg-gradient-to-b from-white to-white/75 bg-clip-text text-transparent">24 Days</span>
+<span class="text-body-sm text-emerald-400 font-medium">-3 Days</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[45%]"></div>
+</div>
+</div>
+</div>
+<!-- 5-Column Kanban Pipeline -->
+<div class="grid grid-cols-5 gap-4 items-start overflow-x-auto pb-4">
+<!-- Column 1: Qualified Lead -->
+<div class="flex flex-col gap-3 bg-surface-container-low/40 rounded-xl p-3 border border-outline-variant/20 min-w-[280px]">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/20 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-slate-400"></span>
+<span class="text-headline-sm text-on-surface font-semibold">Qualified Lead</span>
+<span class="text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">4</span>
+</div>
+<span class="text-body-sm text-on-surface-variant font-medium">$210K</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="bg-surface-container/80 backdrop-blur-md border border-outline-variant/30 hover:border-primary/50 p-4 rounded-xl flex flex-col gap-3 cursor-pointer transition-all shadow-sm group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-tertiary/10 text-tertiary font-headline-sm flex items-center justify-center border border-tertiary/20">NX</div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Nexus AI Suite</span>
+<span class="text-body-sm text-on-surface-variant">Nexus Corp</span>
+</div>
+</div>
+<span class="text-label-md px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface border border-outline-variant/30">$45,000</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span>Probability</span>
+<span>30%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[30%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 14px;">calendar_today</span>
+<span>Nov 18, 2024</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-cover bg-center" data-alt="Portrait avatar of a deal owner wearing professional attire." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCE8ohtMRQTyaEvaQHwqmUyORQcXbHYHhEaDsDUu-Sq7AdKiBCSER44bnrGyjtLYC8RIbMVYDMoLOvpKdafmaPJWfkYgvku73EW_0uhYCFRd8pJGOMgtBdV_Gq-HQir7hyPAkiS3iXarxrPkOk249BmqzzvDi475lzTZrQ248gM6b3yzRE50mGIqyFy3x_KPWIpVsphnei0YPENNaEKBxCyjWC9K4s0Aa0DCe4k6Rz85YyJhzIbXHdqTu9aK8kPOH0tSy8AquuiaXpH')"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container/80 backdrop-blur-md border border-outline-variant/30 hover:border-primary/50 p-4 rounded-xl flex flex-col gap-3 cursor-pointer transition-all shadow-sm group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary/10 text-primary font-headline-sm flex items-center justify-center border border-primary/20">QL</div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Quantum Leap App</span>
+<span class="text-body-sm text-on-surface-variant">Quantum Labs</span>
+</div>
+</div>
+<span class="text-label-md px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface border border-outline-variant/30">$65,000</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span>Probability</span>
+<span>25%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[25%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 14px;">calendar_today</span>
+<span>Dec 02, 2024</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-cover bg-center" data-alt="Portrait avatar of account executive with confident expression." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8sV8x8bjWuO_wBnQSBzVP20yywXU8R0c2Mx9SwuQFwVp5VBh3y_aTHbgrPxj5xywuY6M8krBKZW_SenqSFNcw5Lj1D_JuM2kRP-1ZC2AL0pJ3MOwkyvcvsUA7FpHNN-4GNVoqR394H7di0gAQGm_caOdoasKtZQD8JXxc5kscCrUrOKjYqnodUu09pyAxP9jJ_km7BUDrv_iveEQ4C6qGRkugs-PDvqSb8IGyL-hrg3hgodfrIxlguzY9b9Ft_DKGi3AqiXc6LP6s')"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 border border-dashed border-outline-variant/40 rounded-lg text-body-sm text-on-surface-variant hover:text-on-surface hover:border-primary/50 transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+          Add Deal
+        </button>
+</div>
+<!-- Column 2: Discovery & Scoping -->
+<div class="flex flex-col gap-3 bg-surface-container-low/40 rounded-xl p-3 border border-outline-variant/20 min-w-[280px]">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/20 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-headline-sm text-on-surface font-semibold">Discovery</span>
+<span class="text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">3</span>
+</div>
+<span class="text-body-sm text-on-surface-variant font-medium">$340K</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="bg-surface-container/80 backdrop-blur-md border border-outline-variant/30 hover:border-primary/50 p-4 rounded-xl flex flex-col gap-3 cursor-pointer transition-all shadow-sm group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary font-headline-sm flex items-center justify-center border border-secondary/20">SN</div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Synergy Cloud Migration</span>
+<span class="text-body-sm text-on-surface-variant">Synergy Networks</span>
+</div>
+</div>
+<span class="text-label-md px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface border border-outline-variant/30">$120,000</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span>Probability</span>
+<span>50%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[50%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 14px;">calendar_today</span>
+<span>Nov 28, 2024</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-cover bg-center" data-alt="Portrait avatar of female sales lead in professional business attire." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdoXdseQU0vIMWHQV0nhbFQ1YtcdbyIX_uCKQpGm3wQiEyn8hzLLmE54XODLNn7OB_ghvhzaCJVPcD8ouDbaln9CEjAhhrcU1DoB--1EJVyHK3ejG_uWqmwgxpEhfqIkkgxAIFCHxx1R2W1gNiHONj9n0-naTPsAsZEE5TViwoU_9RXb3-Ot5KABzr37FfMWP6sdx5rj--k80Bg6vChN3gQ7hJOARiUFyM8tlORepPHSvs1PgLK5V6a61NXnHuAIwru5fTSqUqRcB8')"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 border border-dashed border-outline-variant/40 rounded-lg text-body-sm text-on-surface-variant hover:text-on-surface hover:border-primary/50 transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+          Add Deal
+        </button>
+</div>
+<!-- Column 3: Proposal Sent (ACTIVE TARGET) -->
+<div class="flex flex-col gap-3 bg-surface-container-low/40 rounded-xl p-3 border border-primary/40 shadow-lg shadow-indigo-500/5 min-w-[280px] ring-1 ring-primary/20">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/20 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-headline-sm text-on-surface font-semibold">Proposal Sent</span>
+<span class="text-label-sm px-1.5 py-0.5 rounded bg-primary/20 text-primary font-bold">5</span>
+</div>
+<span class="text-body-sm text-primary font-medium">$580K</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Active Card: Apex Global Rebrand -->
+<div class="bg-surface-container border-2 border-primary p-4 rounded-xl flex flex-col gap-3 cursor-pointer shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary/10 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary font-headline-sm flex items-center justify-center shadow-md">AG</div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface font-bold">Apex Global Rebrand</span>
+<span class="text-body-sm text-on-surface-variant">Apex Holdings</span>
+</div>
+</div>
+<span class="text-label-md px-2 py-0.5 rounded-full bg-primary/20 text-primary border border-primary/30 font-bold">$85,000</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span>Probability</span>
+<span class="text-primary font-semibold">75%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary-container to-primary h-full w-[75%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px;">calendar_today</span>
+<span>Nov 24, 2024</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-cover bg-center ring-1 ring-primary" data-alt="Portrait avatar of deal manager Alex Mercer wearing sleek business attire." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy-7stsfk93vK65wud4bKDu_dRnD_N1KVuWBEwevgNBGHibUCKALh5ms5AcSN8ZDRDNshNSLqKLR7HRhRR8ymJEQbwZAE5i_BRRVSl6c4s_S6ltY_HoKzEttKSe7ebSd7xvB3oXsbDeiBWrsnD3CAV454ByxtGN3YX8qCCCABbBaWjzBze5b_quJLWSB6vQbwgYVqOmgg1e_c4cHVgfn-UPCifqtwo4mmq2kyZx0mT0iPl3EuxRJtWFOfPLnBlKAeputwvNDC9ASSw')"></div>
+</div>
+</div>
+<!-- Secondary Card in Proposal -->
+<div class="bg-surface-container/80 backdrop-blur-md border border-outline-variant/30 hover:border-primary/50 p-4 rounded-xl flex flex-col gap-3 cursor-pointer transition-all shadow-sm group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-tertiary/10 text-tertiary font-headline-sm flex items-center justify-center border border-tertiary/20">ZE</div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Zenith ERP Overhaul</span>
+<span class="text-body-sm text-on-surface-variant">Zenith Group</span>
+</div>
+</div>
+<span class="text-label-md px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface border border-outline-variant/30">$210,000</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span>Probability</span>
+<span>70%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[70%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 14px;">calendar_today</span>
+<span>Dec 10, 2024</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-cover bg-center" data-alt="Portrait avatar of senior technical sales engineer." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCO2gqCNmSIEyKn__Swh9Dun0cwMUzKKd_ayqPgHg5-TUSYhIeVMqsYtU0RJrkqQJmfW8SwE3cKiOY5mJRf_DPzWDJJ5xINgaesu2RE6p3v9CbR3DEIn4BPly-jl29tOeNeH1ullRoCgr0XslXTKSFdhig6fkZDxxFfG9aJMMbE1NkGctSVzlIhKc8H4Yl58D7jb31CyK8ce3pTV5eKZGbpsM2o5Uz8x-EXJxEeRwJgWTskpm-xj6j9k1sR6WwJTYTYRKsbiMWdk3CB')"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 border border-dashed border-outline-variant/40 rounded-lg text-body-sm text-on-surface-variant hover:text-on-surface hover:border-primary/50 transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+          Add Deal
+        </button>
+</div>
+<!-- Column 4: Contract Negotiation -->
+<div class="flex flex-col gap-3 bg-surface-container-low/40 rounded-xl p-3 border border-outline-variant/20 min-w-[280px]">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/20 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span class="text-headline-sm text-on-surface font-semibold">Negotiation</span>
+<span class="text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">2</span>
+</div>
+<span class="text-body-sm text-on-surface-variant font-medium">$410K</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container/80 backdrop-blur-md border border-outline-variant/30 hover:border-primary/50 p-4 rounded-xl flex flex-col gap-3 cursor-pointer transition-all shadow-sm group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 font-headline-sm flex items-center justify-center border border-amber-500/20">OM</div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">OmniLogistics Platform</span>
+<span class="text-body-sm text-on-surface-variant">Omni Corp</span>
+</div>
+</div>
+<span class="text-label-md px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface border border-outline-variant/30">$250,000</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span>Probability</span>
+<span>90%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-amber-400 h-full w-[90%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 14px;">calendar_today</span>
+<span>Nov 20, 2024</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-cover bg-center" data-alt="Portrait avatar of legal account director." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxyMp0bWDXoAxketyCksnJmZMiClmcVVqmUYZRBKZmlmhOa0EXc_CAIMYmKWBh0jb4Ly-6Yr5Y53PoBL-s3qmKodbtE5cxQA3l4UsNYrr27kNb7jPLonYt8e53G65V4TU6PjP4FZNiWMnOsa15rfMOHdZJFfw_IrVzfg32o2NeTiJWV-Y7yeCHygyxqLWVgrztEvlSq2NfXEsKoVF15NE-yxHMsqTbsgwIBp250WYg9NhVaFRsHGL-moqGS6ZPmoQU5DReDKFhheNK')"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 border border-dashed border-outline-variant/40 rounded-lg text-body-sm text-on-surface-variant hover:text-on-surface hover:border-primary/50 transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+          Add Deal
+        </button>
+</div>
+<!-- Column 5: Closed Won -->
+<div class="flex flex-col gap-3 bg-surface-container-low/40 rounded-xl p-3 border border-outline-variant/20 min-w-[280px]">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/20 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="text-headline-sm text-on-surface font-semibold">Closed Won</span>
+<span class="text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">6</span>
+</div>
+<span class="text-body-sm text-emerald-400 font-medium">$300K</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container/80 backdrop-blur-md border border-outline-variant/30 hover:border-primary/50 p-4 rounded-xl flex flex-col gap-3 cursor-pointer transition-all shadow-sm group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 font-headline-sm flex items-center justify-center border border-emerald-500/20">ST</div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Stellar Mobile App</span>
+<span class="text-body-sm text-on-surface-variant">Stellar Brands</span>
+</div>
+</div>
+<span class="text-label-md px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">$95,000</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span>Probability</span>
+<span class="text-emerald-400 font-semibold">100%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-emerald-400 h-full w-[100%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-emerald-400" style="font-size: 14px;">check_circle</span>
+<span>Completed</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-cover bg-center" data-alt="Portrait avatar of top account closer." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAheOApGGRIQ5kGNiwIQHf2HWExJktLmOetWPmA8Kw8YnCkVvMWtNB-ax9tq7gNn2YJ2qsUheOkm4QaJd-U1gYnWPb6_Qc4sn3LjQYRLO1oMm5coriVkDe4smOhIT8MFjUyVS3n19Rjh4r4-ZCUG1vZ8ProhyT5zq6NA7WVv3IwMSgRl98tpuE6tkCvOlz0UhBTrz4Cic0Ie5gjNgC2nPVtacwR0CJ2R8bcljTVwUJ1E7hBby8ZQZ_fuoZ2kJiJ2c7p0bPOkVQjX7yX')"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 border border-dashed border-outline-variant/40 rounded-lg text-body-sm text-on-surface-variant hover:text-on-surface hover:border-primary/50 transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+          Add Deal
+        </button>
+</div>
+</div>
+</main>
+<!-- Deal Detail Drawer for 'Apex Global Rebrand' -->
+<aside class="fixed top-0 right-0 h-screen w-[420px] bg-surface-container-low/95 backdrop-blur-3xl border-l border-outline-variant/30 shadow-2xl z-50 flex flex-col justify-between overflow-y-auto">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-outline-variant/20 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label-md uppercase tracking-wider text-primary font-semibold">Proposal Sent Stage</span>
+</div>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+</button>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary font-headline-lg flex items-center justify-center shadow-lg shrink-0">
+          AG
+        </div>
+<div class="flex flex-col">
+<h2 class="text-headline-lg text-on-surface font-bold tracking-tight">Apex Global Rebrand</h2>
+<span class="text-body-md text-on-surface-variant">Apex Holdings Inc. • Enterprise Division</span>
+</div>
+</div>
+<!-- Value & Prob Badge -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="bg-surface-container/60 border border-outline-variant/30 p-3 rounded-xl flex flex-col gap-1">
+<span class="text-label-sm text-on-surface-variant uppercase">Deal Value</span>
+<span class="text-headline-md text-on-surface font-bold">$85,000</span>
+</div>
+<div class="bg-surface-container/60 border border-outline-variant/30 p-3 rounded-xl flex flex-col gap-1">
+<span class="text-label-sm text-on-surface-variant uppercase">Win Probability</span>
+<span class="text-headline-md text-primary font-bold">75% ($63.7k)</span>
+</div>
+</div>
+</div>
+<!-- Drawer Body / Content -->
+<div class="p-6 flex flex-col gap-6 flex-1 overflow-y-auto">
+<!-- Stage Progression Tracker -->
+<div class="flex flex-col gap-3">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Stage Progression Tracker</span>
+<div class="grid grid-cols-5 gap-1">
+<div class="flex flex-col gap-1.5">
+<div class="h-1.5 rounded-full bg-primary"></div>
+<span class="text-[10px] text-primary font-semibold truncate">Qualified</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="h-1.5 rounded-full bg-primary"></div>
+<span class="text-[10px] text-primary font-semibold truncate">Discovery</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="h-1.5 rounded-full bg-primary shadow-sm shadow-primary/50"></div>
+<span class="text-[10px] text-primary font-bold truncate">Proposal</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="h-1.5 rounded-full bg-surface-container-high"></div>
+<span class="text-[10px] text-on-surface-variant truncate">Negotiation</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="h-1.5 rounded-full bg-surface-container-high"></div>
+<span class="text-[10px] text-on-surface-variant truncate">Closed Won</span>
+</div>
+</div>
+</div>
+<!-- Contact Info -->
+<div class="flex flex-col gap-3">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Primary Contact</span>
+<div class="bg-surface-container/60 border border-outline-variant/30 p-3 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-1 ring-primary/40" data-alt="Portrait of corporate stakeholder Jonathan Vance wearing a crisp suit and tie." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDC_MfwaaH2svMNBOELiYnRk3-Cz4kG2cpY3Zlh5n3g4P4koBdefbekAGruHBUszk3eunFCO5DNc5LQLrpITA7HwWl86LoMHeljbHQ7SJpc7uUnM-hR5K_fG-bHDguywJu7ZJZ0B3G8ra_CSat3q-baBGFo0o89ZXsFdzsKz0wQOEGGMVFqj7s-Xz3M2rydbv8ABL1vLQ54gNI8iSEB99s01doFyuwWL7kKp3ed5VbDFmWaWGAtuDeBgKpbgufMZ5lSuHKfMKwVPosR')"></div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface">Jonathan Vance</span>
+<span class="text-body-sm text-on-surface-variant">VP of Global Brand Strategy</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined" style="font-size: 18px;">mail</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined" style="font-size: 18px;">call</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Proposal Attachment -->
+<div class="flex flex-col gap-3">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Proposal Attachment</span>
+<div class="bg-surface-container/60 border border-outline-variant/30 p-3 rounded-xl flex items-center justify-between group hover:border-primary/50 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="p-2.5 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">description</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Apex_Rebrand_Statement_v4.pdf</span>
+<span class="text-body-sm text-on-surface-variant">4.2 MB • Uploaded Nov 18</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">download</span>
+</div>
+</div>
+<!-- Notes Log -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Activity & Notes Log</span>
+<button class="text-body-sm text-primary hover:underline">Add Note</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Note 1 -->
+<div class="bg-surface-container/40 border border-outline-variant/20 p-3.5 rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-cover bg-center" data-alt="Small thumbnail avatar of Alex Mercer." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoUwXsdjrHfbrJ1-aq0swF0gh7sG9OtsIRMniDOZVbrJHM22vfov-5uNZRTVn6rkX1Rff9xa5kUTOnBf5Ugh66PCijSJeJqAUJ6hyvpG473r7O5mHRHQcBGedtB3SKk9QkK7HG7Oi1lTU_c3jzBechwzJOodYiwCjAtu1ciJLKGwuQqTOQWXWIf_r8Br72IZrhNi0Bn3GaY_hFcbQwu75qAtrhVkrFqmX0CvpWl0NUIcEdV3lSDgKbBFYUFQ0n4-Rx7BWzOuUfYf-o')"></div>
+<span class="text-headline-sm text-on-surface">Alex Mercer</span>
+</div>
+<span class="text-label-sm text-on-surface-variant">2 hours ago</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Client reviewed the 3D brand identity guidelines and expressed strong interest in expanding scope into digital retail portals.</p>
+</div>
+<!-- Note 2 -->
+<div class="bg-surface-container/40 border border-outline-variant/20 p-3.5 rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-cover bg-center" data-alt="Small thumbnail avatar of Sarah Jenkins." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqCJMiav9UVnOf-O5kMKeEvhCd7tENgCeMpUFzmux7uEVqR2fLSgWZoQylqA6OdT0qP1NVNwYZEfTsBBqaAQp4lAOiBzDSGhqcCHCojhjegXTfdYNWu25_Jtknp_gpHES4KNQLS0AdDZxZL774JfFU8lqZHe2w8XfsczGZxSjQfTpok0fZ2pUcXHew_YYLc_Z6taVDdDfSmzcQfbxQ3IeTkGWNtjJO_haPOsCsNZQV8GPFr9kG_-hzEtookBt0aO5UsYqFwAxbQUho')"></div>
+<span class="text-headline-sm text-on-surface">Sarah Jenkins</span>
+</div>
+<span class="text-label-sm text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Sent revised commercial terms with 15% enterprise volume discount. Awaiting formal sign-off.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Action -->
+<div class="p-6 border-t border-outline-variant/20 bg-surface-container-low">
+<button class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#6366f1] to-[#4f46e5] text-white font-headline-sm shadow-xl shadow-indigo-500/30 border border-white/25 flex items-center justify-center gap-2 active:scale-[0.98] transition-all hover:opacity-95">
+<span class="material-symbols-outlined" style="font-size: 20px;">rocket_launch</span>
+        Convert to Live Project
+      </button>
+</div>
+</aside>
+</body></html>

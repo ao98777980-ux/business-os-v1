@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STITCH-A19: Physical Resources &amp; Gear Vault Fleet</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#34343d",
+            "primary-fixed-dim": "#c0c1ff",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "tertiary": "#7bd0ff",
+            "on-secondary-fixed": "#23005c",
+            "surface-tint": "#c0c1ff",
+            "on-tertiary": "#00354a",
+            "on-surface-variant": "#c7c4d7",
+            "outline-variant": "#464554",
+            "on-secondary-container": "#c4abff",
+            "tertiary-container": "#009bd1",
+            "primary-fixed": "#e1e0ff",
+            "on-tertiary-fixed": "#001e2c",
+            "on-error-container": "#ffdad6",
+            "on-error": "#690005",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "error": "#ffb4ab",
+            "surface-container": "#1f1f28",
+            "background": "#13131b",
+            "on-primary-fixed": "#07006c",
+            "surface-dim": "#13131b",
+            "secondary-fixed": "#e9ddff",
+            "inverse-surface": "#e4e1ed",
+            "on-primary": "#1000a9",
+            "primary-container": "#8083ff",
+            "tertiary-fixed": "#c4e7ff",
+            "primary": "#c0c1ff",
+            "outline": "#908fa0",
+            "error-container": "#93000a",
+            "on-background": "#e4e1ed",
+            "on-tertiary-fixed-variant": "#004c69",
+            "surface-variant": "#34343d",
+            "secondary-container": "#571bc1",
+            "secondary": "#d0bcff",
+            "on-primary-container": "#0d0096",
+            "surface": "#13131b",
+            "on-secondary-fixed-variant": "#5516be",
+            "inverse-on-surface": "#302f39",
+            "on-tertiary-container": "#002d40",
+            "surface-container-lowest": "#0d0d16",
+            "surface-bright": "#393842",
+            "surface-container-low": "#1b1b23",
+            "on-secondary": "#3c0091",
+            "secondary-fixed-dim": "#d0bcff",
+            "inverse-primary": "#494bd6",
+            "surface-container-high": "#292932",
+            "on-surface": "#e4e1ed"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin-md": "1.5rem",
+            "gutter": "1rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "margin-lg": "2rem",
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "space-md": "0.75rem",
+            "gutter-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter", "sans-serif"],
+            "metric-numeral-sm": ["Inter", "sans-serif"],
+            "headline-sm": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "metric-numeral-lg": ["Inter", "sans-serif"],
+            "headline-xl": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "display-lg-mobile": ["Inter", "sans-serif"],
+            "display-lg": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-40 flex flex-col justify-between p-4 border-r border-outline-variant/30 bg-surface-container-low/80 backdrop-blur-2xl shadow-2xl">
+<div>
+<!-- Header -->
+<div class="flex items-center gap-3 px-3 py-3 mb-6">
+<div class="w-9 h-9 rounded-lg bg-primary-container/20 border border-primary/30 flex items-center justify-center text-primary font-headline-md">
+          VG
+        </div>
+<div>
+<div class="text-headline-md font-headline-md text-on-surface tracking-tight font-semibold">Vanguard Global</div>
+<div class="text-body-sm text-on-surface-variant">003VXA Enterprise Tier</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+          Overview
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+          Tasks
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined">folder_special</span>
+          Projects
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined">group</span>
+          CRM
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined">payments</span>
+          Finance
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-surface-container-high text-primary font-headline-sm border-l-2 border-primary transition-all duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">movie</span>
+          Production
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined">campaign</span>
+          Campaigns
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+          AI Assistant
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+          Settings
+        </a>
+</nav>
+</div>
+<!-- Footer / Quick Create & Profile -->
+<div class="space-y-3 pt-4 border-t border-outline-variant/20">
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary text-on-primary font-headline-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add</span>
+        Quick Create
+      </button>
+<div class="flex items-center gap-3 px-2 py-1.5 rounded-lg hover:bg-surface-container cursor-pointer transition-colors">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Professional executive headshot of a male director in a charcoal bespoke suit against a blurred studio background, dramatic cinematic lighting, clean corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT-UC3tY4Cr2vFcGx3pCaVNKADB0V8PZgk7DNRVXLGUlqgCYnoAvWG41KeFsfnsEe_NrX3XW63g_WT9KYbKSgDDGP7qFVICYdic4rffhlv9at1uYIKC3uiyrigM3_fNy4692b5VTyc5Q_f9Y0_uEliOBe5ySfbK64PyBHbXNHtKtmpyC0Xz_QGypUfp5QWUnPpYzVSzzWZB-FZX76C3-0zOubycFZmr2sXJmwwpVFFeTw8b3ss7J1Cyi9SsCXPIOlziEzQTDXS6Xet"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="text-body-sm font-semibold truncate">Executive Profile</div>
+<div class="text-xs text-on-surface-variant truncate">alex.vanguard@enterprise.io</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="sticky top-0 right-0 h-16 z-30 flex items-center justify-between px-6 border-b border-outline-variant/20 bg-surface-container-low/70 backdrop-blur-2xl ml-64">
+<div class="flex items-center gap-6 flex-1">
+<div class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">BusinessOS</div>
+<div class="hidden lg:flex items-center gap-2 text-on-surface-variant text-sm">
+<span>/</span>
+<span class="text-on-surface font-medium">Projects</span>
+<span>/</span>
+<span class="text-primary font-medium">Nike SS27 Campaign</span>
+</div>
+<!-- Search Bar -->
+<div class="relative max-w-xs w-full ml-4">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-on-surface-variant pointer-events-none">
+<span class="material-symbols-outlined text-sm">search</span>
+</span>
+<input class="w-full pl-9 pr-4 py-1.5 bg-surface-container-lowest/60 border border-outline-variant/30 rounded-lg text-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search serial/model (Cmd+K)..." type="text"/>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-3">
+<div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/30 text-xs font-mono text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+        Timer: 01:24:08
+      </div>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant/30 mx-1"></div>
+<div class="w-9 h-9 rounded-full overflow-hidden border border-primary/40 relative cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Close-up executive profile avatar of an operations lead with sleek dark hair and subtle rim lighting, high-end commercial aesthetic, deep space obsidian tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG1RRqDZl7gVQ2vSSJFpN7hMh8yCzOO77Xoyb52hNXV7swjCqIe4sjw89H5xq5TU5o6AQDSXvUTsI9Qp5dKmyxTPBdhiLI73nEOp5I52-EWg6gE53YCMJOBpVAI5ZxCP_uJbj1MMTvNmGLXovrg3U6eOMAKRVXKqrsh_vmhHNn3eaZXYTYji1oh5JCUVZEhvhClIxG93i9X2vAKiTPCcAPSGzgvuZMJQY-Xm4mgZ5AVdWqgHi1Gav8YKQftMvYAquJpcFikeaCPZtb"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-background"></div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 p-8 flex flex-col gap-8 max-w-[1600px]">
+<!-- Breadcrumb & Header Title Area -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-1">
+<span>Production</span>
+<span>/</span>
+<span class="text-primary font-medium">Physical Resources &amp; Gear Vault Fleet</span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-on-surface tracking-tight">Equipment Fleet &amp; Asset Vault</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high border border-outline-variant/40 text-on-surface text-sm font-semibold hover:bg-surface-container-highest transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">qr_code_scanner</span>
+          Scan Serial Barcode
+        </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary text-sm font-semibold hover:opacity-90 transition-all flex items-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+          Register New Asset
+        </button>
+</div>
+</div>
+<!-- Navigation Tab Switcher & Category Filters -->
+<div class="flex flex-col gap-4 border-b border-outline-variant/20 pb-4">
+<!-- Top Level Tab Switcher -->
+<div class="flex items-center gap-2 p-1 bg-surface-container-lowest rounded-xl w-fit border border-outline-variant/30">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-primary font-headline-sm text-sm shadow-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+          Equipment Fleet
+        </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md text-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-base">real_estate_agent</span>
+          Stages &amp; Facilities
+        </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md text-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-base">event_upcoming</span>
+          Booking Matrix
+        </button>
+</div>
+<!-- Sub-filters & Category Pills -->
+<div class="flex items-center justify-between flex-wrap gap-4 pt-2">
+<div class="flex items-center gap-2 overflow-x-auto pb-1">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary text-xs font-semibold shadow-sm">All Assets (148)</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-on-surface text-xs font-semibold transition-all">Cameras (24)</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-on-surface text-xs font-semibold transition-all">Lenses (46)</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-on-surface text-xs font-semibold transition-all">Lighting (32)</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-on-surface text-xs font-semibold transition-all">Audio (28)</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-on-surface text-xs font-semibold transition-all">Stages (18)</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">sort</span>
+<span>Sort by:</span>
+<select class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-xs text-on-surface py-1 px-2 focus:outline-none focus:border-primary">
+<option>Valuation (High to Low)</option>
+<option>Serial Number</option>
+<option>Status</option>
+<option>Recent Activity</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Top KPI Row Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1 -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 p-5 rounded-xl relative overflow-hidden group hover:border-primary/50 transition-all">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-all"></div>
+<div class="text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Total Fleet Value</div>
+<div class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface mb-2">$541,200</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-emerald-400 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm">trending_up</span> +4.8% QoQ
+          </span>
+<span class="text-on-surface-variant">148 Active Units</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 p-5 rounded-xl relative overflow-hidden group hover:border-primary/50 transition-all">
+<div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-all"></div>
+<div class="text-label-md text-on-surface-variant uppercase tracking-wider mb-1">In Vault Available</div>
+<div class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface mb-2">$382,000</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-emerald-400 flex items-center gap-1 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Ready for deployment
+          </span>
+<span class="text-on-surface-variant">96 Units</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 p-5 rounded-xl relative overflow-hidden group hover:border-primary/50 transition-all">
+<div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/10 transition-all"></div>
+<div class="text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Deployed On Set</div>
+<div class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface mb-2">$159,200</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-amber-400 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm">movie</span> Active Shoots
+          </span>
+<span class="text-on-surface-variant">52 Units</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 p-5 rounded-xl relative overflow-hidden group hover:border-primary/50 transition-all">
+<div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-all"></div>
+<div class="text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Service Required</div>
+<div class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface mb-2">2 Units</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-blue-400 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm">build</span> Calibration Due
+          </span>
+<span class="text-on-surface-variant">Priority Check</span>
+</div>
+</div>
+</div>
+<!-- Main View Grid of Gear Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Gear Card 1 (Active/Selected item triggering right drawer view) -->
+<div class="bg-surface-container-low/90 backdrop-blur-xl border border-primary/40 rounded-xl p-5 relative group hover:border-primary transition-all shadow-xl shadow-black/40 flex flex-col justify-between">
+<div>
+<!-- Thumbnail & Status -->
+<div class="relative h-48 rounded-lg overflow-hidden bg-surface-container-lowest mb-4 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-end professional cinema camera ARRI Alexa 35 production package mounted on carbon fiber rails with matte box, anamorphic prime lens, and digital viewfinder, sleek studio lighting against an obsidian dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDMemt952bF3esYgVtSQTIVF_gzyu8H8vYlVLwU95-Dx46WllocLGYm-F_X7SCwaeixUaJqeJERNhn_1jLFd2Nib-EL57YTn7ewsEPtuf0b2_R13gXLRuuC87W1YxQTB9QcjZjACHDXuvRS9yEqBflgu7zq8lStYgUpwWrfwq7MAVDCPKD1KBUAVaqteBZTttStJlOy9hTcjaL4QhjMt509XnrbakiqxO8Sl50y5gW3Wg18S8R-erl4eMbMkrGkf0LKg7_k2iy2sMJ"/>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                AVAILABLE
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-background/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs font-mono text-on-surface-variant">
+              SN: ARRI-35-9042
+            </div>
+</div>
+<!-- Title & Specs -->
+<div class="mb-4">
+<div class="text-xs text-primary font-mono mb-1">CAMERA VAULT // LFF-35</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">ARRI Alexa 35 Production Package</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">Includes LPL Mount, Codex CompactDrive 2TB, MVF-2 Viewfinder, and V-Mount power distribution plate.</p>
+</div>
+</div>
+<div>
+<!-- Valuation & Custodian Footer -->
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20 mb-4">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Asset Valuation</div>
+<div class="text-metric-numeral-sm font-metric-numeral-sm text-on-surface">$78,500</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider mb-1">Current Custodian</div>
+<div class="flex items-center gap-2 justify-end">
+<span class="text-xs font-medium text-on-surface">Vault Master</span>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Avatar portrait of a studio equipment manager with neutral expression, professional studio framing, crisp obsidian tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBefjbSkL_LoxkKBvIV1uNKEzZ6Rdsotj1U7VhoQjStFcVum4VY06IX1tXZWS-fA_DfDpJ70ONTceX4J-wXchHqDW2Ag7OH8Hi4I0YK3obeLyxEnPiQvCpRITBX6t5C8WhurehL2aoVUqc8cEGHOmexqDyv8EuZaOjhaAPEYayeKn-HKVc2Re__ZK2o3rAlxOF1xKs1VUvs_y9AXVxmpBGwcHSJ6Z1iNeAa8yoredYAih1syycLKF61eLHQvDyLktj8TTUMBiMXwbn9"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">history</span>
+              Chain of Custody
+            </button>
+<button class="py-2 px-3 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5 shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-sm">vpn_key</span>
+              Check Out
+            </button>
+</div>
+</div>
+</div>
+<!-- Gear Card 2 (On Set) -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 rounded-lg p-5 relative group hover:border-outline transition-all shadow-xl flex flex-col justify-between">
+<div>
+<div class="relative h-48 rounded-lg overflow-hidden bg-surface-container-lowest mb-4 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional RED V-Raptor 8K VV cinema camera rig outfitted with wireless follow focus, matte box, and Gold Mount battery setup on a soundstage set." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZUicN0YS9lMIESE_EbNH1W6jvP_h8O2haRjdNUPwOxBXfbrCofQHUQ-ILC_jx2103stURxib6TdeEnvm5m_CtxCKFs-zUDyp8e-IV5Y6X3SB3uBowptm9zLhLJDViDSAvZ3CALBmGRJbon_l8R5ALOnXL37m4BqJafbG2SzmsuoOAPOfpt9DVgBBEC_0YEBz8mXO44unjecvhWvIlVtmOAuo3OcuOysZqUCUVI0-LcBMCwYl7rGAgylAfTyiVbKLkzNr1Sp73aP2R"/>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center gap-1.5 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                ON SET
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-background/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs font-mono text-on-surface-variant">
+              SN: RED-VR8K-4410
+            </div>
+</div>
+<div class="mb-4">
+<div class="text-xs text-secondary font-mono mb-1">CAMERA VAULT // 8K-VV</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">RED V-Raptor 8K VV Cinema Rig</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">Complete with DSMC3 RED Touch 7.0" LCD monitor, RF-to-PL adapter, and dual 660GB PRO CFexpress cards.</p>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20 mb-4">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Asset Valuation</div>
+<div class="text-metric-numeral-sm font-metric-numeral-sm text-on-surface">$54,200</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider mb-1">Current Custodian</div>
+<div class="flex items-center gap-2 justify-end">
+<span class="text-xs font-medium text-on-surface">Marcus Vance</span>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Portrait of a male cinematographer wearing a black technical jacket on set, soft warm rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWa5NHoHc3Zdqi32aQAsmJWF13dp2B-MtPnXweU_xyYI5SiQSmyt-W7r4v5NAlTjt8imfOmWnsE6OFGDT7gzlj_k1E2KzjJxqpAr86pzhDIvVCNM-oQMfhuiznCeEE-9nVETDojEyChR0G5LhkwvYG2-b8JkClptoMHBItdVj11iMnLfAUnN164ST_o8BHxxzlVmTI4b2_v-eKdn04t4ld8MtrV8WWe0d8bXktV3YyKgO4lDm_ga1pugkrVQvb-J14FqAt0gXw6RLt"/>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">history</span>
+              Chain of Custody
+            </button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">visibility</span>
+              View Booking
+            </button>
+</div>
+</div>
+</div>
+<!-- Gear Card 3 (Maintenance) -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 rounded-lg p-5 relative group hover:border-outline transition-all shadow-xl flex flex-col justify-between">
+<div>
+<div class="relative h-48 rounded-lg overflow-hidden bg-surface-container-lowest mb-4 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Angenieux Optimo Ultra 12x zoom cinema lens resting on velvet maintenance foam in a Pelican case, macro lens barrel detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRZdm5GCGXl5gTslFgTZrYsBrifJfSCyRPzD71HHW6fFWJekKh7IpkUxhccboRokpV7C4mQZWCDeeeQ8sgyy_yWBkRrF_CRQWpgwpiNLb17V2r62mKDLiDaeV-3ZjethoYOet4DrkKTFvlHiNae9Qmvk_M5GAHfFc15ulLNgXhDPPqSm3OkrJqxxDK7Gc9WbYQSfwPnN295l09brvpL2GgQrIOJlBLZF4B6U3oMVEyL48JsVhPgSWptLHk8bu1vuu_d_1YSBdygMda"/>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider bg-blue-500/10 text-blue-400 border border-blue-500/30 flex items-center gap-1.5 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                MAINTENANCE
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-background/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs font-mono text-on-surface-variant">
+              SN: ANG-OPT-1102
+            </div>
+</div>
+<div class="mb-4">
+<div class="text-xs text-tertiary font-mono mb-1">LENS VAULT // ZOOM</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Angenieux Optimo Ultra 12x</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">High-end 36-435mm T2.8 zoom lens. Currently undergoing optical element alignment and collimation test.</p>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20 mb-4">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Asset Valuation</div>
+<div class="text-metric-numeral-sm font-metric-numeral-sm text-on-surface">$115,000</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider mb-1">Current Custodian</div>
+<div class="flex items-center gap-2 justify-end">
+<span class="text-xs font-medium text-on-surface">Lens Tech Lab</span>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Avatar portrait of an optical technician wearing sterile gloves in a cleanroom workshop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAybL7Ck043KKy2ZqLN3SgpNkLZcc7RMv_dw-tjm4sv_OYvUU50y_IGDxcxB-5vvwx_eitYE0fuXWETehEIOo_CseMRUzGzAL0wNbmO7kW2wGSUI7sMuz-hqhRE6MQ6OGX_Y6LBNN0cmN12Kzrth_lDRooDLkmgOQWwrf4s1IWBw_X4Fd16CqORoyPxeP-70ZnD3KaGKSaULdi1CKMkbOJ9GJLAzJl2UvhuIp6ZDj_LozG_H77Pe0RCXq-p3LxwzdhYgamTltT8nx5K"/>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">history</span>
+              Service Log
+            </button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">build</span>
+              Service Notes
+            </button>
+</div>
+</div>
+</div>
+<!-- Gear Card 4 (Available - Lighting) -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 rounded-lg p-5 relative group hover:border-outline transition-all shadow-xl flex flex-col justify-between">
+<div>
+<div class="relative h-48 rounded-lg overflow-hidden bg-surface-container-lowest mb-4 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="ARRI SkyPanel S60-C LED softlight fixture mounted on heavy-duty stainless steel C-stand with barn doors attached, dark studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFzxMox8BMqn6kwOWSvRsGm7nJ4HnhWF7FHZ8gmD71CIi4qpUYfklD-ynrqilJet3HfoDlzoCMcKpRWOTo8XOKLfbL11zao7GJMoMcV1ei3F18ZGMYybH1vW5M7B7_bsFjLDAL8e6m1payj-bzjI7NWpUzxquciyk9P9yt08x3KN2WfOAVi2pfmk1Vti-F9lAdjXsdiMpZkuZBYh-xeW2Uxq_L0fgfpGJ8dBhU1fI6h4HOLE_OJzRVxQ1NZfMLQ287y54uJXpfwi14"/>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                AVAILABLE
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-background/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs font-mono text-on-surface-variant">
+              SN: ARRI-SP60-1209
+            </div>
+</div>
+<div class="mb-4">
+<div class="text-xs text-primary font-mono mb-1">LIGHTING VAULT // LED</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">ARRI SkyPanel S60-C LED Softlight</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">Full spectrum LED softlight with DMX control module, standard yoke, and heavy-duty power supply unit.</p>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20 mb-4">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Asset Valuation</div>
+<div class="text-metric-numeral-sm font-metric-numeral-sm text-on-surface">$12,400</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider mb-1">Current Custodian</div>
+<div class="flex items-center gap-2 justify-end">
+<span class="text-xs font-medium text-on-surface">Vault Master</span>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Avatar portrait of a studio equipment manager with neutral expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWjVKoxY-90NhnJVtgB3bwCk5mP5fCMgf8XogGkJwVSDOTKBpqC2SJhj1rOaMx3pLg9fD7NVXcQqsfbUs8YyqAi0-doHCneJtlcRpny_obUrVfM-y4-3pmLwvHNXsdOAy97FILtZtlxX5lWVO3z2Yr1vtYDLeC25TUNqgki-Se8CpzYQMYYKpQQxwSe2lz4kfvmWU-4prLNBApwYdw5lt2wqHUzjKMXUpxU_vgxxf3zIWItwbJWgvgtpb35CkyEnyMLrpN-HRj6Gvr"/>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">history</span>
+              Chain of Custody
+            </button>
+<button class="py-2 px-3 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5 shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-sm">vpn_key</span>
+              Check Out
+            </button>
+</div>
+</div>
+</div>
+<!-- Gear Card 5 (Available - Audio) -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 rounded-lg p-5 relative group hover:border-outline transition-all shadow-xl flex flex-col justify-between">
+<div>
+<div class="relative h-48 rounded-lg overflow-hidden bg-surface-container-lowest mb-4 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sound Devices 833 8-input 12-track compact production audio recorder in a custom carbon fiber audio bag with wireless receivers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkdGy8GQ77etikmMMngVeIqneqOqSSrwlcf-WKomEJ0bkk6o0DpKHKgtzL4GdH--Nmc1i-eOGa7TT3opnAn5P_IiEfzTNBIdj3UI1BlG2NJnjyZKG1ph4TS7ZcHRQjuQSln76VTQnXz2x_3yHUgtJNt84Kim62Yo7b0WbA4-m2MMfpmaHoN832PVvepjAawiu9T8bCA3rr2OUfysGzNigVnKMMwpKj01HuMO7QM5LGZT_qI_MeOKwtB9fhKWUWlKuQfnN4t7sA5uyT"/>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                AVAILABLE
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-background/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs font-mono text-on-surface-variant">
+              SN: SD-833-3392
+            </div>
+</div>
+<div class="mb-4">
+<div class="text-xs text-primary font-mono mb-1">AUDIO VAULT // RECORDER</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Sound Devices 833 Production Mixer</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">8-input, 12-track field recorder with Dugan Speech System and XL-WPH3 power supply in Orca bag.</p>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20 mb-4">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Asset Valuation</div>
+<div class="text-metric-numeral-sm font-metric-numeral-sm text-on-surface">$8,900</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider mb-1">Current Custodian</div>
+<div class="flex items-center gap-2 justify-end">
+<span class="text-xs font-medium text-on-surface">Vault Master</span>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Avatar portrait of a studio equipment manager with neutral expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-vWAXURwk9QXF2ioIjqslyFosNJnDoE-WygU1uwJJgykzy_9y2TZd2NXMTK_LfbjbMrCNO9Zpwyk3nGN3HCtGHmle6iL4puUnloXddDpqe2qc5onW3oOvTgDSFL8fUKcDQBTqoGyY_NNoVH0mrzs7zQktIW_R6dW_VTXdnJhp9HMPkidWL7ghcTzQITgxI-eqE3_56V-LM0mcQKrAeh4JiC32EV1RLlsQ506EQipVYzSH0omel_3emNKgDiaWXQkt2oVB9uPraB5k"/>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">history</span>
+              Chain of Custody
+            </button>
+<button class="py-2 px-3 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5 shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-sm">vpn_key</span>
+              Check Out
+            </button>
+</div>
+</div>
+</div>
+<!-- Gear Card 6 (On Set - Lenses) -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 rounded-lg p-5 relative group hover:border-outline transition-all shadow-xl flex flex-col justify-between">
+<div>
+<div class="relative h-48 rounded-lg overflow-hidden bg-surface-container-lowest mb-4 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cooke Anamorphic /i Full Frame Plus prime lens set resting in a custom metal Pelican vault case." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQf57Qkt45KLj-0-wJwv1_izQK0AIF7dvITobK8Eh8uTLrInBKkZvlEstm2X5tLFIAjJFt_bJHVGapbSIRmxRE7zI4c-U9K0CaZpsplDTfA4LlMfpauFZ2sZcNsckJym3wic6J6KroH9740JLOhRQYWRriSHEgGAT4QKdImPhKC_XN4wY1WlCdb2fso4r7LHsrrRgCIzwmlpatyOynru8sN59KQCy4EBa0uxzIDaBqPR7DWcvW1dv0RKuNoF20Bfre8dSR0XPmLHqK"/>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center gap-1.5 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                ON SET
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-background/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs font-mono text-on-surface-variant">
+              SN: COOKE-FF-5081
+            </div>
+</div>
+<div class="mb-4">
+<div class="text-xs text-secondary font-mono mb-1">LENS VAULT // PRIME</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Cooke Anamorphic 50mm T2.3</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">Full Frame Plus prime lens with legendary Cooke Look, dual-focus scales, and PL mount.</p>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20 mb-4">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Asset Valuation</div>
+<div class="text-metric-numeral-sm font-metric-numeral-sm text-on-surface">$34,500</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider mb-1">Current Custodian</div>
+<div class="flex items-center gap-2 justify-end">
+<span class="text-xs font-medium text-on-surface">Elena Rostova</span>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Portrait of a female gaffer with cinematic stage lighting, focused expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh755tCt3KE09M5IeAvke6Ltqvi3ZvzvyWD1zKqorDz_EqBzK7-2w85S3zetrmExy5EbQ3rSiSdSFhA_rrKR0mNa0AIOhyCAHPpZn_ygvvMtgPKxXGcRwCqUfixpZAdtmoYAAzSd6k9vWkWwGLJgT_jkNAF2Ou3MTrj4v48qSh_9EwGh-LV6XYgLjl_hODzJM03henhO_gDh-_vHiZCh5K3iTsmMM3UG5_AdI43u1coNbf85uLpF43ZDL7jxtfC-4ZcQz6Oc6V3Atw"/>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">history</span>
+              Chain of Custody
+            </button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">visibility</span>
+              View Booking
+            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Drawer: GearCustodyDrawer -->
+<aside class="fixed top-0 right-0 h-screen w-[480px] z-50 bg-surface-container-low/95 backdrop-blur-3xl border-l border-outline-variant/30 shadow-2xl flex flex-col justify-between overflow-y-auto">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-outline-variant/20 flex items-center justify-between sticky top-0 bg-surface-container-low/95 backdrop-blur-md z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<div class="text-xs text-primary font-mono">ASSET INSPECTOR // SPEC-04</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">ARRI Alexa 35 Package</h2>
+</div>
+</div>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Drawer Content Body -->
+<div class="p-6 space-y-6 flex-1">
+<!-- Asset Details Banner -->
+<div class="space-y-4">
+<div class="relative h-44 rounded-xl overflow-hidden border border-outline-variant/30 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Detailed close-up studio shot of the ARRI Alexa 35 camera body showing serial number badge, LPL mount pins, and machined magnesium alloy casing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApy1Ji9-80pZLyNYxRx3rERXOGewEnYrIP7_ck_4aksH9mKOJc_qRxv5R8L9Rges3d22yP2LJnP2U3Z412V3Hp4YuUymJGNeW2JDcX9ivOHqkYkV2D51bbZLv0ykJ0lpcfeoEy2uq8kO5DxABJ_rBj3sQMsKVXFYUL6EAshM2l63IkzpgSVQFdeXvA95JhNUBc8d8Fp-tT1vNxjFkVVH7MP9OH3l3QMSwb0A17CNAJA9kLYEGTf8B6kbT-E1BCL_2cTxvVFJgzRprM"/>
+<div class="absolute bottom-3 left-3 bg-background/90 backdrop-blur-md px-3 py-1 rounded-md border border-outline-variant/30 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-xs font-mono text-on-surface">Available in Vault Bay 04</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-lowest/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="text-label-md text-on-surface-variant mb-1">Serial Number</div>
+<div class="text-sm font-mono text-on-surface">ARRI-35-9042</div>
+</div>
+<div class="bg-surface-container-lowest/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="text-label-md text-on-surface-variant mb-1">Valuation Tier</div>
+<div class="text-sm font-semibold text-on-surface">$78,500.00</div>
+</div>
+<div class="bg-surface-container-lowest/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="text-label-md text-on-surface-variant mb-1">Acquisition Date</div>
+<div class="text-sm text-on-surface">Oct 14, 2023</div>
+</div>
+<div class="bg-surface-container-lowest/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="text-label-md text-on-surface-variant mb-1">Insurance Policy</div>
+<div class="text-sm text-on-surface font-mono">AXA-ENT-9921</div>
+</div>
+</div>
+</div>
+<!-- Active Shoot Booking Card -->
+<div class="bg-surface-container/80 border border-outline-variant/30 rounded-xl p-4 space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-secondary uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">event</span> Active Shoot Booking
+          </span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-secondary/10 text-secondary border border-secondary/30">Next Up</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface">Project Cyberpunk Day 1</div>
+<div class="text-body-sm text-on-surface-variant">Stage A Main Lot // Scheduled Checkout: Tomorrow, 06:00 AM</div>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/40">
+<img class="w-full h-full object-cover" data-alt="Portrait of lead camera operator with cyberpunk neon backlighting, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtd0Be2SnOXzja0D3LGefEBIFSCoZvQlYJfmsy3CIC4aOCiNt-TtGnEWthqSHRLxtdboLiitVDr0aBh65Uvq9gl52mcJ5q8cGQDgTX4msnDAl39eXNSD_zfsvQJb5QVHHx-H5lLWGR7pCFBJf1i7zzfBgicbFo3g1_EWxwhUWgGjFGkR-d8SdLLnfWoS_pyejF5Qtf6e79YPpFmJ2a3z7qvwL8rslzT7AXid8c_0FwHaYidqGeLK72gEtsIV9G4HzUMX0gorb_s0SH"/>
+</div>
+</div>
+</div>
+<!-- Chain of Custody Timeline -->
+<div class="space-y-4">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Chain of Custody Timeline</h3>
+<div class="space-y-4 relative before:absolute before:inset-0 before:left-3 before:w-[2px] before:bg-outline-variant/30">
+<!-- Timeline Event 1 -->
+<div class="relative flex items-start gap-3 pl-8">
+<div class="absolute left-1.5 top-1 w-3 h-3 rounded-full bg-primary border-2 border-background ring-4 ring-primary/20"></div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Returned to Vault Bay 04</div>
+<div class="text-xs text-on-surface-variant">Today, 02:14 AM • Verified by Vault Master</div>
+</div>
+</div>
+<!-- Timeline Event 2 -->
+<div class="relative flex items-start gap-3 pl-8">
+<div class="absolute left-1.5 top-1 w-3 h-3 rounded-full bg-surface-container-highest border-2 border-outline-variant"></div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Project Cyberpunk Tech Scout</div>
+<div class="text-xs text-on-surface-variant">Yesterday, 08:30 AM • Custodian: Marcus Vance</div>
+</div>
+</div>
+<!-- Timeline Event 3 -->
+<div class="relative flex items-start gap-3 pl-8">
+<div class="absolute left-1.5 top-1 w-3 h-3 rounded-full bg-surface-container-highest border-2 border-outline-variant"></div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Scheduled Preventive Maintenance</div>
+<div class="text-xs text-on-surface-variant">Nov 12, 2024 • Certified ARRI Service Center</div>
+</div>
+</div>
+<!-- Timeline Event 4 -->
+<div class="relative flex items-start gap-3 pl-8">
+<div class="absolute left-1.5 top-1 w-3 h-3 rounded-full bg-surface-container-highest border-2 border-outline-variant"></div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Initial Asset Registration &amp; Tagging</div>
+<div class="text-xs text-on-surface-variant">Oct 14, 2023 • Vanguard Global Procurement</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer CTA -->
+<div class="p-6 border-t border-outline-variant/20 bg-surface-container-low/95 backdrop-blur-md sticky bottom-0">
+<button class="w-full py-3 px-4 rounded-xl bg-primary text-on-primary font-headline-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-xl shadow-primary/25 text-sm font-semibold">
+<span class="material-symbols-outlined">swap_horiz</span>
+        Check Out / Return to Vault
+      </button>
+</div>
+</aside>
+</body></html>

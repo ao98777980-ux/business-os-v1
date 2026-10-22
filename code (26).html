@@ -1,0 +1,491 @@
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operations Calendar - BusinessOS</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#001e2c",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed": "#e9ddff",
+            "on-primary-container": "#0d0096",
+            "on-secondary": "#3c0091",
+            "on-tertiary-container": "#002d40",
+            "surface-tint": "#c0c1ff",
+            "primary-fixed": "#e1e0ff",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "inverse-on-surface": "#302f39",
+            "surface-dim": "#13131b",
+            "on-error": "#690005",
+            "on-primary-fixed": "#07006c",
+            "secondary": "#d0bcff",
+            "on-surface-variant": "#c7c4d7",
+            "surface-bright": "#393842",
+            "on-primary": "#1000a9",
+            "error-container": "#93000a",
+            "surface-container-highest": "#34343d",
+            "inverse-surface": "#e4e1ed",
+            "surface-container": "#1f1f28",
+            "tertiary-container": "#009bd1",
+            "on-surface": "#e4e1ed",
+            "on-tertiary-fixed-variant": "#004c69",
+            "on-tertiary": "#00354a",
+            "tertiary-fixed": "#c4e7ff",
+            "primary-fixed-dim": "#c0c1ff",
+            "secondary-container": "#571bc1",
+            "outline": "#908fa0",
+            "inverse-primary": "#494bd6",
+            "surface-container-high": "#292932",
+            "background": "#13131b",
+            "tertiary": "#7bd0ff",
+            "surface-variant": "#34343d",
+            "surface-container-lowest": "#0d0d16",
+            "outline-variant": "#464554",
+            "surface": "#13131b",
+            "error": "#ffb4ab",
+            "surface-container-low": "#1b1b23",
+            "on-secondary-fixed-variant": "#5516be",
+            "on-background": "#e4e1ed",
+            "primary": "#c0c1ff",
+            "secondary-fixed-dim": "#d0bcff",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "on-secondary-fixed": "#23005c",
+            "on-secondary-container": "#c4abff",
+            "primary-container": "#8083ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "margin-md": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-md": "0.75rem",
+            "margin-lg": "2rem",
+            "gutter": "1rem",
+            "space-lg": "1rem",
+            "space-2xl": "2rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "metric-numeral-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-xl": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-50 flex flex-col justify-between h-full p-4 border-r border-white/5 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-2xl">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2 py-3">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary to-secondary-container flex items-center justify-center text-on-primary font-bold shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<h1 class="text-headline-lg font-headline-lg font-extrabold text-primary dark:text-inverse-primary tracking-tight">BusinessOS</h1>
+<p class="text-label-sm text-on-surface-variant">Enterprise Suite</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1.5">
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface rounded-xl hover:bg-surface-variant/40 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-headline-sm">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-primary font-bold bg-primary/10 rounded-xl hover:bg-surface-variant/40 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="text-headline-sm">Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface rounded-xl hover:bg-surface-variant/40 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="text-headline-sm">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface rounded-xl hover:bg-surface-variant/40 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+<span class="text-headline-sm">Workflows</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface rounded-xl hover:bg-surface-variant/40 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-headline-sm">Settings</span>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<button class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline-sm text-center shadow-lg shadow-primary/25 hover:opacity-95 transition-all active:scale-[0.98]">
+        New Operation
+      </button>
+<div class="flex items-center gap-3 px-2 py-2 border-t border-white/5">
+<img class="w-9 h-9 rounded-full object-cover border border-white/10" data-alt="Professional executive headshot of an executive user with a confident expression, wearing a tailored charcoal suit jacket, set against a sleek modern architectural office background with soft neutral lighting and glass partitions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8w--o5M3U50mIvGPSkM4n4mO7Ib48i2wQg1yAGQ1D3GkbJVP2LOvvRi9a4FleBNagpcwQueoYzzYooSOgxJFFosIAFAXJppOzB6QxYDfABhXEyXYP3SIsTQSAV1-eAuie8G2jfgY1wd8nIhMe29NDnnnLUeV6oFwRIqv3Y2i6OUyVODoYC8n_eh5DZ_WZz4J23nDSGeR0yo2w8OMrl21Uq4SiPCX2-npuegBulpevTtQ3Q3as0Jk04V_dz7tXrWq-bij7D0emv_LJ"/>
+<div class="overflow-hidden">
+<p class="text-headline-sm truncate text-on-surface">Alex Mercer</p>
+<p class="text-label-sm text-on-surface-variant truncate">Executive Principal</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="pl-64 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-40 bg-surface/80 backdrop-blur-2xl border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<h2 class="text-headline-md font-headline-md text-primary dark:text-inverse-primary">Operations Calendar</h2>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant"></div>
+<!-- Date Navigation -->
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-lg bg-surface-variant/30 hover:bg-surface-variant text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="text-headline-sm text-on-surface px-2">October 2024</span>
+<button class="p-1.5 rounded-lg bg-surface-variant/30 hover:bg-surface-variant text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="ml-2 px-3 py-1 rounded-lg bg-surface-variant/50 hover:bg-surface-variant text-on-surface text-label-md transition-all border border-white/5">
+              Today
+            </button>
+</div>
+</div>
+<!-- Segmented Toggle & Filters -->
+<div class="flex items-center gap-6">
+<!-- Category Filters -->
+<div class="hidden xl:flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-primary/20 text-primary text-label-md border border-primary/30">All Events</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface text-label-md flex items-center gap-1.5 border border-white/5">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span> Shoot Days
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface text-label-md flex items-center gap-1.5 border border-white/5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Milestones
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface text-label-md flex items-center gap-1.5 border border-white/5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> Client Reviews
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface text-label-md flex items-center gap-1.5 border border-white/5">
+<span class="w-2 h-2 rounded-full bg-violet-500"></span> Sprints
+            </button>
+</div>
+<!-- View Mode Toggle -->
+<div class="flex bg-surface-container-high p-1 rounded-xl border border-white/5">
+<button class="px-3 py-1 rounded-lg text-label-md text-on-surface-variant hover:text-on-surface transition-all">Month</button>
+<button class="px-3 py-1 rounded-lg text-label-md bg-surface-variant text-on-surface font-bold shadow-sm">Week</button>
+<button class="px-3 py-1 rounded-lg text-label-md text-on-surface-variant hover:text-on-surface transition-all">Day</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Workspace Canvas -->
+<main class="flex-1 p-6 flex gap-6 max-w-[1920px] mx-auto w-full">
+<!-- Calendar Grid Area (7x5 Month Grid) -->
+<div class="flex-1 flex flex-col bg-surface-container-lowest/50 rounded-2xl border border-white/5 overflow-hidden shadow-2xl backdrop-blur-xl">
+<!-- Days Header -->
+<div class="grid grid-cols-7 border-b border-white/5 bg-surface-container-low/50 text-center">
+<div class="py-3 text-label-sm text-on-surface-variant">MON</div>
+<div class="py-3 text-label-sm text-on-surface-variant">TUE</div>
+<div class="py-3 text-label-sm text-on-surface-variant">WED</div>
+<div class="py-3 text-label-sm text-on-surface-variant">THU</div>
+<div class="py-3 text-label-sm text-on-surface-variant">FRI</div>
+<div class="py-3 text-label-sm text-on-surface-variant">SAT</div>
+<div class="py-3 text-label-sm text-on-surface-variant">SUN</div>
+</div>
+<!-- Grid Matrix -->
+<div class="grid grid-cols-7 grid-rows-5 flex-1 divide-x divide-y divide-white/5">
+<!-- Week 1 -->
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/20 opacity-40">
+<span class="text-body-sm text-on-surface-variant">30</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">1</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">2</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">3</span>
+<div class="mt-1 p-1.5 rounded bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[11px] font-medium truncate">
+              Q4 Kickoff Sync
+            </div>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">4</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">5</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">6</span>
+</div>
+<!-- Week 2 -->
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">7</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">8</span>
+<div class="mt-1 p-1.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-medium truncate">
+              Milestone: Alpha v1.2
+            </div>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">9</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">10</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">11</span>
+<div class="mt-1 p-1.5 rounded bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[11px] font-medium truncate">
+              Client Review: Stark
+            </div>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">12</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">13</span>
+</div>
+<!-- Week 3 -->
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">14</span>
+<div class="mt-1 p-1.5 rounded bg-violet-500/10 border border-violet-500/20 text-violet-400 text-[11px] font-medium truncate">
+              Sprint 42 Planning
+            </div>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">15</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">16</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">17</span>
+<!-- Multi-day span example -->
+<div class="mt-1 p-1.5 rounded bg-blue-500/20 border border-blue-500/30 text-blue-300 text-[11px] font-medium truncate">
+              Project Cyberpunk Stage A Shoot [3d]
+            </div>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">18</span>
+<div class="mt-1 p-1.5 rounded bg-blue-500/20 border border-blue-500/30 text-blue-300 text-[11px] font-medium truncate">
+              Project Cyberpunk (Cont.)
+            </div>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">19</span>
+<div class="mt-1 p-1.5 rounded bg-blue-500/20 border border-blue-500/30 text-blue-300 text-[11px] font-medium truncate">
+              Project Cyberpunk (Final)
+            </div>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">20</span>
+</div>
+<!-- Week 4 (Includes Current Day Oct 24) -->
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">21</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">22</span>
+<div class="mt-1 p-1.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-medium truncate">
+              Apex Global Final Delivery
+            </div>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">23</span>
+</div>
+<!-- Current Day Highlighted: Oct 24 -->
+<div class="min-h-[120px] p-2 bg-primary/5 border-2 border-primary/40 relative">
+<div class="flex justify-between items-center">
+<span class="text-body-sm font-bold text-primary bg-primary/25 w-6 h-6 rounded-full flex items-center justify-center">24</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<div class="mt-2 space-y-1">
+<div class="p-1 rounded bg-blue-500/15 border border-blue-500/30 text-blue-300 text-[10px] font-medium truncate">
+                09:00 Dir. Review
+              </div>
+<div class="p-1 rounded bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[10px] font-medium truncate">
+                14:00 Stakeholders
+              </div>
+</div>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">25</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">26</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">27</span>
+</div>
+<!-- Week 5 -->
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">28</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">29</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">30</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/30">
+<span class="text-body-sm text-on-surface-variant">31</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/20 opacity-40">
+<span class="text-body-sm text-on-surface-variant">1</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/20 opacity-40">
+<span class="text-body-sm text-on-surface-variant">2</span>
+</div>
+<div class="min-h-[120px] p-2 bg-surface-container-lowest/20 opacity-40">
+<span class="text-body-sm text-on-surface-variant">3</span>
+</div>
+</div>
+</div>
+<!-- Right Day Agenda Drawer -->
+<aside class="w-96 flex flex-col bg-surface-container-lowest/80 backdrop-blur-2xl rounded-2xl border border-white/5 shadow-2xl overflow-hidden">
+<!-- Drawer Header -->
+<div class="p-5 border-b border-white/5 flex items-center justify-between bg-surface-container-low/40">
+<div>
+<span class="text-label-sm text-primary font-semibold tracking-wider">SELECTED AGENDA</span>
+<h3 class="text-headline-md text-on-surface">Thursday, Oct 24</h3>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-variant/30 hover:bg-surface-variant flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Chronological Timeline (08:00 to 18:00) -->
+<div class="flex-1 overflow-y-auto p-5 space-y-6">
+<!-- 08:00 -->
+<div class="flex gap-4 relative">
+<div class="w-12 text-right text-label-sm text-on-surface-variant pt-1">08:00</div>
+<div class="absolute left-14 top-2 w-2 h-2 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<div class="flex-1 ml-6 p-4 rounded-xl bg-surface-container-high/60 border border-white/5 space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Shoot Day</span>
+<span class="text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Stage B
+                </span>
+</div>
+<h4 class="text-headline-sm text-on-surface">Camera Calibration & Lighting Setup</h4>
+<div class="flex items-center justify-between pt-2 border-t border-white/5">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border border-surface object-cover" data-alt="Close-up portrait of a cinematic lighting technician with short dark hair and a focused expression, wearing a utilitarian black vest over a dark shirt inside a professional film studio setting with soft amber backlighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi0AsS3FXd28DRmCIWrq6TlMNYeWceAd88gAa8ki9AQ4m_3vT8Ohfay_UrmLgR3B0KW3xawW3-hMgWw737ygBOLflC5vYMDs6jBD5-x7NECvoDSYonKln3nWk78JgF112u8fLVT9V26CuO-DZrjRTH-D9dTzf4rzZHvGnEpSVfmTlmbXXp9OVmeVMkdEXdxN29HfBX4LTufORT2QxRrMfJTrawvEc-rIYrreWRC4-S5L38ncsmz1LdCPqXDSDs47QqBn5jT5sJy9_f"/>
+<img class="w-6 h-6 rounded-full border border-surface object-cover" data-alt="Portrait of a female camera operator smiling warmly, wearing a casual grey crewneck sweater, set against a blurred background of high-end digital production equipment and monitors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbUjn4CDsjWiDgkh8VxSSTnhUqWudN7oERNvxTAAKn_50-9Q3GAlqA30HPK1RswZo4cEhraT0FpPvGQlpqDuBKQUXXdBu39HGcoiiOM0rf8E2uZtBtj0HCc53sjaQT0bW_GR81WjeqaRy544ZE6Bcj4sU_M_v450I-7z2AaHHHWAJ4GQFvCyevPds-UyJFCIGs3364HSBAlXM3wn7Szzy5_hwVj12BBl4bViNUb-Sdkbl6aS8_ODRmpUKYhzfl9hA7uInLG1i4GOCs"/>
+</div>
+<span class="text-label-sm text-on-surface-variant">08:00 - 10:00</span>
+</div>
+</div>
+</div>
+<!-- 10:30 -->
+<div class="flex gap-4 relative">
+<div class="w-12 text-right text-label-sm text-on-surface-variant pt-1">10:30</div>
+<div class="absolute left-14 top-2 w-2 h-2 rounded-full bg-amber-500 ring-4 ring-amber-500/20"></div>
+<div class="flex-1 ml-6 p-4 rounded-xl bg-surface-container-high/60 border border-white/5 space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Client Review</span>
+<span class="text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Room 3
+                </span>
+</div>
+<h4 class="text-headline-sm text-on-surface">Stark Industries Phase II Review</h4>
+<div class="flex items-center justify-between pt-2 border-t border-white/5">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border border-surface object-cover" data-alt="Portrait of a corporate executive in a sharp navy blue blazer and crisp white shirt, exhibiting a confident and professional demeanor in an executive boardroom with subtle glass accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuUUeF7k46QpdTO5R_Y4rvkTNlbqgPUI6OIAKt23j5reQlvpvIcHTLhh8KdGC0lfg4-0pFF0JZwJcrLOP06cI0vEd7W3Y7CGlKmrF85OswpvvJIhFW-RFhs1ObF_6RlWp7qVWfIEfeCl7dBPqngCEocsowUtOtVcD5lv6FKqK4WrS3kNq6Ds0LUEX9WcIMj_7t9tqjElzY8Ps8W_VOV7ZBiSrFE16yPvL9N2BwqpfplNoaM9JabMo-iVhJxSSyCPCGNRCyD7DFkT7S"/>
+</div>
+<span class="text-label-sm text-on-surface-variant">10:30 - 12:00</span>
+</div>
+</div>
+</div>
+<!-- 13:00 -->
+<div class="flex gap-4 relative">
+<div class="w-12 text-right text-label-sm text-on-surface-variant pt-1">13:00</div>
+<div class="absolute left-14 top-2 w-2 h-2 rounded-full bg-emerald-500 ring-4 ring-emerald-500/20"></div>
+<div class="flex-1 ml-6 p-4 rounded-xl bg-surface-container-high/60 border border-white/5 space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Milestone</span>
+<span class="text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Main Stage
+                </span>
+</div>
+<h4 class="text-headline-sm text-on-surface">Live-Action Sequence Take 1</h4>
+<div class="flex items-center justify-between pt-2 border-t border-white/5">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border border-surface object-cover" data-alt="Professional headshot of a creative director with styled hair and designer glasses, wearing a sleek black turtleneck inside a contemporary design studio illuminated with cool blue lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhZU2Rk3lirZPMErFJEHjG0epN8BP8gTtNuNWTVpMfA50bQKLffrv1YaZMDzzpEOEj6tk-kfh0hPchOeew0y_AV9eT6ERdZFIs3AK-Ks0Y81aN6GV3FrgQi8b2RtnVsjSMnSuEWhtWR-dO8QLM_JWJSIaaHCVUy3zCbvpgtAmG-FKwSfBFITTNhmebvy9U5KORRy_BdEotXU6k3hQrMfU2_6vAlRKdC1zzpUQtNSbul5e3CFp6y2noBmD-owyy7s1AMYY6qurTl-vC"/>
+<img class="w-6 h-6 rounded-full border border-surface object-cover" data-alt="Portrait of an audio engineer wearing studio headphones, looking intently toward an audio mixing console with warm indicator lights in a sophisticated dark acoustic control room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDedGd9saoW756UZtUQz8C-HhBbnzyz3Q3fiVvbHSdlxSOtYV6ZtAzpRTeo9j0sOgMhdLtem29Vx7TSMhQuVcJcS6Rb7kl-qlhyPW2P8tjlPZ_nLjxGVm9D4J1FI6FQMmHbmp8ov3SU2c9UoD24UPWOJCELJxdJ9ltPim-LPsRg6b1cGntOkRdxAWc_F59WXt4fZy2Eu0HOtKj2uMkkAmE_chCdHJh26ALd3buRSsNcwWdSUrK0ChciGDvesP-UIdSGj2nY8oFbyooM"/>
+<img class="w-6 h-6 rounded-full border border-surface object-cover" data-alt="Portrait of a motion graphics artist with a thoughtful expression, wearing a dark hoodie, set against a softly lit background of high-resolution dual monitors displaying complex timeline interfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABO7Xr0kKheJ2MySKS-5CuYvsDCBusmGadRV9DhYcNRBEWO_KTX7_7u2hbCVh3husp80eJo1BwQjhDqHd63CvOURZFbXd_QPClTx6qT0AXUZsyMB1Zb01nL-CSBEU7E37sOJlXxKym0D-q-CSUviBCbc7R99LiyKMBUwgIcaOxJLmWYdc49zD0_hilxYbG01Lk42Td8ecz6gFuUq3yNfFrVmE7c0HQW1M1KuOMXQmRBwU9Wu82HKHpLailF2GgTrSPU2B9zsUTFNmj"/>
+</div>
+<span class="text-label-sm text-on-surface-variant">13:00 - 16:30</span>
+</div>
+</div>
+</div>
+<!-- 17:00 -->
+<div class="flex gap-4 relative">
+<div class="w-12 text-right text-label-sm text-on-surface-variant pt-1">17:00</div>
+<div class="absolute left-14 top-2 w-2 h-2 rounded-full bg-violet-500 ring-4 ring-violet-500/20"></div>
+<div class="flex-1 ml-6 p-4 rounded-xl bg-surface-container-high/60 border border-white/5 space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm px-2 py-0.5 rounded bg-violet-500/10 text-violet-400 border border-violet-500/20">Sprint Sync</span>
+<span class="text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Virtual Room B
+                </span>
+</div>
+<h4 class="text-headline-sm text-on-surface">Daily Retrospective & Wrap</h4>
+<div class="flex items-center justify-between pt-2 border-t border-white/5">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border border-surface object-cover" data-alt="Portrait of a software engineering lead smiling, wearing a simple dark t-shirt, set against a modern tech workspace with subtle neon ambient rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlciFh7BtnTy6U97sUhjJFqcfx64cin5T5IeliJAlIR4TouP2pLjr750ezs0c8ocBDHjnAfgkYtRYEPoVHpnP3-D92YCQG8gn9xatcmUHr2z33sD61Nh94kw3i_K2RIbSihCkyxFeXIBcGjeQiLdhGr26XP-JSHXve3sc8OvYm4OeLbmno-6mrAguqBwkmv3H9qVYw6N-Mwr2vsKn3-MTfyjxGp5LSySg6FzSeowNfjRYv9VedoKshKBpj1kfyEacpAB6M63M-dpnE"/>
+</div>
+<span class="text-label-sm text-on-surface-variant">17:00 - 18:00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Action -->
+<div class="p-4 border-t border-white/5 bg-surface-container-low/40">
+<button class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/25 hover:opacity-95 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            Schedule Event
+          </button>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

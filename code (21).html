@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OmniCorp x 003VXA - Client Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "tertiary-fixed": "#c4e7ff",
+              "surface-container-high": "#292932",
+              "surface-dim": "#13131b",
+              "surface-container": "#1f1f28",
+              "surface-container-low": "#1b1b23",
+              "on-surface": "#e4e1ed",
+              "on-background": "#e4e1ed",
+              "on-primary-fixed": "#07006c",
+              "primary-container": "#8083ff",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#7bd0ff",
+              "secondary-container": "#571bc1",
+              "surface": "#13131b",
+              "surface-bright": "#393842",
+              "on-tertiary-fixed-variant": "#004c69",
+              "inverse-on-surface": "#302f39",
+              "primary": "#c0c1ff",
+              "tertiary-container": "#009bd1",
+              "secondary": "#d0bcff",
+              "tertiary": "#7bd0ff",
+              "primary-fixed-dim": "#c0c1ff",
+              "outline-variant": "#464554",
+              "surface-container-lowest": "#0d0d16",
+              "surface-container-highest": "#34343d",
+              "secondary-fixed-dim": "#d0bcff",
+              "on-tertiary-fixed": "#001e2c",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "on-secondary-fixed": "#23005c",
+              "primary-fixed": "#e1e0ff",
+              "on-tertiary-container": "#002d40",
+              "on-secondary-fixed-variant": "#5516be",
+              "on-primary-container": "#0d0096",
+              "inverse-surface": "#e4e1ed",
+              "surface-variant": "#34343d",
+              "outline": "#908fa0",
+              "secondary-fixed": "#e9ddff",
+              "on-secondary": "#3c0091",
+              "on-error": "#690005",
+              "on-primary": "#1000a9",
+              "on-tertiary": "#00354a",
+              "inverse-primary": "#494bd6",
+              "background": "#13131b",
+              "on-secondary-container": "#c4abff",
+              "surface-tint": "#c0c1ff",
+              "on-surface-variant": "#c7c4d7",
+              "error-container": "#93000a",
+              "error": "#ffb4ab"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "space-sm": "0.5rem",
+              "margin-md": "1.5rem",
+              "margin-lg": "2rem",
+              "space-lg": "1rem",
+              "space-xs": "0.25rem",
+              "space-xl": "1.5rem",
+              "margin": "1rem",
+              "gutter-lg": "1.5rem",
+              "space-2xl": "2rem",
+              "gutter": "1rem",
+              "space-md": "0.75rem"
+            },
+            "fontFamily": {
+              "display-lg-mobile": ["Inter"],
+              "headline-sm": ["Inter"],
+              "body-sm": ["Inter"],
+              "body-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-md": ["Inter"],
+              "display-lg": ["Inter"],
+              "label-md": ["Inter"],
+              "metric-numeral-lg": ["Inter"],
+              "metric-numeral-sm": ["Inter"],
+              "headline-lg": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-xl": ["Inter"]
+            },
+            "fontSize": {
+              "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+              "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+              "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+              "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+              "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+              "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+              "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+              "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+              "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }],
+              "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+              "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+              "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+              "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+      body {
+        background-color: #080810;
+        color: #e4e1ed;
+        font-family: 'Inter', sans-serif;
+      }
+      .glass-panel {
+        background: rgba(17, 18, 34, 0.55);
+        backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+      }
+      .glass-vessel {
+        background: rgba(26, 28, 54, 0.45);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+      }
+      .liquid-btn {
+        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+      }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Shell -->
+<header class="bg-surface dark:bg-surface-dim shadow-md w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 max-w-7xl mx-auto h-20">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md font-extrabold text-on-surface dark:text-on-surface tracking-tight">OmniCorp x 003VXA</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface transition-all duration-200 text-headline-md font-headline-md" href="#">Overview</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 transition-all duration-200 text-headline-md font-headline-md" href="#">Deliverables</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all duration-200 text-headline-md font-headline-md" href="#">Roadmap</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all duration-200 text-headline-md font-headline-md" href="#">Invoices</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="liquid-btn text-white px-5 py-2.5 rounded-lg text-label-md transition-all duration-200 flex items-center gap-2 hover:brightness-110">
+<span class="material-symbols-outlined text-sm">lock_open</span>
+                    E-Sign Portal
+                </button>
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A detailed portrait headshot of a corporate executive with sharp professional attire, studio rim lighting against a dark obsidian background, ultra-high resolution photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCsJq7z0Wg0HMQrwo30y3ihRSfkAxlqdMdsu7QSNXav2gSZ_FwE_umgn4l4W3o9Zi-8W8BAfx16vReVfx-EW1lW3tnBKA4H7B0e2T02EL7rVe5lfH4F-7rwHQQumaIH5mi9_3OtF_Wo3Sv8RHEaezVy4bAajXyPYmb806SZqKP9zCdhKEQZZ782mFJ3jjR5y7UTZfx0JSR6FmCfAzG4cuUbNYpaSJ2-_4XpwOf1kR69sU5D_qcRZP-sFoaZ8_qHTgcNH59JWqCXkbJ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 max-w-7xl w-full mx-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Center/Left Media Review Suite (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Header Controls & Version Switcher -->
+<div class="flex flex-wrap items-center justify-between gap-4 glass-panel p-4 rounded-xl">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-white">Cyberpunk 2027 Hero Spot 60s</h1>
+<p class="text-body-sm text-on-surface-variant">Asset ID: VXA-CP-2027-v2.2 • Master ProRes 4444</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest p-1 rounded-lg border border-outline-variant">
+<button class="px-3 py-1.5 rounded text-label-md text-on-surface-variant hover:text-white transition-all">v1.0</button>
+<button class="px-3 py-1.5 rounded text-label-md text-on-surface-variant hover:text-white transition-all">v2.0</button>
+<button class="px-3 py-1.5 rounded text-label-md bg-secondary-container text-on-secondary-container font-bold shadow">v2.2 Current</button>
+</div>
+</div>
+<!-- 16:9 Cinema Video Player -->
+<div class="relative w-full aspect-video rounded-xl overflow-hidden glass-vessel shadow-2xl group flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Cinematic cyberpunk scene featuring a high-tech futuristic street at night with neon holographic advertisements, rain-slicked pavement reflecting purple and cyan lights, hyper-detailed volumetric lighting, unreal engine 5 render style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5lEs8BSzjmXjWzBLgLMI-XyX9YgCePo9vCc4KKLZUyjQmwzIFa5huwkzWODqeUblZEgQ6tFNhddeJLBAlhSuqi8kz1ETvhyS4ZV6ObBPME8XBwV9Lo6yksTEG8Jvjt-PQCnaFauakDv9NLSUgw1_Pw92OFPtQ_sDd14Qr_3OgkkkcgD0j3Wbb6XpOUzNameky9woUjtoWSgOiqUoA2bmURckhdFXcUHzN3wZ2wtNAVKL7seBlI2GugjTVK6AxaOjZuloC7h8WW7La')"></div>
+<!-- Play overlay control button -->
+<button class="relative z-10 w-16 h-16 rounded-full bg-surface/80 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-xl hover:scale-105 transition-all">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- Timecode Overlay -->
+<div class="absolute top-4 left-4 z-10 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md border border-white/10 text-xs font-mono tracking-wider text-white">
+                    00:00:42:18 / 00:01:00:00
+                </div>
+<!-- On-video comment pin indicators -->
+<div class="absolute top-1/3 left-1/4 z-20 group/pin cursor-pointer">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shadow-lg ring-4 ring-primary/30">1</div>
+</div>
+<div class="absolute top-1/2 left-2/3 z-20 group/pin cursor-pointer">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-xs font-bold shadow-lg ring-4 ring-secondary/30">2</div>
+</div>
+</div>
+<!-- Scrub Bar & Clickable Frame Comment Dots -->
+<div class="glass-panel p-4 rounded-xl flex flex-col gap-3">
+<div class="relative w-full h-3 bg-surface-container-highest rounded-full cursor-pointer flex items-center">
+<div class="absolute h-full bg-primary rounded-full" style="width: 70%;"></div>
+<!-- Scrub Handle -->
+<div class="absolute left-[70%] w-4 h-4 bg-white rounded-full shadow-md -ml-2 ring-2 ring-primary"></div>
+<!-- Frame comment dots on timeline -->
+<div class="absolute left-[25%] w-3 h-3 bg-primary rounded-full -top-0.5 cursor-pointer shadow" title="Comment 1"></div>
+<div class="absolute left-[65%] w-3 h-3 bg-secondary rounded-full -top-0.5 cursor-pointer shadow" title="Comment 2"></div>
+</div>
+<div class="flex justify-between items-center text-body-sm text-on-surface-variant">
+<span>00:00:00:00</span>
+<span class="text-primary font-mono font-semibold">Active Timecode: 00:00:42:18</span>
+<span>00:01:00:00</span>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="flex items-center justify-between gap-4 pt-2">
+<button class="glass-vessel hover:bg-surface-variant text-on-surface px-6 py-3 rounded-xl text-headline-sm transition-all duration-200 flex items-center gap-2">
+<span class="material-symbols-outlined">edit_note</span>
+                    Request Changes
+                </button>
+<button class="liquid-btn text-white px-8 py-3.5 rounded-xl text-headline-sm transition-all duration-200 flex items-center gap-3 hover:scale-[1.02] shadow-xl relative overflow-hidden group">
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-amber-300" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Approve & E-Sign Deliverable</span>
+</button>
+</div>
+</div>
+<!-- Right Side Panel: Frame-Accurate Feedback Thread (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="glass-panel rounded-xl p-5 flex flex-col h-full max-h-[720px]">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant">
+<h2 class="text-headline-md font-headline-md text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">forum</span>
+                        Feedback Thread
+                    </h2>
+<span class="bg-primary/10 text-primary px-2.5 py-1 rounded-full text-label-sm font-bold border border-primary/20">2 Active</span>
+</div>
+<!-- Comments List Container -->
+<div class="flex-1 overflow-y-auto py-4 flex flex-col gap-4 pr-1">
+<!-- Comment Item 1 -->
+<div class="glass-vessel p-4 rounded-xl flex flex-col gap-3 border-l-4 border-l-primary">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Close up avatar portrait of an executive reviewer wearing stylish dark glasses in a minimalist modern office setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1RTqj2wROUKZ8wyUA0VdQ2fclKSwtz7xcnYRzterj9fx4St5UxxU5vWfVIB94oaMK_xs2QqwTlgJP5PRCI4CfT3_7EuB5byXsvVYUeg7pQ_OZawRHv3jfrDqqOpnWdu7-9WlKvIvSkQ7McxmNrjvC8k6s8tPi-gUhampS3DaY3rCr3p-kreEch72tWqsH26OkiXxTLRb1Okh3-FBCKGYkKbO1QZruFgdzkh1D1it0L9lfQRTqzcI-KDXucZ0lGAYrrKT4PGhTSN3a"/>
+<span class="text-headline-sm text-white">Marcus Vance</span>
+</div>
+<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">00:00:14:05</span>
+</div>
+<p class="text-body-md text-on-surface-variant">The color grading on the neon signage feels slightly muted compared to the storyboard brief. Can we push the cyan saturation up by 15%?</p>
+<div class="flex items-center justify-between text-xs text-outline pt-2 border-t border-white/5">
+<span>2 hours ago</span>
+<button class="text-primary hover:underline flex items-center gap-1">Reply</button>
+</div>
+</div>
+<!-- Comment Item 2 -->
+<div class="glass-vessel p-4 rounded-xl flex flex-col gap-3 border-l-4 border-l-secondary">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Professional avatar portrait of a female creative director with sharp lighting against a dark neutral wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwI3UNBnu23-XmF9ux-tvEd2pvz3aIBn2CbXsNRE7i4q7qPdX4DQ6U-aFPEp0tGfhuphRA7A8JU1nEYKkm4B8DFIQWX42Gkr1TPqfR4584mIQXL-5YG-qRmbLpPxR1wFxRAbc7CmPuwW3kLKRks1mpkhtEzHXUL3hoAUEIzTQGiOeIYC07x2J1t9sQEFC_ypMyw3x9dIifj9tdbSpP7CpeIRdR1MuxHwr_LH7JZCGnUpc8FajHoXUO4tG8F6pz0pEoWKTE7RNS3UAi"/>
+<span class="text-headline-sm text-white">Elena Rostova</span>
+</div>
+<span class="text-xs font-mono text-secondary bg-secondary/10 px-2 py-0.5 rounded">00:00:42:18</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Audio mix is pristine. Transition timing at this exact frame is spot on. Ready for sign-off once Marcus's color note is addressed.</p>
+<div class="flex items-center justify-between text-xs text-outline pt-2 border-t border-white/5">
+<span>45 mins ago</span>
+<button class="text-primary hover:underline flex items-center gap-1">Reply</button>
+</div>
+</div>
+</div>
+<!-- Comment Input Area -->
+<div class="pt-4 border-t border-outline-variant flex flex-col gap-3">
+<div class="relative">
+<textarea class="w-full bg-black/40 border border-outline-variant rounded-xl p-3 text-body-md text-white placeholder-outline focus:border-primary focus:ring-1 focus:ring-primary resize-none" placeholder="Type frame-accurate comment..." rows="3"></textarea>
+<div class="absolute bottom-3 right-3 flex items-center gap-2">
+<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">00:00:42:18</span>
+</div>
+</div>
+<button class="liquid-btn text-white w-full py-2.5 rounded-xl text-headline-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">send</span>
+                        Post Comment
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- SideNavBar (Collaboration Workspace) -->
+<aside class="fixed right-0 top-0 h-screen w-80 bg-surface-container-low dark:bg-surface-container-low border-l border-outline-variant shadow-lg hidden xl:flex flex-col justify-between p-6 z-40 transform translate-x-full hover:translate-x-0 transition-transform duration-300">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-xl object-cover border border-outline-variant" data-alt="Workspace abstract emblem featuring glowing geometry on dark obsidian background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPk22_Rsk_Z_49z0fx5M62Ayk3qzsc_nuiO4tcTKy-hyDtoOFe8eThhqvH5kM0QeGmPO7pCgPmh-1_JJsMI5LffvkSSu-jxYEWfmjWn3ORpeM_16t14CassvoDg7zQF5d6KZrODOKqs2hfBW_frOkGgfejs6PAwv39DYllHvIAZIj9f8cz7TGcGTvHpkLHyXkNRh9Fub_QFbcsBY5jIYf5WeE_c4ZbWZ66JBUajdQvCWEJbl6VsnnQe6TubMP_fuLwK7OM_jN9BXbg"/>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Collaboration</h3>
+<p class="text-body-sm text-on-surface-variant">Active Workspace</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant px-3 py-2 rounded-xl hover:bg-surface-container-highest transition-all duration-200" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-label-md">Comments</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container font-bold rounded-xl px-3 py-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">edit_document</span>
+<span class="text-label-md">E-Sign Studio</span>
+</a>
+</div>
+</div>
+<div class="p-4 glass-vessel rounded-xl text-center">
+<p class="text-xs text-on-surface-variant">Secure Cryptographic Session Active</p>
+<p class="text-[10px] font-mono text-primary mt-1">SHA-256: 8f9b...3a1c</p>
+</div>
+</aside>
+</body></html>

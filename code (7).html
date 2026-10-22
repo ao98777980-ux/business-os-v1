@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessOS — Vanguard Global Executive Overview</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration verbatim as provided -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#571bc1",
+            "on-tertiary-fixed": "#001e2c",
+            "on-error": "#690005",
+            "surface-container-highest": "#34343d",
+            "primary-fixed": "#e1e0ff",
+            "tertiary-fixed": "#c4e7ff",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "on-tertiary-fixed-variant": "#004c69",
+            "on-surface": "#e4e1ed",
+            "tertiary-container": "#009bd1",
+            "on-primary-fixed": "#07006c",
+            "background": "#13131b",
+            "inverse-primary": "#494bd6",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-tertiary": "#00354a",
+            "surface": "#13131b",
+            "surface-dim": "#13131b",
+            "on-surface-variant": "#c7c4d7",
+            "surface-container-low": "#1b1b23",
+            "surface-variant": "#34343d",
+            "inverse-on-surface": "#302f39",
+            "on-tertiary-container": "#002d40",
+            "surface-tint": "#c0c1ff",
+            "error": "#ffb4ab",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "on-secondary": "#3c0091",
+            "inverse-surface": "#e4e1ed",
+            "on-secondary-fixed-variant": "#5516be",
+            "on-secondary-container": "#c4abff",
+            "primary-container": "#8083ff",
+            "outline-variant": "#464554",
+            "primary": "#c0c1ff",
+            "on-error-container": "#ffdad6",
+            "error-container": "#93000a",
+            "tertiary": "#7bd0ff",
+            "on-secondary-fixed": "#23005c",
+            "secondary-fixed": "#e9ddff",
+            "secondary": "#d0bcff",
+            "surface-container": "#1f1f28",
+            "outline": "#908fa0",
+            "surface-container-high": "#292932",
+            "surface-bright": "#393842",
+            "surface-container-lowest": "#0d0d16",
+            "secondary-fixed-dim": "#d0bcff",
+            "on-primary-container": "#0d0096",
+            "on-background": "#e4e1ed",
+            "on-primary": "#1000a9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-2xl": "2rem",
+            "margin-lg": "2rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1rem",
+            "gutter-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-md": "1.5rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "headline-xl": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "metric-numeral-lg": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Inter"]
+          },
+          "fontSize": {
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }],
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom Material Symbol sizing and layout helpers */
+    .material-symbols-outlined {
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    /* Obsidian Liquid Glass Specular Shimmer */
+    .glass-specular-panel {
+      position: relative;
+      background: rgba(27, 27, 35, 0.62);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-specular-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+      pointer-events: none;
+    }
+    
+    /* Subtle Glowing Pulse */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.96); }
+    }
+    .animate-pulse-glow {
+      animation: pulseGlow 2.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased font-body-md selection:bg-primary-container selection:text-on-primary-container relative overflow-x-hidden min-h-screen">
+<!-- Atmospheric Background Radial Glow Blurs -->
+<div aria-hidden="true" class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-[25%] left-[10%] w-[850px] h-[850px] rounded-full bg-secondary-container/20 blur-[140px]"></div>
+<div class="absolute top-[40%] -right-[15%] w-[700px] h-[700px] rounded-full bg-primary-container/15 blur-[160px]"></div>
+<div class="absolute -bottom-[20%] left-[25%] w-[600px] h-[600px] rounded-full bg-tertiary-container/10 blur-[130px]"></div>
+</div>
+<!-- ========================================================================= -->
+<!-- SIDEBAR NAVIGATION (Executive Dock)                                      -->
+<!-- ========================================================================= -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-40 flex flex-col justify-between p-4 border-r border-outline-variant/30 bg-surface-container-low/80 backdrop-blur-2xl shadow-2xl">
+<!-- Top Branding & Quick Create -->
+<div class="flex flex-col gap-4">
+<!-- Agency Header -->
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary-container via-secondary to-tertiary-container p-[1px] shadow-lg flex-shrink-0">
+<div class="w-full h-full bg-surface-container-lowest rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-tertiary rounded-full border-2 border-surface-container-lowest animate-pulse"></span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-headline-md font-headline-md text-on-surface tracking-tight font-semibold truncate">Vanguard Global</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span class="text-label-sm font-label-sm text-outline tracking-wider">Enterprise Tier</span>
+</div>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<button class="group relative w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-headline-sm text-headline-sm shadow-lg shadow-secondary-container/20 border border-white/20 hover:brightness-110 active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>Quick Create</span>
+<span class="ml-auto text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-black/25 text-white/90">N</span>
+</button>
+<!-- Navigation Links Cluster (9 items from JSON) -->
+<nav class="flex flex-col gap-1 mt-2">
+<!-- Tab 1: Overview (ACTIVE) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-surface-container-high text-primary font-headline-sm border-l-2 border-primary active:scale-[0.98] transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="dashboard">dashboard</span>
+<span class="text-headline-sm font-headline-sm flex-1">Overview</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_#c0c1ff]"></span>
+</a>
+<!-- Tab 2: Tasks -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+<span class="font-body-md flex-1">Tasks</span>
+<span class="px-2 py-0.5 text-label-sm font-label-sm rounded-full bg-surface-container-highest text-primary border border-outline-variant/30">12</span>
+</a>
+<!-- Tab 3: Projects -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="folder_special">folder_special</span>
+<span class="font-body-md">Projects</span>
+</a>
+<!-- Tab 4: CRM -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md">CRM</span>
+</a>
+<!-- Tab 5: Finance -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-md">Finance</span>
+</a>
+<!-- Tab 6: Production -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="movie">movie</span>
+<span class="font-body-md">Production</span>
+</a>
+<!-- Tab 7: Campaigns -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span class="font-body-md">Campaigns</span>
+</a>
+<!-- Tab 8: AI Assistant -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-body-md flex-1">AI Assistant</span>
+<span class="px-1.5 py-0.5 text-label-sm font-label-sm rounded bg-secondary-container/40 text-secondary border border-secondary/30">v2.4</span>
+</a>
+<!-- Tab 9: Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Dock: Resources & Profile -->
+<div class="flex flex-col gap-3 pt-3 border-t border-outline-variant/30">
+<!-- Storage Consumption Meter -->
+<div class="px-3 py-2.5 rounded-lg bg-surface-container-lowest/60 border border-outline-variant/20 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-outline">Storage &amp; Engine</span>
+<span class="text-on-surface font-semibold">78%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style="width: 78%;"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>3.9 TB used</span>
+<span>5.0 TB Max</span>
+</div>
+</div>
+<!-- Executive Profile Card -->
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-surface-container transition-colors duration-150 cursor-pointer group">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover border border-outline-variant/40 group-hover:border-primary transition-colors" data-alt="A refined black-and-white editorial portrait of a mid-thirties male executive with sharp tailored style, shot with moody cinematic directional lighting in a futuristic obsidian architectural office studio with deep violet reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2qH43gFzDnSUo-0yshxCzHx2yLtKO2ZQ1REqmDHapRyWf2tJlZuaj4WpIG1JoLhRq7LySYQJA_u13zY30aEJ2ldYPXF3hAk88kqhAkuoHSeEc3LZugVoKKjjWeW5wZndy5mkCVsa_6VaSZXSjmxsqkg9xS3J-WXyb6v7w14Xc4ABIq5R-CWIfXSDP4_nhf-5CGRt4o9EXrERt-_xcHLcB2s4DP7a9VkIskl9kSscquhofgomJLuDaVLaG1M-O0G9nGWr3yjldhduO"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-surface-container-low" title="Online"></span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-headline-sm font-headline-sm text-on-surface truncate">Alexander Vance</span>
+<span class="text-label-sm font-label-sm text-outline truncate">Executive Profile</span>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline group-hover:text-on-surface text-sm" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- TOPBAR NAVIGATION (Executive Cockpit)                                    -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 right-0 h-16 z-30 flex items-center justify-between px-6 border-b border-outline-variant/20 bg-surface-container-low/70 backdrop-blur-2xl ml-64">
+<!-- Left: Breadcrumb Context & Omnisearch -->
+<div class="flex items-center gap-6 flex-1 max-w-2xl">
+<!-- Breadcrumbs Hierarchy -->
+<div class="hidden xl:flex items-center gap-2 text-label-md font-label-md text-outline">
+<span class="hover:text-on-surface cursor-pointer">Agency Command</span>
+<span class="material-symbols-outlined text-xs text-outline-variant" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-headline-sm">Executive Overview</span>
+<span class="material-symbols-outlined text-xs text-outline-variant" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary-fixed-dim bg-surface-container-high px-2 py-0.5 rounded text-label-sm font-label-sm">Q3 Operations</span>
+</div>
+<!-- Omnibox Global Search Bar -->
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full h-9 pl-9 pr-14 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/40 text-body-sm font-body-sm text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all shadow-inner" placeholder="Cmd + K to search projects, clients, or assets..." type="text"/>
+<div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 text-label-sm font-label-sm bg-surface-container-high text-outline rounded border border-outline-variant/50">⌘K</kbd>
+</div>
+</div>
+</div>
+<!-- Center/Right: Live Billable Timer & Trailing Actions -->
+<div class="flex items-center gap-3">
+<!-- Live Billable Timer Widget Pill -->
+<div class="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-surface-container-high/80 border border-outline-variant/30 shadow-sm backdrop-blur-md">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+</span>
+<div class="flex items-center gap-2 text-label-md font-label-md">
+<span class="text-on-surface font-mono tracking-tight font-semibold">Timer: 02:41:18</span>
+<span class="text-outline">/</span>
+<span class="text-primary truncate max-w-[140px]">Nike HyperRev Motion</span>
+</div>
+<button class="p-1 rounded-full hover:bg-surface-container-highest text-outline hover:text-on-surface transition-colors" title="Pause Billable Session" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="pause">pause</span>
+</button>
+</div>
+<!-- Quick Filter Selection -->
+<div class="relative hidden sm:block">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high/60 border border-outline-variant/30 text-body-sm font-body-sm text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-sm text-outline" data-icon="calendar_today">calendar_today</span>
+<span>Last 30 Days</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Export Data Action -->
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high/60 border border-outline-variant/30 text-body-sm font-body-sm text-on-surface hover:bg-surface-container-high active:scale-[0.97] transition-all" title="Export Analytics PDF/CSV" type="button">
+<span class="material-symbols-outlined text-sm text-outline" data-icon="ios_share">ios_share</span>
+<span class="hidden md:inline">Export</span>
+</button>
+<!-- Trailing Action Icons (Notifications & Settings) -->
+<div class="flex items-center gap-1 border-l border-outline-variant/20 pl-2">
+<!-- Notification Bell with Amber Unread Badge -->
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors active:scale-[0.97]" title="Activity Notifications" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 ring-2 ring-surface-container-low"></span>
+</button>
+<!-- System Controls / Tune -->
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors active:scale-[0.97]" title="Cockpit Calibration" type="button">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- Quick Switch Workspace Avatar -->
+<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-secondary-container to-primary flex items-center justify-center font-headline-sm text-headline-sm text-white shadow-sm ring-1 ring-white/20 cursor-pointer ml-1">
+        VG
+      </div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN DASHBOARD CONTENT AREA                                               -->
+<!-- ========================================================================= -->
+<main class="ml-64 p-8 relative z-10 space-y-8 max-w-[1800px] mx-auto">
+<!-- Dashboard Title Strip -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-label-md font-label-md text-primary tracking-widest uppercase">Executive Dashboard</span>
+<span class="text-outline">•</span>
+<span class="text-label-md font-label-md text-emerald-400 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Live Telemetry
+          </span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-on-surface tracking-tight font-bold">
+          Creative Intelligence &amp; Capital Command
+        </h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/30 text-label-md font-label-md text-outline">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="sync">sync</span>
+<span>Synced 42s ago</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-headline-sm font-headline-sm text-on-surface transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+<span>Download Q3 Dossier</span>
+</button>
+</div>
+</div>
+<!-- ======================================================================= -->
+<!-- 4 EXECUTIVE KPI SUMMARY CARDS                                           -->
+<!-- ======================================================================= -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+<!-- KPI 1: MRR -->
+<div class="glass-specular-panel rounded-xl p-5 flex flex-col justify-between hover:border-primary/40 transition-all duration-200">
+<div class="flex items-start justify-between">
+<span class="text-label-md font-label-md text-outline uppercase tracking-wider">Monthly Recurring Revenue</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+            +14.2%
+          </span>
+</div>
+<div class="my-3">
+<div class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface tracking-tight font-bold">
+            $148,250
+          </div>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Target: $160,000 / month</p>
+</div>
+<!-- Mini Sparkline SVG -->
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-primary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 92.6% to target
+          </span>
+<svg class="w-24 h-6 overflow-visible" fill="none" viewbox="0 0 100 24">
+<path d="M0 20 L20 18 L40 12 L60 15 L80 6 L100 2" stroke="#6366f1" stroke-linecap="round" stroke-width="2"></path>
+<path d="M0 20 L20 18 L40 12 L60 15 L80 6 L100 2 L100 24 L0 24 Z" fill="url(#sparkline-grad-1)" opacity="0.25"></path>
+<defs>
+<lineargradient id="sparkline-grad-1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#6366f1"></stop>
+<stop offset="100%" stop-color="#6366f1" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<!-- KPI 2: Active Client Projects -->
+<div class="glass-specular-panel rounded-xl p-5 flex flex-col justify-between hover:border-primary/40 transition-all duration-200">
+<div class="flex items-start justify-between">
+<span class="text-label-md font-label-md text-outline uppercase tracking-wider">Active Client Projects</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-sky-500/15 text-sky-300 border border-sky-500/30 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+            2 in Client Review
+          </span>
+</div>
+<div class="my-3">
+<div class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface tracking-tight font-bold">
+            18 In Progress
+          </div>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">4 Delivery scheduled this week</p>
+</div>
+<!-- Progress Distribution Stack -->
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Production health</span>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-400" title="12 on track"></span>
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="w-2 h-2 rounded-full bg-amber-400" title="2 at risk"></span>
+<span class="w-2 h-2 rounded-full bg-primary" title="4 review"></span>
+</div>
+</div>
+</div>
+<!-- KPI 3: Team Velocity -->
+<div class="glass-specular-panel rounded-xl p-5 flex flex-col justify-between hover:border-primary/40 transition-all duration-200">
+<div class="flex items-start justify-between">
+<span class="text-label-md font-label-md text-outline uppercase tracking-wider">Team Velocity &amp; Sprint</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-secondary/15 text-secondary border border-secondary/30 flex items-center gap-1">
+            +3.2% delta
+          </span>
+</div>
+<div class="my-3">
+<div class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface tracking-tight font-bold">
+            94.8%
+          </div>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">On-Time Milestone Rate</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-outline">Sprint Cycle 28</span>
+<span class="text-primary font-medium">Day 9 of 14</span>
+</div>
+</div>
+<!-- KPI 4: Outstanding Invoices -->
+<div class="glass-specular-panel rounded-xl p-5 flex flex-col justify-between hover:border-primary/40 transition-all duration-200">
+<div class="flex items-start justify-between">
+<span class="text-label-md font-label-md text-outline uppercase tracking-wider">Outstanding Invoices</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="priority_high">priority_high</span>
+            3 Due Soon
+          </span>
+</div>
+<div class="my-3">
+<div class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface tracking-tight font-bold">
+            $32,400
+          </div>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Avg. Days to Pay: 18d</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-outline">Unbilled Accrual</span>
+<span class="text-emerald-400 font-medium">+$64,800 Retainer</span>
+</div>
+</div>
+</div>
+<!-- ======================================================================= -->
+<!-- MAIN TWO-COLUMN WORKSPACE GRID                                          -->
+<!-- ======================================================================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- ===================================================================== -->
+<!-- LEFT / CENTER HERO SECTION (~65% width: 8 Cols)                      -->
+<!-- ===================================================================== -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Interactive Revenue Projection Chart Card -->
+<div class="glass-specular-panel rounded-2xl p-6 relative overflow-hidden">
+<!-- Header and View Selectors -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-md font-headline-md text-on-surface font-semibold">Revenue vs Target Projection</h3>
+<span class="px-2 py-0.5 text-label-sm font-label-sm rounded bg-surface-container-high text-primary border border-outline-variant/30">FY 2024</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Model correlates verified invoices, contracted retainers, and weighted production pipelines.</p>
+</div>
+<!-- Granularity Pill Selector -->
+<div class="inline-flex p-1 rounded-lg bg-surface-container-lowest border border-outline-variant/30 self-start sm:self-auto">
+<button class="px-3 py-1 rounded text-label-sm font-label-sm font-medium bg-surface-container-high text-primary shadow-sm" type="button">Monthly</button>
+<button class="px-3 py-1 rounded text-label-sm font-label-sm font-medium text-outline hover:text-on-surface transition-colors" type="button">Quarterly</button>
+<button class="px-3 py-1 rounded text-label-sm font-label-sm font-medium text-outline hover:text-on-surface transition-colors" type="button">Annual</button>
+</div>
+</div>
+<!-- Legend Bar -->
+<div class="flex items-center gap-6 mb-4 text-label-sm font-label-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-sm bg-gradient-to-r from-primary to-secondary-container"></span>
+<span class="text-on-surface">Actual Realized Revenue</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-4 h-0.5 border-t-2 border-dashed border-tertiary"></span>
+<span class="text-outline">Board Target Benchmark ($160k pace)</span>
+</div>
+<div class="ml-auto hidden sm:flex items-center gap-1.5 text-emerald-400">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span>104.2% YTD Efficiency</span>
+</div>
+</div>
+<!-- High-Fidelity SVG Area Graph with Glowing Gradients -->
+<div class="relative w-full h-72">
+<!-- Gridlines Background -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="border-b border-outline"></div>
+<div class="border-b border-outline"></div>
+<div class="border-b border-outline"></div>
+<div class="border-b border-outline"></div>
+<div class="border-b border-outline"></div>
+</div>
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 760 220">
+<defs>
+<!-- Area Fill Gradient -->
+<lineargradient id="revenue-area-fill" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#8083ff" stop-opacity="0.55"></stop>
+<stop offset="50%" stop-color="#571bc1" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#1b1b23" stop-opacity="0"></stop>
+</lineargradient>
+<!-- Neon Line Gradient -->
+<lineargradient id="neon-stroke" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#7bd0ff"></stop>
+<stop offset="40%" stop-color="#c0c1ff"></stop>
+<stop offset="100%" stop-color="#8083ff"></stop>
+</lineargradient>
+<!-- Glow Filter -->
+<filter height="140%" id="neon-glow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="3.5"></fegaussianblur>
+<femerge>
+<femergenode in="blur"></femergenode>
+<femergenode in="SourceGraphic"></femergenode>
+</femerge>
+</filter>
+</defs>
+<!-- Target Benchmark Dashed Curve -->
+<path d="M 20 160 C 120 150, 220 135, 320 120 C 420 105, 520 85, 620 60 C 670 45, 710 35, 740 25" fill="none" opacity="0.6" stroke="#7bd0ff" stroke-dasharray="6,6" stroke-width="2"></path>
+<!-- Actual Revenue Area Fill -->
+<path d="M 20 180 C 110 160, 180 145, 260 150 C 340 155, 400 110, 480 95 C 560 80, 620 50, 680 42 L 680 220 L 20 220 Z" fill="url(#revenue-area-fill)"></path>
+<!-- Actual Revenue High-Glow Curve -->
+<path d="M 20 180 C 110 160, 180 145, 260 150 C 340 155, 400 110, 480 95 C 560 80, 620 50, 680 42" fill="none" filter="url(#neon-glow)" stroke="url(#neon-stroke)" stroke-width="3.5"></path>
+<!-- Projected Extrapolation (Aug-Dec dotted continuation) -->
+<path d="M 680 42 C 700 38, 720 30, 740 20" fill="none" opacity="0.7" stroke="#c0c1ff" stroke-dasharray="4,4" stroke-width="2"></path>
+<!-- Interactive Data Indicator Point (Current: July/Aug) -->
+<circle cx="680" cy="42" fill="#13131b" r="7" stroke="#c0c1ff" stroke-width="3"></circle>
+<circle cx="680" cy="42" fill="#ffffff" r="3"></circle>
+<!-- Benchmark Point at Current X -->
+<circle cx="680" cy="48" fill="#7bd0ff" opacity="0.8" r="4"></circle>
+</svg>
+<!-- Floating Data Callout Tooltip (DOM Positioned on current point) -->
+<div class="absolute right-[8%] top-[12%] transform -translate-y-full bg-surface-container-high/95 border border-primary/50 backdrop-blur-xl px-3 py-2 rounded-lg shadow-2xl flex flex-col pointer-events-none">
+<span class="text-label-sm font-label-sm text-outline uppercase">Current Month (Aug)</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold text-primary">$148,250 Actual</span>
+<span class="text-label-sm font-label-sm text-emerald-400 font-semibold">+9.8% over prior period</span>
+</div>
+</div>
+<!-- X-Axis Timeline Labels -->
+<div class="flex items-center justify-between px-2 pt-3 text-label-sm font-label-sm text-outline border-t border-outline-variant/20">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>May</span>
+<span>Jun</span>
+<span>Jul</span>
+<span class="text-primary font-bold">Aug (Live)</span>
+<span class="opacity-40">Sep</span>
+<span class="opacity-40">Oct</span>
+<span class="opacity-40">Nov</span>
+<span class="opacity-40">Dec</span>
+</div>
+<!-- Executive Summary Sub-Metrics Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 pt-5 border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest/60 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="pie_chart">pie_chart</span>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-outline">Gross Margin</div>
+<div class="text-headline-md font-headline-md font-semibold text-on-surface">68.4% <span class="text-xs text-emerald-400 font-normal">Healthy</span></div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest/60 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-outline">Pipeline Value</div>
+<div class="text-headline-md font-headline-md font-semibold text-on-surface">$420,000 <span class="text-xs text-outline font-normal">Weighted</span></div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest/60 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-lg" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-outline">Burn Multiple</div>
+<div class="text-headline-md font-headline-md font-semibold text-on-surface">0.8x <span class="text-xs text-emerald-400 font-normal">Top Decile</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Health & Deliverables Tracker -->
+<div class="glass-specular-panel rounded-2xl p-6">
+<div class="flex items-center justify-between mb-5">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface font-semibold">Project Health &amp; Deliverables Tracker</h3>
+<p class="text-body-sm font-body-sm text-outline">Production pipelines with milestone verification, burn velocity, and blockers.</p>
+</div>
+<a class="text-label-md font-label-md text-primary hover:text-primary-fixed-dim transition-colors flex items-center gap-1" href="#">
+<span>View All 18</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="space-y-4">
+<!-- Project 1: Aura Brand Identity -->
+<div class="p-4 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 hover:border-primary/50 transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold text-xs border border-indigo-500/30">
+                    AI
+                  </div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Aura Brand Identity</h4>
+<span class="text-label-sm font-label-sm text-outline">Client: Aura AI • Brand Strategy &amp; 3D Assets</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    On Track
+                  </span>
+<span class="text-label-sm font-label-sm text-outline">4 days remaining</span>
+</div>
+</div>
+<!-- Progress bar & metrics -->
+<div class="space-y-1.5 mt-3">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-outline">Completion: 14/16 Assets Delivered</span>
+<span class="text-on-surface font-semibold">85%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-emerald-400 rounded-full transition-all duration-500" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+<!-- Project 2: NovaPeak Summer Shoot -->
+<div class="p-4 rounded-xl bg-surface-container-low/70 border border-amber-500/30 hover:border-amber-400/60 transition-all bg-amber-500/[0.02]">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center font-bold text-xs border border-amber-500/30">
+                    NP
+                  </div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-semibold">NovaPeak Summer Shoot</h4>
+<span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 text-label-sm font-label-sm border border-amber-500/40">Budget Flag</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline">Client: NovaPeak • Commercial Cinematography</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="warning">warning</span>
+                    At Risk (2 Blockers)
+                  </span>
+<span class="text-label-sm font-label-sm text-amber-300 font-medium">Over budget +12%</span>
+</div>
+</div>
+<div class="space-y-1.5 mt-3">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-outline">Color Grading &amp; Director Cuts</span>
+<span class="text-amber-300 font-semibold">60%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-amber-400 rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+</div>
+<!-- Project 3: Lumina 3D Product Suite -->
+<div class="p-4 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 hover:border-primary/50 transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold text-xs border border-cyan-500/30">
+                    LL
+                  </div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Lumina 3D Product Suite</h4>
+<span class="text-label-sm font-label-sm text-outline">Client: Lumina Lux • Unreal Engine CGI Pipeline</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    On Track
+                  </span>
+<span class="text-label-sm font-label-sm text-outline">Sprint 3 of 6</span>
+</div>
+</div>
+<div class="space-y-1.5 mt-3">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-outline">High-poly Shader Assemblies</span>
+<span class="text-on-surface font-semibold">42%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 42%;"></div>
+</div>
+</div>
+</div>
+<!-- Project 4: Chronos App Rebrand -->
+<div class="p-4 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 hover:border-primary/50 transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-300 flex items-center justify-center font-bold text-xs border border-purple-500/30">
+                    CH
+                  </div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Chronos App Rebrand</h4>
+<span class="text-label-sm font-label-sm text-outline">Client: Chronos • Design System &amp; Motion Tokens</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-purple-500/15 text-purple-300 border border-purple-500/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="verified">verified</span>
+                    Client Review
+                  </span>
+<span class="text-label-sm font-label-sm text-emerald-400">QA Passed</span>
+</div>
+</div>
+<div class="space-y-1.5 mt-3">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-outline">Final Signoff Pending VP Approval</span>
+<span class="text-on-surface font-semibold">95%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 95%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- RIGHT COLUMN SECTION (~35% width: 4 Cols)                             -->
+<!-- ===================================================================== -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Upcoming Deadlines & Milestones -->
+<div class="glass-specular-panel rounded-2xl p-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-headline-md font-headline-md text-on-surface font-semibold">Upcoming Deadlines</h3>
+<span class="material-symbols-outlined text-outline text-lg" data-icon="event">event</span>
+</div>
+<div class="space-y-3">
+<!-- Deadline 1: Urgent -->
+<div class="p-3.5 rounded-xl bg-surface-container-low/80 border-l-4 border-rose-500 border-r border-t border-b border-outline-variant/30 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-bold bg-rose-500/20 text-rose-300 uppercase tracking-wider">Urgent Signoff</span>
+<span class="text-label-sm font-label-sm text-rose-300 font-semibold">Today, 5:00 PM</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface font-medium">Aura AI Keynote Deck final signoff</p>
+<span class="text-label-sm font-label-sm text-outline">Lead: Elena Rostova • Awaiting Partner Review</span>
+</div>
+<!-- Deadline 2: Director Review -->
+<div class="p-3.5 rounded-xl bg-surface-container-low/80 border-l-4 border-amber-400 border-r border-t border-b border-outline-variant/30 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-bold bg-amber-500/20 text-amber-300 uppercase tracking-wider">Priority Review</span>
+<span class="text-label-sm font-label-sm text-amber-300 font-semibold">Tomorrow, 11:00 AM</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface font-medium">NovaPeak Raw Cuts Director review</p>
+<span class="text-label-sm font-label-sm text-outline">Lead: Marcus Chen • 4K Proxy Sync</span>
+</div>
+<!-- Deadline 3: Package Export -->
+<div class="p-3.5 rounded-xl bg-surface-container-low/80 border-l-4 border-sky-400 border-r border-t border-b border-outline-variant/30 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-bold bg-sky-500/20 text-sky-300 uppercase tracking-wider">Milestone</span>
+<span class="text-label-sm font-label-sm text-outline">Aug 18</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface font-medium">Lumina Lux 3D Renders package export</p>
+<span class="text-label-sm font-label-sm text-outline">Lead: David K. • Octane Cluster Render</span>
+</div>
+<!-- Deadline 4: Pitch Deck -->
+<div class="p-3.5 rounded-xl bg-surface-container-low/80 border-l-4 border-purple-400 border-r border-t border-b border-outline-variant/30 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-bold bg-purple-500/20 text-purple-300 uppercase tracking-wider">Client RFP</span>
+<span class="text-label-sm font-label-sm text-outline">Aug 20</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface font-medium">Sephora Q4 Pitch Deck submissions</p>
+<span class="text-label-sm font-label-sm text-outline">Lead: Business Development • $350k Retainer</span>
+</div>
+</div>
+</div>
+<!-- Recent Team Activity Live Stream -->
+<div class="glass-specular-panel rounded-2xl p-6">
+<div class="flex items-center justify-between mb-5">
+<div class="flex items-center gap-2">
+<h3 class="text-headline-md font-headline-md text-on-surface font-semibold">Live Activity Stream</h3>
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+</div>
+<span class="text-label-sm font-label-sm text-outline">Realtime</span>
+</div>
+<!-- Activity List -->
+<div class="space-y-4 relative before:absolute before:inset-0 before:left-4 before:w-0.5 before:bg-outline-variant/20 before:pointer-events-none">
+<!-- Item 1: Elena Rostova -->
+<div class="relative flex items-start gap-3 pl-1">
+<img class="w-7 h-7 rounded-full object-cover ring-2 ring-primary relative z-10 flex-shrink-0" data-alt="Close up modern portrait of a female creative art director with minimalist dark glasses in high contrast moody cinematic studio lighting with dark purple specular rim light reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9HlwOMX4eshFLalv27ACM_TmxUnU0ORaFATuUxrSk1-xUKcSVN3w5qToKdT1vgeUIB6AHhUix5gD40n0HoE3No6uhe85Pf53hnFHTyoHAa48E6JHsAtJasuu6wjlncCP82EfCTnpZz8X62S6JWM4ZEvkV58Uu5lvg3BD22tu7IZYnprEVT6lTtYAQV-ZQ7Xlzz5hW2xEVC7kMBJkC63WzS26HMWdSdHiY6cTiH_zrYB8097hM2JdCPSsiaIZruEdYwndpDF7Ayys6"/>
+<div class="flex flex-col flex-1">
+<div class="text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">Elena Rostova</span> uploaded 8 final 4K renders for <span class="text-on-surface font-medium">Aura AI</span>.
+                </div>
+<span class="text-label-sm font-label-sm text-outline mt-0.5">12m ago • Design Production</span>
+</div>
+</div>
+<!-- Item 2: Marcus Chen -->
+<div class="relative flex items-start gap-3 pl-1">
+<img class="w-7 h-7 rounded-full object-cover ring-2 ring-secondary relative z-10 flex-shrink-0" data-alt="Portrait of an Asian male executive film producer in sharp black attire, looking thoughtfully into camera, dramatic low-key studio lighting with cold blue and violet rim light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-ezaM8LyTVA2Cp0UEix7tBilVOZqTUOxH53CtSV0JXeZlDtN7MBjge5aJpjxa-Dj70m-p28skPeXgfSvMHnuXkOgRfv9MbejHDdzX64-HjRaPOZ7ZWZmoHY4xSIDC0SYM5iC3PFcG8isDSVGYg_-STurYC6CevNEKIbPNH-JuWyzIsyHL4qq4ZZU9p_sc6n2JMkh0NwQIk-3Z3u_1Y7HM0nDixmkdvsqN04ScjKeOdnhAvLdGJPbvKK1_J1az3dl0dssjREvR4XV5"/>
+<div class="flex flex-col flex-1">
+<div class="text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-secondary">Marcus Chen</span> approved production budget revision for <span class="text-amber-300 font-medium">NovaPeak ($14,500)</span>.
+                </div>
+<span class="text-label-sm font-label-sm text-outline mt-0.5">45m ago • Financial Operations</span>
+</div>
+</div>
+<!-- Item 3: Sarah Jenkins -->
+<div class="relative flex items-start gap-3 pl-1">
+<img class="w-7 h-7 rounded-full object-cover ring-2 ring-tertiary relative z-10 flex-shrink-0" data-alt="Portrait of a young woman motion designer in an obsidian high tech creative editing studio with dual neon monitor reflections cast across her face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9iHmsDErIoN-QW1jgUvfRuDqVzDzW5diHnZo7E5auJ9efgWHSZtRLb-yHqvfk9Y-Qte3tZcWNiqFLzEvea1F3beor4Z-RY_S8uEyT0xIFr5O2QAX-Qs30fUQPwsLKIurZfdRYIS4cj3jt5gXLQojudLcytM4N8khCngZ-nrG8IdBMW8Qax9RIWlPMwai0yYc3zZzduUiCHuPiqY8RwQhTea2WT2ZWBDLsl0zoCXMEZteUsNYpW_h--3nEaomYn5KwolEK8nGNac_R"/>
+<div class="flex flex-col flex-1">
+<div class="text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-tertiary">Sarah Jenkins</span> submitted reel cut v3 to <span class="text-on-surface font-medium">Client Review</span>.
+                </div>
+<span class="text-label-sm font-label-sm text-outline mt-0.5">2h ago • Video Editing</span>
+</div>
+</div>
+<!-- Item 4: AI Agent Automation -->
+<div class="relative flex items-start gap-3 pl-1">
+<div class="w-7 h-7 rounded-full bg-gradient-to-tr from-secondary-container to-primary flex items-center justify-center text-white ring-2 ring-primary/40 relative z-10 flex-shrink-0">
+<span class="material-symbols-outlined text-xs" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary-fixed-dim">System AI Assistant</span> generated automated campaign performance report for <span class="text-on-surface font-medium">Nike</span>.
+                </div>
+<span class="text-label-sm font-label-sm text-outline mt-0.5">3h ago • Autonomous Telemetry</span>
+</div>
+</div>
+</div>
+<!-- Bottom View Log Link -->
+<button class="w-full mt-5 pt-3 border-t border-outline-variant/20 text-label-sm font-label-sm text-outline hover:text-on-surface flex items-center justify-center gap-1 transition-colors" type="button">
+<span>Access Complete Audit Log</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Quick Agency Resource Allocation Mini-Card -->
+<div class="p-4 rounded-xl bg-gradient-to-br from-surface-container-high/60 to-surface-container-lowest/80 border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="dns">dns</span>
+</div>
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-medium">GPU Render Farm</div>
+<div class="text-label-sm font-label-sm text-emerald-400">12 of 16 Nodes Active (75%)</div>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest hover:bg-surface-bright text-label-sm font-label-sm text-on-surface transition-colors" type="button">
+            Manage
+          </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Interactive Click and Ambient Hover Micro-interactions -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Interactive pill buttons in Revenue card
+      const toggleButtons = document.querySelectorAll('.revenue-toggle-btn');
+      toggleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          toggleButtons.forEach(b => {
+            b.classList.remove('bg-surface-container-high', 'text-primary', 'shadow-sm');
+            b.classList.add('text-outline');
+          });
+          btn.classList.add('bg-surface-container-high', 'text-primary', 'shadow-sm');
+          btn.classList.remove('text-outline');
+        });
+      });
+    });
+  </script>
+</body></html>

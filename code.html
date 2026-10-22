@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workspace Settings Suite - BusinessOS</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#e4e1ed",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "on-secondary-fixed": "#23005c",
+            "tertiary-container": "#009bd1",
+            "on-tertiary": "#00354a",
+            "on-primary-container": "#0d0096",
+            "on-primary-fixed": "#07006c",
+            "primary": "#c0c1ff",
+            "secondary-container": "#571bc1",
+            "tertiary-fixed": "#c4e7ff",
+            "surface-variant": "#34343d",
+            "primary-fixed": "#e1e0ff",
+            "on-secondary-container": "#c4abff",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#5516be",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#c0c1ff",
+            "primary-container": "#8083ff",
+            "surface-dim": "#13131b",
+            "surface": "#13131b",
+            "background": "#13131b",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "secondary-fixed-dim": "#d0bcff",
+            "inverse-surface": "#e4e1ed",
+            "secondary-fixed": "#e9ddff",
+            "outline": "#908fa0",
+            "surface-container-lowest": "#0d0d16",
+            "surface-container-low": "#1b1b23",
+            "surface-container": "#1f1f28",
+            "on-primary": "#1000a9",
+            "inverse-on-surface": "#302f39",
+            "on-secondary": "#3c0091",
+            "on-surface-variant": "#c7c4d7",
+            "surface-container-high": "#292932",
+            "surface-bright": "#393842",
+            "outline-variant": "#464554",
+            "error-container": "#93000a",
+            "secondary": "#d0bcff",
+            "on-tertiary-fixed-variant": "#004c69",
+            "surface-tint": "#c0c1ff",
+            "on-background": "#e4e1ed",
+            "on-tertiary-container": "#002d40",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#001e2c",
+            "surface-container-highest": "#34343d",
+            "inverse-primary": "#494bd6",
+            "tertiary": "#7bd0ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "metric-numeral-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "metric-numeral-lg": ["Inter"],
+            "display-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-xl": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Left Navigation Rail -->
+<aside class="fixed left-0 top-0 h-screen w-60 bg-surface-container-lowest border-r border-outline-variant/30 flex flex-col justify-between p-4 z-40">
+<div>
+<!-- Agency Branding -->
+<div class="flex items-center gap-3 px-2 py-3 mb-6">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-inverse-primary flex items-center justify-center text-on-primary font-bold shadow-lg shadow-primary/20">
+          V
+        </div>
+<div>
+<h1 class="font-headline-sm text-on-surface leading-tight">Vanguard Global</h1>
+<p class="text-body-sm text-on-surface-variant">BusinessOS</p>
+</div>
+</div>
+<!-- Settings Navigation Tabs -->
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-label-md">Workspace Profile</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-surface-container-high text-primary border-l-2 border-primary rounded-lg font-bold transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">palette</span>
+<span class="font-label-md">Appearance &amp; Glass</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+<span class="font-label-md">AI Providers &amp; NIM</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="font-label-md">Team RBAC</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-xl">hub</span>
+<span class="font-label-md">Integrations</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="font-label-md">Billing</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-xl">shield</span>
+<span class="font-label-md">Security &amp; Audit</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span class="font-label-md">API &amp; Webhooks</span>
+</a>
+</nav>
+</div>
+<!-- Footer Profile & System Status -->
+<div class="pt-4 border-t border-outline-variant/20 space-y-3">
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<div class="relative">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot portrait of an executive leader in sharp focus, set against a dark moody high-tech office interior with bokeh lighting, professional corporate attire, confident expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACwfLY04BaH5voaGxvJRdlJD7QgukqTRaWbzqgIGVmqtg0IgbNqM9PH3c259gtxfDB55GescUKNlew8hw2A_376C8HOmYpE73N9J036OoOtu0wy5QoDoYhVYec73Qguy8xZzqECXGrqkabWexRk7DYN-3kBhrORtzW1oC8q6EFqY-624ZUsUKrXdc4CiORfI5Stadokz-Ep1_0buRNnCHEuq-shEdg7i-bdEv7v1wtdT7aeoOTUtkA7TJfq_0G-sgD8qN8Az1s9ZxH"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-surface-container-lowest"></div>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Alex Mercer</p>
+<p class="text-body-sm text-on-surface-variant text-[10px]">Workspace Admin</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base cursor-pointer hover:text-on-surface">unfold_more</span>
+</div>
+<div class="px-2 py-1.5 bg-surface-container-low rounded-lg flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant text-[11px]">System Status</span>
+<span class="text-emerald-400 text-[11px] font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Optimal
+        </span>
+</div>
+</div>
+</aside>
+<!-- Top Header -->
+<header class="fixed top-0 right-0 h-16 ml-60 z-30 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant/30 px-6 flex items-center justify-between">
+<div class="flex items-center gap-4 w-96">
+<div class="relative w-full">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg pl-9 pr-4 py-1.5 text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Search parameters, themes, or commands... (Cmd+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-low rounded-lg border border-outline-variant/20 text-on-surface-variant font-mono text-xs">
+<span class="material-symbols-outlined text-sm text-primary">timer</span>
+<span>01:24:08</span>
+</div>
+<button class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">tune</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<img class="w-9 h-9 rounded-full object-cover border border-primary/40 shadow-sm" data-alt="Close up studio portrait of an executive creative director wearing sleek minimalist black attire, dramatic rim lighting casting indigo reflections, high-end commercial tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDstTaV8sU_k8QuzO_HWbe93crmMBgk5kkZZUDKezmypL4d6MFibGbvRqKDD4xqM5igh_j4aMY2sjfPr_xJDJ97kbn_WYDtDAoJHR0vog8miTmL6yqfUbEV3P9nvz8vjBTmyb8bsMHvm1eZE3LEYAQGRTyuDe5iD7HDkO3kEzfaWTD-LMnCf7i49R-BL89J_qfSvqHLJ-dMYi47Ee8pL-BMHcW_nDGtmjq7ts5vAE5h07wI9G_ZwWxMFkN7x2Et8JSii_l079ZjJjOS"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-60 pt-16 p-8 min-h-screen bg-surface text-on-surface max-w-[1600px] pb-24">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<h1 class="font-headline-xl text-on-surface">Workspace Settings Suite</h1>
+<p class="text-body-lg text-on-surface-variant mt-1">Configure visual studio parameters, glassmorphic rendering depth, and global workspace themes.</p>
+</div>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-primary to-inverse-primary text-on-primary font-label-md rounded-lg shadow-lg shadow-primary/20 hover:opacity-95 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg">download</span>
+        Export Settings Backup
+      </button>
+</div>
+<!-- Section 1: Theme Presets Selector Cards -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">palette</span>
+          Theme Presets
+        </h2>
+<span class="text-body-sm text-on-surface-variant">Select or customize global rendering identity</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Liquid Obsidian (Active) -->
+<div class="relative p-5 rounded-xl bg-surface-container-high border-2 border-primary ring-2 ring-primary/30 shadow-xl cursor-pointer group">
+<div class="absolute top-4 right-4">
+<span class="px-2 py-0.5 rounded-full bg-primary/20 text-primary font-label-sm border border-primary/30">Active</span>
+</div>
+<div class="h-24 rounded-lg bg-gradient-to-br from-surface-dim via-surface-container-lowest to-surface-container-high mb-4 border border-outline-variant/30 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+<div class="w-12 h-12 rounded-full bg-primary/20 border border-primary/40 backdrop-blur-md flex items-center justify-center text-primary font-bold">LO</div>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-1">Liquid Obsidian</h3>
+<p class="text-body-sm text-on-surface-variant">Deep space minimalism with optics refraction and micro-specular rims.</p>
+</div>
+<!-- Aurora Borealis -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-outline-variant cursor-pointer group transition-all">
+<div class="h-24 rounded-lg bg-gradient-to-br from-surface-dim via-emerald-950/20 to-teal-950/20 mb-4 border border-outline-variant/30 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"></div>
+<div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 backdrop-blur-md flex items-center justify-center text-emerald-300 font-bold">AB</div>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-1">Aurora Borealis</h3>
+<p class="text-body-sm text-on-surface-variant">Vibrant emerald luminous fields paired with ultra-dark obsidian canvases.</p>
+</div>
+<!-- Oceanic Deep -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-outline-variant cursor-pointer group transition-all">
+<div class="h-24 rounded-lg bg-gradient-to-br from-surface-dim via-sky-950/30 to-blue-950/20 mb-4 border border-outline-variant/30 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-500/10 via-transparent to-transparent"></div>
+<div class="w-12 h-12 rounded-full bg-sky-500/20 border border-sky-500/40 backdrop-blur-md flex items-center justify-center text-sky-300 font-bold">OD</div>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-1">Oceanic Deep</h3>
+<p class="text-body-sm text-on-surface-variant">Calibrated deep-sea cyan gradients for high-focus telemetry monitoring.</p>
+</div>
+<!-- Cinematic Noir -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-outline-variant cursor-pointer group transition-all">
+<div class="h-24 rounded-lg bg-gradient-to-br from-surface-dim via-zinc-900 to-stone-900 mb-4 border border-outline-variant/30 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
+<div class="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white font-bold">CN</div>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-1">Cinematic Noir</h3>
+<p class="text-body-sm text-on-surface-variant">Absolute monochrome contrast with high specular edge illumination.</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Glass Material & Blur Studio -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">team_drive_outline</span>
+          Glass Material &amp; Blur Studio
+        </h2>
+<span class="text-body-sm text-on-surface-variant">Real-time optical property adjustment</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-surface-container-low p-6 rounded-xl border border-outline-variant/30">
+<!-- Left column: Sliders -->
+<div class="lg:col-span-6 space-y-6">
+<!-- Slider 1 -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-body-md text-on-surface">Backdrop Blur</label>
+<span class="font-mono text-sm text-primary">12px</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" max="40" min="0" type="range" value="12"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant">
+<span>0px (Opaque)</span>
+<span>40px (Ultra Diffusion)</span>
+</div>
+</div>
+<!-- Slider 2 -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-body-md text-on-surface">Color Saturation</label>
+<span class="font-mono text-sm text-primary">140%</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" max="200" min="100" type="range" value="140"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant">
+<span>100% (Standard)</span>
+<span>200% (Hyper Vibrant)</span>
+</div>
+</div>
+<!-- Slider 3 -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-body-md text-on-surface">Specular Highlight</label>
+<span class="font-mono text-sm text-primary">0.85</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="85"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant">
+<span>0.00 (Flat)</span>
+<span>1.00 (Brilliant)</span>
+</div>
+</div>
+<!-- Slider 4 -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-body-md text-on-surface">Tint Opacity</label>
+<span class="font-mono text-sm text-primary">65%</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="65"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant">
+<span>0% (Clear)</span>
+<span>100% (Solid)</span>
+</div>
+</div>
+</div>
+<!-- Right column: Live Preview Card -->
+<div class="lg:col-span-6 relative rounded-xl overflow-hidden border border-outline-variant/30 min-h-[320px] flex items-center justify-center p-6 bg-gradient-to-br from-indigo-950/40 via-surface-dim to-purple-950/30">
+<!-- Background Gradient Mesh Elements -->
+<div class="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-primary/30 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-secondary/20 blur-3xl pointer-events-none"></div>
+<!-- Frosted Glass Card -->
+<div class="relative w-full max-w-sm p-6 rounded-xl bg-surface-container-high/55 backdrop-blur-[24px] border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="font-label-md text-on-surface">LIVE OPTICAL PREVIEW</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 font-label-sm border border-sky-500/25">Optimal</span>
+</div>
+<h4 class="font-headline-md text-on-surface mb-2">Liquid Glassmorphism v2.4</h4>
+<p class="text-body-md text-on-surface-variant mb-4">Demonstrating real-time blur dispersion, specular rim lighting, and high-frequency structural layering.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<span class="text-body-sm text-on-surface-variant font-mono">Render: 60FPS</span>
+<button class="px-3 py-1 bg-primary text-on-primary font-label-md rounded-lg shadow-sm">Test Action</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Interface Density & Layout Toggles -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">grid_view</span>
+          Interface Density &amp; Layout Toggles
+        </h2>
+<span class="text-body-sm text-on-surface-variant">Workspace telemetry geometry</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+<!-- Density Cards -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-outline-variant cursor-pointer transition-all">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">space_dashboard</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-on-surface">Comfortable</h3>
+<p class="text-body-sm text-on-surface-variant">Generous padding &amp; spacing</p>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border border-outline-variant flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-high border-2 border-primary ring-2 ring-primary/20 cursor-pointer transition-all">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">density_small</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-on-surface">Compact Jira-mode</h3>
+<p class="text-body-sm text-on-surface-variant">High-density telemetry layout</p>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border border-primary flex items-center justify-center bg-primary">
+<div class="w-2 h-2 rounded-full bg-on-primary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Toggle Switches Container -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30 space-y-6">
+<!-- Toggle 1 -->
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-on-surface">Hardware Acceleration</h4>
+<p class="text-body-sm text-on-surface-variant">Offload rendering calculations to dedicated GPU pipelines.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-[1px] bg-outline-variant/20"></div>
+<!-- Toggle 2 -->
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-on-surface">Sub-pixel Antialiasing</h4>
+<p class="text-body-sm text-on-surface-variant">Enhance typographic rendering clarity on high-density displays.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-[1px] bg-outline-variant/20"></div>
+<!-- Toggle 3 -->
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-on-surface">Glassmorphism Motion Blur</h4>
+<p class="text-body-sm text-on-surface-variant">Simulate realistic refractive motion trails during drawer transitions.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-surface-container-low/90 backdrop-blur-md p-4 px-8 border-t border-outline-variant/30 flex items-center justify-between z-20 ml-60">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+<span class="text-body-md text-on-surface font-medium">Unsaved appearance modifications detected.</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant/30 rounded-lg font-label-md transition-all active:scale-[0.98]">
+        Reset Defaults
+      </button>
+<button class="px-5 py-2 bg-gradient-to-r from-primary to-inverse-primary text-on-primary font-label-md rounded-lg shadow-lg shadow-primary/25 hover:opacity-95 transition-all active:scale-[0.98]">
+        Save Preferences
+      </button>
+</div>
+</footer>
+</body></html>

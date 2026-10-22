@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>003VXA BusinessOS - Autonomous AI Intelligence Workspace</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter Google Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#292932",
+            "on-surface": "#e4e1ed",
+            "primary-fixed-dim": "#c0c1ff",
+            "primary": "#c0c1ff",
+            "on-secondary": "#3c0091",
+            "surface-variant": "#34343d",
+            "primary-fixed": "#e1e0ff",
+            "on-surface-variant": "#c7c4d7",
+            "surface-tint": "#c0c1ff",
+            "tertiary": "#7bd0ff",
+            "surface-container-highest": "#34343d",
+            "on-tertiary": "#00354a",
+            "on-error": "#690005",
+            "surface": "#13131b",
+            "primary-container": "#8083ff",
+            "on-tertiary-fixed": "#001e2c",
+            "on-primary-container": "#0d0096",
+            "outline": "#908fa0",
+            "on-tertiary-container": "#002d40",
+            "on-tertiary-fixed-variant": "#004c69",
+            "inverse-on-surface": "#302f39",
+            "error-container": "#93000a",
+            "surface-bright": "#393842",
+            "on-secondary-container": "#c4abff",
+            "tertiary-container": "#009bd1",
+            "surface-container": "#1f1f28",
+            "secondary": "#d0bcff",
+            "inverse-surface": "#e4e1ed",
+            "secondary-container": "#571bc1",
+            "secondary-fixed": "#e9ddff",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "outline-variant": "#464554",
+            "tertiary-fixed": "#c4e7ff",
+            "inverse-primary": "#494bd6",
+            "error": "#ffb4ab",
+            "surface-container-low": "#1b1b23",
+            "on-secondary-fixed-variant": "#5516be",
+            "surface-container-lowest": "#0d0d16",
+            "on-secondary-fixed": "#23005c",
+            "surface-dim": "#13131b",
+            "background": "#13131b",
+            "on-primary-fixed": "#07006c",
+            "on-primary": "#1000a9",
+            "on-background": "#e4e1ed",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed-dim": "#d0bcff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "2rem",
+            "space-xl": "1.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin-md": "1.5rem",
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-lg": "2rem"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "metric-numeral-lg": ["Inter"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "label-sm": ["10px", {"lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+            "headline-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+            "label-md": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "headline-xl": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-lg": ["15px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600"}],
+            "body-md": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-sm": ["15px", {"lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+            "metric-numeral-sm": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500"}],
+            "headline-lg": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "metric-numeral-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Liquid Glassmorphism & Micro Refractions */
+    .glass-panel {
+      background: rgba(17, 18, 34, 0.65);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+    }
+    
+    .glass-panel-amber {
+      background: rgba(30, 24, 18, 0.60);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(245, 158, 11, 0.25);
+    }
+
+    .glass-input-pod {
+      background: rgba(13, 13, 22, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(13, 13, 22, 0.4);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(70, 69, 84, 0.6);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(192, 193, 255, 0.4);
+    }
+
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.15); }
+    }
+    .status-pulse {
+      animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container font-body-md overflow-x-hidden">
+<!-- ========================================================================= -->
+<!-- LEFT SIDEBAR: SHARED COMPONENT 'SideNavBar'                              -->
+<!-- ========================================================================= -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-40 flex flex-col justify-between p-4 border-r border-outline-variant/30 bg-surface-container-low/80 backdrop-blur-2xl">
+<!-- Header: Workspace & Logo -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-2 py-1.5">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary-container via-inverse-primary to-tertiary flex items-center justify-center shadow-lg shadow-primary-container/20 ring-1 ring-white/20">
+<span class="material-symbols-outlined text-white font-bold" data-icon="terminal">terminal</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-headline-md font-headline-md text-on-surface tracking-tight font-semibold truncate">Vanguard Global</span>
+<span class="text-label-sm font-label-sm text-tertiary uppercase tracking-wider">Enterprise Tier</span>
+</div>
+</div>
+<!-- Quick Action / CTA -->
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-surface-container-highest hover:bg-surface-container-high text-on-surface text-label-md font-label-md border border-outline-variant/30 transition-all duration-150 active:scale-[0.98] shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="add">add</span>
+<span>Quick Create</span>
+</button>
+<!-- Nav Items Stack (Active: AI Assistant - 8th index matched strictly) -->
+<nav class="flex flex-col gap-1 mt-1">
+<!-- 1. Overview -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#overview">
+<span class="material-symbols-outlined text-[19px]" data-icon="dashboard">dashboard</span>
+<span class="text-body-md font-body-md">Overview</span>
+</a>
+<!-- 2. Tasks -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#tasks">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px]" data-icon="check_circle">check_circle</span>
+<span class="text-body-md font-body-md">Tasks</span>
+</div>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-mono font-medium bg-surface-container text-on-surface-variant">12</span>
+</a>
+<!-- 3. Projects -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#projects">
+<span class="material-symbols-outlined text-[19px]" data-icon="folder_special">folder_special</span>
+<span class="text-body-md font-body-md">Projects</span>
+</a>
+<!-- 4. CRM -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#crm">
+<span class="material-symbols-outlined text-[19px]" data-icon="group">group</span>
+<span class="text-body-md font-body-md">CRM</span>
+</a>
+<!-- 5. Finance -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#finance">
+<span class="material-symbols-outlined text-[19px]" data-icon="payments">payments</span>
+<span class="text-body-md font-body-md">Finance</span>
+</a>
+<!-- 6. Production -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#production">
+<span class="material-symbols-outlined text-[19px]" data-icon="movie">movie</span>
+<span class="text-body-md font-body-md">Production</span>
+</a>
+<!-- 7. Campaigns -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#campaigns">
+<span class="material-symbols-outlined text-[19px]" data-icon="campaign">campaign</span>
+<span class="text-body-md font-body-md">Campaigns</span>
+</a>
+<!-- 8. AI Assistant [ACTIVE] strictly injected with style_active_navigation -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-surface-container-high text-primary font-headline-sm border-l-2 border-primary shadow-sm shadow-primary/10" href="#ai-assistant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="auto_awesome" data-weight="fill" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-headline-sm font-headline-sm">AI Assistant</span>
+</div>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-primary/15 text-primary border border-primary/30 shadow-[0_0_8px_rgba(192,193,255,0.3)]">v3.2</span>
+</a>
+<!-- 9. Settings -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md transition-all duration-150 active:scale-[0.98]" href="#settings">
+<span class="material-symbols-outlined text-[19px]" data-icon="settings">settings</span>
+<span class="text-body-md font-body-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer / Executive User Profile Profile -->
+<div class="pt-3 border-t border-outline-variant/20 flex flex-col gap-2">
+<div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-lowest/70 border border-outline-variant/30 hover:border-outline transition-colors duration-150">
+<div class="relative w-9 h-9 rounded-lg overflow-hidden ring-1 ring-white/10 shrink-0">
+<img class="w-full h-full object-cover" data-alt="An executive portrait photo of Alexander Vance, a distinguished managing partner dressed in tailored dark obsidian Italian formal wear, shot in soft directional rim lighting with high architectural contrast and sleek corporate realism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdlhwyjQz10eHcrnlBHD7PzB0EMIFKCfEr4gAjSrFYrO0QukWvxirYiEXui1MqAhw4ei4-Rpc000CpWz9MiPsgmczDgkDb03P7j5ztkaXr2hgRFIBFPI6nmYjUHlCtnPF4zpYLINHx5GTRo-EZuO9_5LpG4yldmZSzKg55GW2yOcIK-RmmMGoymdAsUOa4WFWj0DakEd-ZeKxOz4OmExPzilqL4Ew6AE0sMm1Rbz56I8afVsC5FtZPVN3jTEWZWmW7uVhXGKJfNHKW"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-headline-sm font-headline-sm text-on-surface truncate">Alexander Vance</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant truncate">Managing Partner</span>
+</div>
+<button class="ml-auto text-on-surface-variant hover:text-on-surface transition-colors" title="Executive Profile Options">
+<span class="material-symbols-outlined text-[18px]" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- TOP COCKPIT BAR: SHARED COMPONENT 'TopNavBar'                             -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 right-0 h-16 z-30 flex items-center justify-between px-6 border-b border-outline-variant/20 bg-surface-container-low/70 backdrop-blur-2xl ml-64">
+<!-- Breadcrumbs / Left Area -->
+<div class="flex items-center gap-3">
+<nav class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
+<span class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Intelligence</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Workspace AI</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-headline-sm tracking-tight text-white">Autonomous Operations Studio</span>
+</nav>
+<span class="h-4 w-[1px] bg-outline-variant/40 mx-2"></span>
+<!-- Telemetry Live Status Pill -->
+<div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-pulse"></span>
+<span>Live Telemetry &amp; NVIDIA NIM Active</span>
+</div>
+</div>
+<!-- Center/Right: Routing Telemetry, Quota & Actions -->
+<div class="flex items-center gap-3">
+<!-- Active Model Router Indicator -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-lg bg-surface-container-highest/60 border border-outline-variant/30 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[16px]" data-icon="tune">tune</span>
+<span class="text-on-surface font-medium">NVIDIA NIM:</span>
+<span class="text-tertiary font-mono">Auto Router (Nemotron 3 Super 120B)</span>
+</div>
+<!-- Compute Quota Progress Mini Meter -->
+<div class="hidden lg:flex flex-col gap-1 px-3 py-1 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/20 min-w-[170px]">
+<div class="flex justify-between items-center text-[10px] font-mono">
+<span class="text-on-surface-variant">Compute Quota</span>
+<span class="text-primary font-medium">42.1%</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-tertiary h-full rounded-full" style="width: 42.18%;"></div>
+</div>
+<div class="text-[9px] text-right font-mono text-outline">42,180 / 100,000 pts</div>
+</div>
+<!-- Trailing Action 1: Timer Badge -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface border border-outline-variant/30 text-label-md font-mono">
+<span class="material-symbols-outlined text-tertiary text-[16px]" data-icon="schedule">schedule</span>
+<span>Timer: 02:41:18</span>
+</div>
+<!-- Trailing Action 2: Quick Search Cmd+K -->
+<button class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/30 text-label-sm font-label-sm transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="search">search</span>
+<span>Search</span>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-highest border border-outline-variant/40 text-[10px] font-mono">Cmd+K</kbd>
+</button>
+<!-- Trailing Icon Action: Notifications -->
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface-container-low"></span>
+</button>
+<!-- Trailing Action: Audit Log Inspector -->
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Audit Log">
+<span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
+</button>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN CONTENT CANVAS                                                       -->
+<!-- ========================================================================= -->
+<main class="ml-64 p-6 space-y-6 max-w-[1920px] mx-auto">
+<!-- --------------------------------------------------------------------- -->
+<!-- SECTION 1: INTELLIGENCE KPI ROW (4 FROSTED GLASS CARDS)              -->
+<!-- --------------------------------------------------------------------- -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- KPI Card 1: Active Agent Routines -->
+<div class="glass-panel p-4 rounded-xl flex flex-col justify-between relative overflow-hidden group hover:border-primary/40 transition-all duration-300">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Operational Pipeline</span>
+<span class="text-headline-md font-headline-md text-white mt-1">12 Autonomous Routines</span>
+</div>
+<span class="p-2 rounded-lg bg-primary/10 border border-primary/25 text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="precision_manufacturing">precision_manufacturing</span>
+</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-400 status-pulse"></span>
+            Cross-domain sync active
+          </span>
+<span class="text-tertiary font-mono text-label-sm font-medium">99.8% Sync</span>
+</div>
+</div>
+<!-- KPI Card 2: DB Context Grounding -->
+<div class="glass-panel p-4 rounded-xl flex flex-col justify-between relative overflow-hidden group hover:border-tertiary/40 transition-all duration-300">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Spec 028 Safety Gate</span>
+<span class="text-headline-md font-headline-md text-white mt-1">100% ACID Grounding</span>
+</div>
+<span class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified_user">verified_user</span>
+</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">0 False Successes</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950/60 border border-emerald-500/40 text-emerald-300">Prisma Locks</span>
+</div>
+</div>
+<!-- KPI Card 3: Multilingual NLU Active -->
+<div class="glass-panel p-4 rounded-xl flex flex-col justify-between relative overflow-hidden group hover:border-secondary/40 transition-all duration-300">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Language Processing</span>
+<span class="text-headline-md font-headline-md text-white mt-1">Multilingual NLU Active</span>
+</div>
+<span class="p-2 rounded-lg bg-secondary/10 border border-secondary/25 text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="translate">translate</span>
+</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-surface-container border border-outline-variant/40 text-primary">EN</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-surface-container border border-outline-variant/40 text-tertiary">HI-Deva</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-surface-container border border-outline-variant/40 text-secondary">PA-Guru</span>
+</div>
+<span class="text-emerald-400 font-mono text-label-sm font-medium">99.4% Res</span>
+</div>
+</div>
+<!-- KPI Card 4: Vector Retrieval Index -->
+<div class="glass-panel p-4 rounded-xl flex flex-col justify-between relative overflow-hidden group hover:border-tertiary-container/40 transition-all duration-300">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Semantic Memory Index</span>
+<span class="text-headline-md font-headline-md text-white mt-1">84,200 Embeddings</span>
+</div>
+<span class="p-2 rounded-lg bg-tertiary-container/10 border border-tertiary-container/30 text-tertiary">
+<span class="material-symbols-outlined text-[20px]" data-icon="hub">hub</span>
+</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant font-mono text-[11px]">Nemotron 3 Embed 1B</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-surface-container border border-outline-variant/30 text-tertiary">14ms Hybrid</span>
+</div>
+</div>
+</section>
+<!-- --------------------------------------------------------------------- -->
+<!-- SECTION 2: SPLIT-SCREEN INTELLIGENCE STUDIO (6-COL / 6-COL)           -->
+<!-- --------------------------------------------------------------------- -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- =================================================================== -->
+<!-- LEFT COLUMN: CONVERSATIONAL INTELLIGENCE & CHAIN OF THOUGHT (6 COLS)-->
+<!-- =================================================================== -->
+<div class="lg:col-span-6 flex flex-col gap-4">
+<!-- Conversational Container -->
+<div class="glass-panel rounded-2xl flex flex-col h-[780px] justify-between overflow-hidden relative">
+<!-- Dialogue Header -->
+<div class="px-5 py-3.5 border-b border-outline-variant/25 flex items-center justify-between bg-surface-container-lowest/50 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="forum">forum</span>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-white">Autonomous Session: Apex Global Enterprise</h2>
+<div class="flex items-center gap-2 text-label-sm font-mono text-outline">
+<span>#AG-SES-9421</span>
+<span>•</span>
+<span>Direct Context Lock</span>
+<span>•</span>
+<span class="text-primary">Est. Cost: $0.042</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="refresh">refresh</span>
+<span>Reset Context</span>
+</button>
+</div>
+</div>
+<!-- Dialogue Thread Scrollable Canvas -->
+<div class="p-5 overflow-y-auto space-y-5 flex-1 pr-4">
+<!-- User Message Turn -->
+<div class="flex items-start gap-3.5 justify-end">
+<div class="flex flex-col items-end max-w-[85%]">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-mono">2 mins ago</span>
+<span class="text-headline-sm font-headline-sm text-white text-[13px]">Alexander Vance</span>
+</div>
+<div class="p-4 rounded-2xl rounded-tr-xs bg-surface-container-high border border-outline-variant/40 text-on-surface font-body-md shadow-md text-right leading-relaxed">
+                  "Apex Dynamics ke Brand Evolution project ke liye $45,000 ka milestone invoice draft karo and review ke liye assign karo Alexander Vance ko."
+                </div>
+<div class="flex items-center gap-2 mt-1 text-[11px] text-outline font-mono">
+<span>Language: Hinglish (Latin HI/EN)</span>
+<span>•</span>
+<span class="text-emerald-400">Grounded to CRM Org #4402</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg overflow-hidden ring-1 ring-primary/40 shrink-0 mt-1">
+<img class="w-full h-full object-cover" data-alt="A close portrait of Alexander Vance, managing partner, with an expression of sharp focus and decisive authority, in dark atmospheric cinematic office environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZYLmu-FG3JwF0-sRGLa96We7teHA0cCcKWIZFmK4hbsYPr90dmfRMESeM1Xk_cn6Elcd8QIYTPDC0pDER7RQlc2trxsvxwx5E3KMP0T12LGY-DSyLayB0B3JfgvOSYzbWEpsgXw5Op74eN7X2tyR9v9D4Wd71aePTIndGpy1_MnJYKhp03_Yl--mdFukH0nxnUE6nLRqygsGloquGL9zIDZr7T8cM0JeC-ONIpF-kBuPXUoUUh5Q4pd0zc8mpQ4Ig_38yWHFnU6jE"/>
+</div>
+</div>
+<!-- AI Assistant Turn with Subtask Trace -->
+<div class="flex items-start gap-3.5 justify-start">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary-container via-inverse-primary to-tertiary flex items-center justify-center ring-1 ring-white/20 shrink-0 mt-1 shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-white text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex flex-col max-w-[88%] space-y-3">
+<div class="flex items-center gap-2">
+<span class="text-headline-sm font-headline-sm text-white text-[13px]">Vanguard AI Agent</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-primary/10 border border-primary/25 text-primary">Nemotron 3 Super 120B</span>
+<span class="text-label-sm font-mono text-outline">1m ago</span>
+</div>
+<!-- Structured Thinking / Subtask Trace Container -->
+<div class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest/80 p-3.5 space-y-2 text-body-sm font-mono">
+<div class="flex items-center justify-between text-outline text-[11px] font-semibold border-b border-outline-variant/20 pb-2">
+<span class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-[14px]" data-icon="account_tree">account_tree</span>
+                      REASONING &amp; GROUNDING CHAIN OF THOUGHT
+                    </span>
+<span class="text-emerald-400">Latency: 284ms</span>
+</div>
+<div class="space-y-1.5 text-[11px] leading-relaxed text-on-surface-variant">
+<div class="flex items-start gap-2">
+<span class="text-primary font-bold">[1]</span>
+<span>Grounded query against PostgreSQL schema: Resolved Project <code class="text-white bg-surface-container px-1 rounded">PRJ-8812</code> ("Apex Dynamics Inc. - Brand Evolution")</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-primary font-bold">[2]</span>
+<span>Milestone validation: Milestone #03 ($45,000.00 USD) deliverable verified as approved by ACEScg Lead</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-primary font-bold">[3]</span>
+<span>Assignee resolution: Target reviewer 'Alexander Vance' mapped to internal Principal ID <code class="text-white bg-surface-container px-1 rounded">usr_av992</code></span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-primary font-bold">[4]</span>
+<span class="text-amber-300">Spec 028 Zero-False-Success Gate: Staged draft in buffer. Direct DB write withheld until human confirmation.</span>
+</div>
+</div>
+</div>
+<!-- Assistant Markdown Response Bubble -->
+<div class="p-4 rounded-2xl rounded-tl-xs bg-surface-container border border-outline-variant/30 text-on-surface font-body-md space-y-3 leading-relaxed shadow-lg">
+<p>
+                    Main ne <strong class="text-white">Apex Dynamics Inc.</strong> ke project <strong class="text-white">Apex Global - Brand Evolution &amp; 3D Campaign</strong> ke liye milestone #03 ($45,000.00 USD) ka invoice draft taiyar kar diya hai.
+                  </p>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest/60 border border-outline-variant/30 text-[12px] space-y-1 font-mono">
+<div class="flex justify-between">
+<span class="text-outline">Invoice Reference:</span>
+<span class="text-white font-semibold">INV-2025-089</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Total Due:</span>
+<span class="text-emerald-400 font-semibold">$45,000.00 USD (Net 30)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Deliverable:</span>
+<span class="text-white">Milestone 03: 3D Production &amp; Shader Master</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Review Assignee:</span>
+<span class="text-primary font-medium">Alexander Vance (usr_av992)</span>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant">
+                    Spec 028 Zero-False-Success protocol ke tahat, database direct mutation lock hai jab tak human confirmation receive nahi hoti. Kripya right staging deck par parameters verify karke <strong class="text-primary">"Confirm &amp; Commit"</strong> execute karein.
+                  </p>
+</div>
+<!-- Context Citations Chips Row -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="text-label-sm font-label-sm text-outline uppercase mr-1">Citations:</span>
+<a class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-[11px] font-mono text-tertiary hover:border-tertiary transition-colors flex items-center gap-1" href="#prj-8812">
+<span class="material-symbols-outlined text-[12px]" data-icon="link">link</span>
+                    Project: #PRJ-8812
+                  </a>
+<a class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant hover:text-white transition-colors" href="#client-apex">
+                    Client: Apex Dynamics Inc.
+                  </a>
+<a class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant hover:text-white transition-colors" href="#ledger">
+                    Ledger: INV-2025-089
+                  </a>
+<span class="px-2 py-0.5 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-[11px] font-mono text-emerald-300">
+                    Policy: Spec 028 Enforced
+                  </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Conversational Prompt Bar -->
+<div class="p-4 border-t border-outline-variant/20 bg-surface-container-lowest/80 backdrop-blur-xl">
+<div class="glass-input-pod rounded-xl p-2 flex flex-col gap-2 focus-within:border-primary/60 transition-all shadow-inner">
+<div class="flex items-center justify-between px-2 pt-1 border-b border-outline-variant/15 pb-2 text-[11px]">
+<div class="flex items-center gap-2">
+<span class="text-outline">Active Context:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-white font-mono">Org #4402 (Apex)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-tertiary font-mono">Postgres Read-Replica 01</span>
+</div>
+<div class="flex items-center gap-1 text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span>Grounded RAG</span>
+</div>
+</div>
+<div class="flex items-center gap-3 px-2">
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="auto_awesome">auto_awesome</span>
+<input class="bg-transparent border-none text-white text-body-md font-body-md focus:outline-none focus:ring-0 w-full placeholder:text-outline" placeholder="Ask AI Agent or execute autonomous cross-domain routine..." type="text" value="Confirm draft invoice INV-2025-089 dispatch notification to Finance Slack channel #billing-ops"/>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="p-1.5 rounded-lg text-outline hover:text-white hover:bg-surface-container transition-colors" title="Attach context artifact">
+<span class="material-symbols-outlined text-[18px]" data-icon="attach_file">attach_file</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-white hover:bg-surface-container transition-colors" title="Voice dictation (Multilingual)">
+<span class="material-symbols-outlined text-[18px]" data-icon="mic">mic</span>
+</button>
+<button class="p-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary transition-all duration-150 flex items-center justify-center shadow-md shadow-primary/25 active:scale-95" title="Send Instruction">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between px-2 pt-2 text-[10px] text-outline font-mono">
+<span>Proactive validation locks: Active · Spec 028 Zero-False-Success</span>
+<span>Tokens: 1,420 prompt / 412 completion</span>
+</div>
+</div>
+</div>
+</div>
+<!-- =================================================================== -->
+<!-- RIGHT COLUMN: PREPARED ACTION CARDS & DATABASE EXECUTION GATE      -->
+<!-- =================================================================== -->
+<div class="lg:col-span-6 flex flex-col gap-4">
+<!-- Header of Mutation Staging Deck -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-400 text-[20px]" data-icon="security">security</span>
+<h2 class="text-headline-md font-headline-md text-white">Database Mutation Staging Area</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full text-label-sm font-mono bg-amber-500/10 border border-amber-500/30 text-amber-300 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400 status-pulse"></span>
+              1 Awaiting Confirmation
+            </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">
+              1 Committed
+            </span>
+</div>
+</div>
+<!-- ----------------------------------------------------------------- -->
+<!-- CARD 1: PREPARED ACTION (Awaiting Human Confirmation)             -->
+<!-- ----------------------------------------------------------------- -->
+<div class="glass-panel-amber rounded-2xl p-5 relative overflow-hidden flex flex-col gap-4 shadow-2xl">
+<!-- Top Alert Ribbon -->
+<div class="flex items-center justify-between pb-3 border-b border-amber-500/30">
+<div class="flex items-center gap-2.5">
+<span class="p-1.5 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300">
+<span class="material-symbols-outlined text-[18px]" data-icon="warning">warning</span>
+</span>
+<div>
+<span class="text-label-sm font-label-sm font-mono text-amber-300 tracking-wider uppercase block">PREPARED ACTION #ACT-9812</span>
+<span class="text-headline-sm font-headline-sm text-white font-semibold">EXECUTE INVOICE CREATION &amp; NOTIFY</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded text-[11px] font-mono bg-amber-950/80 border border-amber-500/40 text-amber-200">
+              BUFFERED TRANSACTION
+            </span>
+</div>
+<!-- Spec 028 Safety Guarantee Callout -->
+<div class="p-3 rounded-xl bg-surface-container-lowest/90 border border-amber-500/20 text-body-sm space-y-1">
+<div class="flex items-center gap-2 text-amber-300 font-medium text-label-md">
+<span class="material-symbols-outlined text-[16px]" data-icon="lock">lock</span>
+<span>Spec 028 Zero-False-Success Enforcement</span>
+</div>
+<p class="text-on-surface-variant text-[12px] leading-relaxed">
+              Human-in-the-loop authorization is required prior to database mutation. Idempotency Key is locked to prevent duplicate charges or orphaned records.
+            </p>
+<div class="pt-1 flex items-center gap-4 text-[10px] font-mono text-outline">
+<span>Idempotency: <strong class="text-white">IDEMP-88219-INV</strong></span>
+<span>ACID Lock: <strong class="text-white">#TXN-90412</strong></span>
+</div>
+</div>
+<!-- Parameter Manifest Table -->
+<div class="rounded-xl border border-outline-variant/30 overflow-hidden bg-surface-container-lowest/60">
+<div class="px-3.5 py-2 bg-surface-container-high/60 border-b border-outline-variant/30 flex justify-between items-center text-label-sm font-mono text-outline">
+<span>PARAMETER MANIFEST (MUTATION PAYLOAD)</span>
+<span class="text-primary font-medium">SCHEMA: prisma.invoice.create</span>
+</div>
+<div class="divide-y divide-outline-variant/20 text-body-sm">
+<div class="grid grid-cols-12 px-3.5 py-2.5 hover:bg-white/[0.02] transition-colors">
+<span class="col-span-4 text-outline font-mono text-[12px]">Invoice Number</span>
+<span class="col-span-8 text-white font-mono font-medium">INV-2025-089</span>
+</div>
+<div class="grid grid-cols-12 px-3.5 py-2.5 hover:bg-white/[0.02] transition-colors">
+<span class="col-span-4 text-outline font-mono text-[12px]">Client Account</span>
+<span class="col-span-8 text-on-surface flex items-center gap-2">
+<span class="text-white font-semibold">Apex Dynamics Inc.</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-[10px] font-mono text-outline">ORG-4402</span>
+</span>
+</div>
+<div class="grid grid-cols-12 px-3.5 py-2.5 hover:bg-white/[0.02] transition-colors">
+<span class="col-span-4 text-outline font-mono text-[12px]">Associated Project</span>
+<span class="col-span-8 text-tertiary">Apex Global - Brand Evolution &amp; 3D Campaign (#PRJ-8812)</span>
+</div>
+<div class="grid grid-cols-12 px-3.5 py-2.5 hover:bg-white/[0.02] transition-colors">
+<span class="col-span-4 text-outline font-mono text-[12px]">Amount &amp; Terms</span>
+<span class="col-span-8 text-white font-mono font-semibold text-[14px]">
+                  $45,000.00 USD <span class="text-on-surface-variant font-normal text-[12px]">(Net 30 Payment Terms)</span>
+</span>
+</div>
+<div class="grid grid-cols-12 px-3.5 py-2.5 hover:bg-white/[0.02] transition-colors">
+<span class="col-span-4 text-outline font-mono text-[12px]">Line Item Description</span>
+<span class="col-span-8 text-on-surface text-[12px]">
+                  Milestone 03: Final ACEScg 3D LookDev, Shader Master Pipeline Delivery, &amp; Color Space Config
+                </span>
+</div>
+<div class="grid grid-cols-12 px-3.5 py-2.5 hover:bg-white/[0.02] transition-colors">
+<span class="col-span-4 text-outline font-mono text-[12px]">Assigned Reviewer</span>
+<span class="col-span-8 text-primary font-medium flex items-center gap-2">
+<span>Alexander Vance</span>
+<span class="text-[10px] font-mono text-outline">(usr_av992 · Managing Partner)</span>
+</span>
+</div>
+<div class="grid grid-cols-12 px-3.5 py-2.5 hover:bg-white/[0.02] transition-colors">
+<span class="col-span-4 text-outline font-mono text-[12px]">Tax Treatment</span>
+<span class="col-span-8 text-on-surface-variant font-mono text-[12px]">
+                  Reverse Charge / Zero VAT Cross-Border ($0.00)
+                </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons / Gate Controls -->
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<!-- Commit Button -->
+<button class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-gradient-to-r from-primary-container via-inverse-primary to-primary text-on-primary font-headline-sm flex items-center justify-center gap-2 shadow-lg shadow-primary-container/30 hover:brightness-110 active:scale-[0.98] transition-all duration-150">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock_open">lock_open</span>
+<span>Confirm &amp; Commit to Database</span>
+</button>
+<!-- Secondary Modify/Cancel Button -->
+<button class="w-full sm:w-auto px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface-variant hover:text-white text-body-md font-medium transition-all duration-150">
+                Cancel / Edit
+              </button>
+</div>
+<!-- Audit Hash -->
+<span class="text-[11px] font-mono text-outline shrink-0">
+              SHA: <code class="text-on-surface">7f8a9...b401</code> (312ms)
+            </span>
+</div>
+</div>
+<!-- ----------------------------------------------------------------- -->
+<!-- CARD 2: COMPLETED & VERIFIED ACTION (Historical / Audit Verified) -->
+<!-- ----------------------------------------------------------------- -->
+<div class="glass-panel rounded-2xl p-5 relative overflow-hidden flex flex-col gap-3 border-emerald-500/20">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2.5">
+<span class="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</span>
+<div>
+<span class="text-label-sm font-label-sm font-mono text-emerald-400 tracking-wider uppercase block">COMPLETED &amp; VERIFIED</span>
+<span class="text-headline-sm font-headline-sm text-white font-semibold">TASK ASSIGNMENT #TSK-4091</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded text-[11px] font-mono bg-emerald-950/40 border border-emerald-500/30 text-emerald-300">
+              COMMITTED
+            </span>
+</div>
+<p class="text-body-md text-on-surface">
+            Assigned <span class="text-white font-medium">"Review ACEScg Shader Master Deliverables"</span> to <span class="text-secondary font-medium">Elena Rostova</span> (Lead 3D LookDev) with priority P1.
+          </p>
+<!-- Audit Telemetry Manifest -->
+<div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/20 grid grid-cols-2 gap-2 text-[11px] font-mono text-outline">
+<div>
+<span>DB Record UUID:</span>
+<div class="text-white truncate font-medium">d8f2a1b9-4401-49b8-a721-99c011e4f502</div>
+</div>
+<div>
+<span>Committed At:</span>
+<div class="text-white font-medium">Today, 14:22:08 UTC</div>
+</div>
+<div>
+<span>ACID Execution Latency:</span>
+<div class="text-emerald-400 font-medium">18ms (PostgreSQL Primary)</div>
+</div>
+<div>
+<span>Idempotency Hash:</span>
+<div class="text-emerald-400 font-medium">Verified 100% Unique</div>
+</div>
+</div>
+<!-- Deep link action -->
+<div class="pt-1 flex justify-between items-center">
+<span class="text-[11px] text-outline font-mono">Triggered via Autonomous Routine #04</span>
+<a class="text-primary hover:text-primary-fixed text-label-md font-label-md flex items-center gap-1 transition-colors" href="#view-task">
+<span>Open in Tasks</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- --------------------------------------------------------------------- -->
+<!-- SECTION 3: SYSTEM AUDIT & MODEL TELEMETRY STRIP                       -->
+<!-- --------------------------------------------------------------------- -->
+<div class="glass-panel p-4 rounded-xl flex flex-wrap items-center justify-between gap-4 text-body-sm font-mono text-on-surface-variant">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="text-white font-medium">NVIDIA NIM Infrastructure:</span>
+<span>US-East Cluster 04 (Dual H100 SXM5)</span>
+</div>
+<div class="hidden md:flex items-center gap-2 text-outline">
+<span>P99 Inference:</span>
+<span class="text-tertiary">38ms</span>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-outline">
+<span>Embedding Model:</span>
+<span class="text-white">Llama Nemotron Embed VL 1B v2</span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-[12px]">
+<span class="text-outline">BusinessOS Spec 028 v4.1</span>
+<span class="text-outline">•</span>
+<span class="text-emerald-400">Zero False Success Guarantee: ACTIVE</span>
+</div>
+</div>
+</main>
+<!-- Lightweight micro-interaction script for reactive UI feedback -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Micro-feedback for action buttons
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          // create subtle liquid pulse
+          const ripple = document.createElement('span');
+          ripple.classList.add('absolute', 'inset-0', 'rounded-inherit', 'bg-white/10', 'animate-ping', 'pointer-events-none');
+          this.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+    });
+  </script>
+</body></html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STITCH-A10: Team Directory &amp; Capacity Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#93000a",
+            "surface-variant": "#34343d",
+            "surface": "#13131b",
+            "tertiary": "#7bd0ff",
+            "surface-container-lowest": "#0d0d16",
+            "on-secondary-fixed": "#23005c",
+            "on-tertiary": "#00354a",
+            "surface-bright": "#393842",
+            "on-primary-container": "#0d0096",
+            "secondary": "#d0bcff",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "on-background": "#e4e1ed",
+            "primary-fixed-dim": "#c0c1ff",
+            "inverse-primary": "#494bd6",
+            "primary-container": "#8083ff",
+            "on-primary": "#1000a9",
+            "outline-variant": "#464554",
+            "on-secondary-container": "#c4abff",
+            "on-tertiary-fixed-variant": "#004c69",
+            "on-secondary-fixed-variant": "#5516be",
+            "surface-tint": "#c0c1ff",
+            "primary": "#c0c1ff",
+            "background": "#13131b",
+            "on-surface-variant": "#c7c4d7",
+            "on-secondary": "#3c0091",
+            "surface-container-high": "#292932",
+            "secondary-fixed-dim": "#d0bcff",
+            "outline": "#908fa0",
+            "on-tertiary-container": "#002d40",
+            "error": "#ffb4ab",
+            "surface-dim": "#13131b",
+            "surface-container-highest": "#34343d",
+            "on-tertiary-fixed": "#001e2c",
+            "tertiary-container": "#009bd1",
+            "tertiary-fixed": "#c4e7ff",
+            "on-error": "#690005",
+            "inverse-surface": "#e4e1ed",
+            "primary-fixed": "#e1e0ff",
+            "inverse-on-surface": "#302f39",
+            "surface-container": "#1f1f28",
+            "on-surface": "#e4e1ed",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "secondary-container": "#571bc1",
+            "on-primary-fixed": "#07006c",
+            "surface-container-low": "#1b1b23",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed": "#e9ddff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "space-lg": "1rem",
+            "space-2xl": "2rem",
+            "gutter": "1rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "margin-md": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter-lg": "1.5rem",
+            "margin-lg": "2rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "metric-numeral-lg": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #13131b;
+      color: #e4e1ed;
+      font-family: 'Inter', sans-serif;
+    }
+    /* Custom Scrollbar for sleek obsidian look */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(19, 19, 27, 0.5);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(144, 143, 160, 0.2);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(144, 143, 160, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-40 flex flex-col justify-between p-4 border-r border-outline-variant/30 bg-surface-container-low/80 backdrop-blur-2xl shadow-2xl">
+<div>
+<div class="flex items-center gap-3 px-2 py-3 mb-6">
+<div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold text-headline-sm shadow-inner">VG</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-semibold text-on-surface tracking-tight">Vanguard Global</span>
+<span class="text-body-sm text-on-surface-variant font-body-sm">003VXA Enterprise Tier</span>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface font-body-md hover:bg-surface-container dark:hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface font-body-md hover:bg-surface-container dark:hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface font-body-md hover:bg-surface-container dark:hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">folder_special</span>
+<span>Projects</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-surface-container-high dark:bg-surface-container-high text-primary dark:text-primary font-headline-sm border-l-2 border-primary shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>CRM</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface font-body-md hover:bg-surface-container dark:hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span>Finance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface font-body-md hover:bg-surface-container dark:hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">movie</span>
+<span>Production</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface font-body-md hover:bg-surface-container dark:hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+<span>Campaigns</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface font-body-md hover:bg-surface-container dark:hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span>AI Assistant</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface font-body-md hover:bg-surface-container dark:hover:bg-surface-container transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<div class="space-y-3 pt-4 border-t border-outline-variant/20">
+<button class="w-full py-2.5 px-4 bg-gradient-to-r from-primary to-inverse-primary text-on-primary font-headline-sm rounded-lg shadow-lg shadow-primary/20 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Quick Create</span>
+</button>
+<div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-container/50 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-[20px]">account_circle</span>
+<div class="flex flex-col overflow-hidden">
+<span class="text-label-md font-semibold text-on-surface truncate">Executive Profile</span>
+<span class="text-[10px] text-on-surface-variant truncate">Master Admin</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="sticky top-0 right-0 h-16 z-30 flex items-center justify-between px-6 border-b border-outline-variant/20 bg-surface-container-low/70 backdrop-blur-2xl ml-64">
+<div class="flex items-center gap-6">
+<span class="text-headline-md font-bold text-on-surface tracking-tight">BusinessOS</span>
+<div class="flex items-center gap-2 text-on-surface-variant text-body-md">
+<span class="hover:text-on-surface cursor-pointer">Projects</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-headline-sm">Nike SS27 Campaign</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-64">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</span>
+<input class="w-full bg-surface-container/80 border border-outline-variant/30 rounded-lg pl-9 pr-4 py-1.5 text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30" placeholder="Global member search..." type="text"/>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container border border-outline-variant/20 rounded-lg text-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>Timer: 01:24:08</span>
+</div>
+<div class="text-xs bg-surface-container-high border border-outline-variant/30 px-2 py-1 rounded text-on-surface-variant font-mono">Cmd+K</div>
+<div class="flex items-center gap-2 border-l border-outline-variant/20 pl-4">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+<button class="p-2 rounded-lg text-primary bg-primary/10 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<img class="w-8 h-8 rounded-full object-cover border border-primary/30 ml-2" data-alt="Executive User Profile Avatar with Online Status showing a professional portrait in dark atmospheric lighting with a sleek neon rim light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsKc0IkS1JUoqxLemMNWW24u95lObJPsOBy5QTubz8p0H-BjJMDxmiR-B00r0bTUSWehcmoihW0sOdaALDocHsmu9xU7aGmjgxAK8O6HheTC0HoLXscpCQvsKXW21oymVU0DCwvOC9AzurI382vgxtbPyRrhpDBizrUDyKQ5wWyrJzhT6oj5ZBbhGBW3Dsi4hHpjuyWHqVMXLkIMGJ4dbsYPcxyzT7Gw4w5ZowkIwh2EjgkQloO3IBlrqt2528w2b-KLdJPw4t9Tnu"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 p-8 flex gap-8">
+<!-- Central Directory & Capacity Studio Canvas -->
+<div class="flex-1 flex flex-col gap-6">
+<!-- Top Title & Navigation Bar Controls -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-headline-xl font-bold tracking-tight text-on-surface">Team Directory &amp; Capacity Studio</h1>
+<p class="text-body-md text-on-surface-variant">Jira-first resource planning, workload balancing, and studio capacity metrics.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 bg-surface-container-high border border-outline-variant/30 rounded-lg text-on-surface text-body-md font-headline-sm hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Allocation</span>
+</button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg text-body-md font-headline-sm shadow-lg shadow-primary/20 hover:brightness-110 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Add Resource</span>
+</button>
+</div>
+</div>
+<!-- Top KPI Row -->
+<div class="grid grid-cols-4 gap-4">
+<!-- KPI 1 -->
+<div class="p-5 rounded-xl bg-surface-container-low/60 border border-outline-variant/20 backdrop-blur-xl relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-all"></div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Agency Capacity</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-metric-numeral-lg font-semibold text-white">84%</span>
+<span class="text-xs text-emerald-400 font-medium flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +3.2%
+              </span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="p-5 rounded-xl bg-surface-container-low/60 border border-outline-variant/20 backdrop-blur-xl relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-tertiary/5 rounded-full blur-xl group-hover:bg-tertiary/10 transition-all"></div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Total Headcount</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-metric-numeral-lg font-semibold text-white">24</span>
+<span class="text-xs text-tertiary font-medium">Active Studio</span>
+</div>
+<div class="flex items-center gap-1.5 mt-3 text-[11px] text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 18 Full-time • 6 Contractors
+            </div>
+</div>
+<!-- KPI 3 -->
+<div class="p-5 rounded-xl bg-surface-container-low/60 border border-outline-variant/20 backdrop-blur-xl relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-error/5 rounded-full blur-xl group-hover:bg-error/10 transition-all"></div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Over-allocated Alert</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-metric-numeral-lg font-semibold text-error">2</span>
+<span class="text-xs text-error/80 font-medium">Action Required</span>
+</div>
+<div class="flex items-center gap-1 mt-3 text-[11px] text-error">
+<span class="material-symbols-outlined text-[14px]">warning</span> Burnout risk detected
+            </div>
+</div>
+<!-- KPI 4 -->
+<div class="p-5 rounded-xl bg-surface-container-low/60 border border-outline-variant/20 backdrop-blur-xl relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary-container/5 rounded-full blur-xl group-hover:bg-primary-container/10 transition-all"></div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Weekly Billable Hours</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-metric-numeral-lg font-semibold text-white">960</span>
+<span class="text-xs text-primary font-medium">/ 1,120h Max</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 85.7%;"></div>
+</div>
+</div>
+</div>
+<!-- Filter & View Switcher Bar -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 bg-surface-container-low/40 p-3 rounded-xl border border-outline-variant/20">
+<!-- Tab Switcher -->
+<div class="flex items-center bg-surface-container p-1 rounded-lg border border-outline-variant/30">
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface text-body-md font-headline-sm rounded-md shadow-sm">Internal Staff</button>
+<button class="px-4 py-1.5 text-on-surface-variant hover:text-on-surface text-body-md font-body-md rounded-md transition-colors">Freelance 1099</button>
+<button class="px-4 py-1.5 text-on-surface-variant hover:text-on-surface text-body-md font-body-md rounded-md transition-colors">Organizational Hierarchy</button>
+</div>
+<!-- Department Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
+<button class="px-3 py-1 bg-primary text-on-primary rounded-full text-label-md font-semibold">All</button>
+<button class="px-3 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface rounded-full text-label-md transition-colors border border-outline-variant/20">Design</button>
+<button class="px-3 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface rounded-full text-label-md transition-colors border border-outline-variant/20">Cinematography</button>
+<button class="px-3 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface rounded-full text-label-md transition-colors border border-outline-variant/20">VFX/Post</button>
+<button class="px-3 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface rounded-full text-label-md transition-colors border border-outline-variant/20">Accounts</button>
+</div>
+</div>
+</div>
+<!-- Responsive Grid of Team Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- Team Card 1: Elena Rostova (Active Selection) -->
+<div class="p-5 rounded-xl bg-surface-container-low/80 border-2 border-primary/50 backdrop-blur-xl relative shadow-xl hover:border-primary transition-all group flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-xl object-cover border border-outline-variant/40" data-alt="Portrait of Elena Rostova, Principal VFX artist, featuring sharp cinematic lighting and professional dark aesthetic studio vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDv00-IPEEwzhF3c_bftd8crU-ic1IHhy5457AXRAJee1vwMI72-0h8O3rSY0U-RNco8CbSTNROD9jD7X1Uiy8I94Bp1-Ad-wvUVNlSu3ZNG5dcqjZwzQbYH7CxEbznZtUnyEYeqJd4pqL9-YjgvANUVvj4hfRyLm5q-S4wu1VTerlrfL4ANFz5b3yhabgIBi88e2GARJMclIoyTTAoukoGrsvBcSBzpEpaoqYkkqFvZu50dyg6X-n4GVQdeo5JeuqbPgUUvl1uTLb"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-surface rounded-full"></span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-label-sm font-semibold">VFX/Post</span>
+</div>
+<h3 class="text-headline-md font-bold text-on-surface group-hover:text-primary transition-colors">Elena Rostova</h3>
+<p class="text-body-sm text-on-surface-variant mb-4">Principal VFX • Lead Compositor</p>
+<!-- Weekly Capacity Progress Bar -->
+<div class="mb-4 bg-surface-container/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between text-body-sm mb-1.5">
+<span class="text-on-surface-variant">Weekly Capacity</span>
+<span class="text-primary font-semibold">36 / 40h</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-inverse-primary h-full rounded-full" style="width: 90%;"></div>
+</div>
+</div>
+<!-- Active Assigned Project Badges -->
+<div class="mb-4">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Active Projects</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-body-sm border border-outline-variant/30 font-medium">Nike SS27</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-body-sm border border-outline-variant/30 font-medium">Cyberpunk 2077</span>
+</div>
+</div>
+</div>
+<!-- Quick Contact Action Buttons -->
+<div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">mail</span> Message
+            </button>
+<button class="flex-1 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary text-body-sm rounded-lg border border-primary/20 transition-colors flex items-center justify-center gap-1.5 font-headline-sm">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View Profile
+            </button>
+</div>
+</div>
+<!-- Team Card 2: Marcus Vance -->
+<div class="p-5 rounded-xl bg-surface-container-low/80 border border-outline-variant/20 backdrop-blur-xl relative shadow-lg hover:border-outline-variant/50 transition-all group flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-xl object-cover border border-outline-variant/40" data-alt="Portrait of Marcus Vance, Creative Director, set in a modern minimalist design agency workspace with moody lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7yZBVuTtWuc-fCGica79k1QJR-5tEWpR00YhSjb_uooLVqBRDom4K1T9rN3TSuFc_wkuzfMtVARQggtWtirAGleKwgFgSMvQpXRg30RAv-kV847x94183ob76m_hwgy12MDc3K7ssPsD0jaLP32MApjlJ3XI6xk9EpmJFsopWWrs_1FaZFnDh9bAfjZ8_r-9IyPxB7zzObwxZhQKaPAz1mv1kXnL6yTPq5R-42nmPl5cOAxbUl-93Y-ejFDbCIos4n2m-QmaHtTbV"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-surface rounded-full"></span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20 text-label-sm font-semibold">Design</span>
+</div>
+<h3 class="text-headline-md font-bold text-on-surface group-hover:text-primary transition-colors">Marcus Vance</h3>
+<p class="text-body-sm text-on-surface-variant mb-4">Executive Creative Director</p>
+<div class="mb-4 bg-surface-container/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between text-body-sm mb-1.5">
+<span class="text-on-surface-variant">Weekly Capacity</span>
+<span class="text-error font-semibold">44 / 40h (Over)</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<div class="mb-4">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Active Projects</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-body-sm border border-outline-variant/30 font-medium">Vanguard Rebrand</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-body-sm border border-outline-variant/30 font-medium">Apex UI System</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">mail</span> Message
+            </button>
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View Profile
+            </button>
+</div>
+</div>
+<!-- Team Card 3: Sarah Chen -->
+<div class="p-5 rounded-xl bg-surface-container-low/80 border border-outline-variant/20 backdrop-blur-xl relative shadow-lg hover:border-outline-variant/50 transition-all group flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-xl object-cover border border-outline-variant/40" data-alt="Portrait of Sarah Chen, Lead Cinematographer, working on camera gear in high-end studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLmxlDhwlboWSJgu-9ndplZhixJYXlSRvSq9NN6tb1D8GNfFaDNvGXxWSIYsWZBeUBQljI9J1KgbhbxLOavD-HHeQxrd3MFytlb7HxZkOw5DzUh_yDHpHtV9adpGgpzNhqKe-TcY-hrbTohAQiZZqtAu0iRfAMefG8wFUgb-lEQsRJTZFFZD7elW9OHYPKTFv6RLjTtS-1Uj45uNHLvau-GQW1qOcXrRS8bDrBVHN_usN5LZBdJ3xjp4lwgJ7__UHBxHjkS7n0QdSy"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-amber-400 border-2 border-surface rounded-full"></span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20 text-label-sm font-semibold">Cinematography</span>
+</div>
+<h3 class="text-headline-md font-bold text-on-surface group-hover:text-primary transition-colors">Sarah Chen</h3>
+<p class="text-body-sm text-on-surface-variant mb-4">Director of Photography</p>
+<div class="mb-4 bg-surface-container/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between text-body-sm mb-1.5">
+<span class="text-on-surface-variant">Weekly Capacity</span>
+<span class="text-tertiary font-semibold">32 / 40h</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+<div class="mb-4">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Active Projects</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-body-sm border border-outline-variant/30 font-medium">Nike SS27</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">mail</span> Message
+            </button>
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View Profile
+            </button>
+</div>
+</div>
+<!-- Team Card 4: David Kalu -->
+<div class="p-5 rounded-xl bg-surface-container-low/80 border border-outline-variant/20 backdrop-blur-xl relative shadow-lg hover:border-outline-variant/50 transition-all group flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-xl object-cover border border-outline-variant/40" data-alt="Portrait of David Kalu, Senior Motion Designer, in a sleek post-production studio environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXQ8Iv3KAmnPSIyrXcd5Xt00vvGmRp-UHdP0wk3g5fDUDs7ucL7FlyaBpfEOs1jWNTZH8e1dzGT7LgpSA73chNcSDGLB78dOR4be0pLQN5KPF7oGIZ0XUyyn1cywthJTd-pWehsBTzTBbMWxxVNYbUGym0lAwS6bEhfyHaBOL6hp0HpMWXsidYoIl5vE6avMAvbSBK9uF3i84yvhtmDhPojmbp69p_7uvyAZ9J3mHgeZqKf8mRFZIm_rjObidbzAmQKGmd7R8IpHrT"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-surface rounded-full"></span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-label-sm font-semibold">VFX/Post</span>
+</div>
+<h3 class="text-headline-md font-bold text-on-surface group-hover:text-primary transition-colors">David Kalu</h3>
+<p class="text-body-sm text-on-surface-variant mb-4">Senior Motion Designer</p>
+<div class="mb-4 bg-surface-container/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between text-body-sm mb-1.5">
+<span class="text-on-surface-variant">Weekly Capacity</span>
+<span class="text-primary font-semibold">38 / 40h</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 95%;"></div>
+</div>
+</div>
+<div class="mb-4">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Active Projects</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-body-sm border border-outline-variant/30 font-medium">Cyberpunk 2077</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-body-sm border border-outline-variant/30 font-medium">Apex UI</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">mail</span> Message
+            </button>
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View Profile
+            </button>
+</div>
+</div>
+<!-- Team Card 5: Liam O'Connor -->
+<div class="p-5 rounded-xl bg-surface-container-low/80 border border-outline-variant/20 backdrop-blur-xl relative shadow-lg hover:border-outline-variant/50 transition-all group flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-xl object-cover border border-outline-variant/40" data-alt="Portrait of Liam O'Connor, Studio Financial Controller, in a modern executive office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmYLtiB2O0sql3V-zicvGIKj11sQxqhOYF2nfMoWlLE9uKTQeIR3Xt_LtG8xyH09wMzmtlrpI-d6Y0wQsjTE3fnnE4BO3fv3FkulRXjd0o9GHxUy1VNf9MDSlzdUz7EkYDFftEq7C3IQtFwZXLZ2HAube3fVQsFDq-aNNQu-kSWM5I81NQQAX_PTwbqN4cSsm6SYSuqFvaLYZCRn9wOx6ZO7zOf58cvN3H9z3Az_TD1PH5VJJbuxMaj2gvhVyUqvYqYP-OxImbP3H2"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-surface rounded-full"></span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20 text-label-sm font-semibold">Accounts</span>
+</div>
+<h3 class="text-headline-md font-bold text-on-surface group-hover:text-primary transition-colors">Liam O'Connor</h3>
+<p class="text-body-sm text-on-surface-variant mb-4">Financial Controller</p>
+<div class="mb-4 bg-surface-container/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between text-body-sm mb-1.5">
+<span class="text-on-surface-variant">Weekly Capacity</span>
+<span class="text-tertiary font-semibold">30 / 40h</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-tertiator h-full rounded-full bg-tertiary" style="width: 75%;"></div>
+</div>
+</div>
+<div class="mb-4">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Active Projects</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-body-sm border border-outline-variant/30 font-medium">Global Ops</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">mail</span> Message
+            </button>
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View Profile
+            </button>
+</div>
+</div>
+<!-- Team Card 6: Amara Okafor -->
+<div class="p-5 rounded-xl bg-surface-container-low/80 border border-outline-variant/20 backdrop-blur-xl relative shadow-lg hover:border-outline-variant/50 transition-all group flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-xl object-cover border border-outline-variant/40" data-alt="Portrait of Amara Okafor, Lead Product Designer, in a creative tech studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF5grjzAxE66hfN3Y5zF0RgWYGcIL1bXW9IvKiCZYLDtorh386GLOUf7058raGVo25924y3koRG1Ls3vjYS4is4DV0DgYGD9OKM90RXTyr03eePjGS4WWqws0e2qmN7RQVaQI4ZgRbvAXe3263rzEutwKObq4aUaZAGBgNrb878ta-GB1Qbt87tdm0PPcHofawaz_MehylnDoUNvkoTr5TgCZQBwaV8F740kcJ5DgZpSH865ELVdDXqh0xtZKQKfuTWbKh9OZs7nHn"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-slate-500 border-2 border-surface rounded-full"></span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20 text-label-sm font-semibold">Design</span>
+</div>
+<h3 class="text-headline-md font-bold text-on-surface group-hover:text-primary transition-colors">Amara Okafor</h3>
+<p class="text-body-sm text-on-surface-variant mb-4">Lead Product Designer</p>
+<div class="mb-4 bg-surface-container/60 p-3 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between text-body-sm mb-1.5">
+<span class="text-on-surface-variant">Weekly Capacity</span>
+<span class="text-on-surface-variant font-semibold">0 / 40h (Leave)</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-surface-variant h-full rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+<div class="mb-4">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Active Projects</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-body-sm border border-outline-variant/30 font-medium">On Leave</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">mail</span> Message
+            </button>
+<button class="flex-1 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm rounded-lg border border-outline-variant/30 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View Profile
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- TeamMemberProfileDrawer (Right Sidebar) -->
+<aside class="w-[420px] bg-surface-container-low/90 backdrop-blur-2xl border-l border-outline-variant/30 p-6 flex flex-col justify-between shrink-0 shadow-2xl">
+<div class="space-y-6">
+<!-- Drawer Header & Close -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-xl object-cover border border-primary/30" data-alt="Portrait of Elena Rostova in profile drawer with detailed studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-x6Se7iMkPEW0w7916aMlf6Myfq5t3DEi1E07h9bCXruTykoTRGb7KI08x8VJrte6UY7NN0EMeGpX50jFcfziakUcwagn-o6l0PqV40Hnm7ATehrK0LloNLbr9CkXhVdJK9kdMLJq81MM7sXFE4hwOlwUTyQsrBtabxDIVf_hMNK3Ijtutx_Yg9ne_5pZT4sQa0IdjqO7sMByRg9eapm-KvW2k07Y5a0FXz97BwpMSmndNKjWOkLi2gk_qxnfgbbFEpSfjcBomj0N"/>
+<div>
+<h2 class="text-headline-md font-bold text-on-surface">Elena Rostova</h2>
+<p class="text-body-sm text-primary font-medium">Principal VFX • Lead Compositor</p>
+</div>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Skill Tags -->
+<div>
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Core Skills &amp; Expertise</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-body-sm text-on-surface font-medium">Nuke Studio</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-body-sm text-on-surface font-medium">Houdini FX</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-body-sm text-on-surface font-medium">Color Grading</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-body-sm text-on-surface font-medium">Python API</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-body-sm text-on-surface font-medium">Pipeline TD</span>
+</div>
+</div>
+<!-- Weekly Calendar Allocation Heatmap -->
+<div class="bg-surface-container/50 p-4 rounded-xl border border-outline-variant/20">
+<div class="flex items-center justify-between mb-3">
+<span class="text-headline-sm font-semibold text-on-surface">Allocation Heatmap</span>
+<span class="text-xs text-primary font-mono">36h / 40h Wk 12</span>
+</div>
+<div class="grid grid-cols-5 gap-2 text-center">
+<div class="bg-surface-container-high p-2 rounded-lg border border-outline-variant/30">
+<span class="text-[10px] text-on-surface-variant block mb-1">MON</span>
+<span class="text-body-md font-bold text-primary">8h</span>
+</div>
+<div class="bg-surface-container-high p-2 rounded-lg border border-outline-variant/30">
+<span class="text-[10px] text-on-surface-variant block mb-1">TUE</span>
+<span class="text-body-md font-bold text-primary">8h</span>
+</div>
+<div class="bg-surface-container-high p-2 rounded-lg border border-outline-variant/30">
+<span class="text-[10px] text-on-surface-variant block mb-1">WED</span>
+<span class="text-body-md font-bold text-primary">8h</span>
+</div>
+<div class="bg-surface-container-high p-2 rounded-lg border border-outline-variant/30">
+<span class="text-[10px] text-on-surface-variant block mb-1">THU</span>
+<span class="text-body-md font-bold text-primary">8h</span>
+</div>
+<div class="bg-surface-container p-2 rounded-lg border border-outline-variant/20 opacity-70">
+<span class="text-[10px] text-on-surface-variant block mb-1">FRI</span>
+<span class="text-body-md font-bold text-tertiary">4h</span>
+</div>
+</div>
+</div>
+<!-- Active Assigned Tasks List -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-headline-sm font-semibold text-on-surface">Active Jira Tasks</span>
+<span class="text-xs text-on-surface-variant">3 Assigned</span>
+</div>
+<div class="space-y-2.5">
+<div class="p-3 rounded-lg bg-surface-container/60 border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle_outline</span>
+<div>
+<p class="text-body-md font-medium text-on-surface">NX-402: Compositing Shot #14</p>
+<span class="text-[11px] text-on-surface-variant">Nike SS27 • Due Tomorrow</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-semibold">In Progress</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container/60 border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle_outline</span>
+<div>
+<p class="text-body-md font-medium text-on-surface">NX-419: Color Match Sequence B</p>
+<span class="text-[11px] text-on-surface-variant">Nike SS27 • Due Mar 28</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary/10 text-tertiary text-[10px] font-semibold">Review</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container/60 border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-[18px]">radio_button_unchecked</span>
+<div>
+<p class="text-body-md font-medium text-on-surface">CP-102: Hologram FX Cleanup</p>
+<span class="text-[11px] text-on-surface-variant">Cyberpunk 2077 • Due Apr 02</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-semibold">Backlog</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Reassign Workload Button Footer -->
+<div class="pt-6 border-t border-outline-variant/20">
+<button class="w-full py-3 bg-gradient-to-r from-primary to-inverse-primary text-on-primary font-headline-sm rounded-xl shadow-lg shadow-primary/20 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+<span>Reassign Workload</span>
+</button>
+</div>
+</aside>
+</main>
+</body></html>
