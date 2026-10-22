@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>003VXA / BusinessOS — Tasks Studio</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#571bc1",
+            "on-primary": "#1000a9",
+            "inverse-on-surface": "#302f39",
+            "error": "#ffb4ab",
+            "on-surface": "#e4e1ed",
+            "on-secondary-fixed-variant": "#5516be",
+            "surface-container-low": "#1b1b23",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "surface-container-lowest": "#0d0d16",
+            "primary-fixed-dim": "#c0c1ff",
+            "primary-fixed": "#e1e0ff",
+            "surface-container": "#1f1f28",
+            "inverse-primary": "#494bd6",
+            "on-secondary-container": "#c4abff",
+            "on-tertiary-fixed": "#001e2c",
+            "on-error": "#690005",
+            "secondary-fixed": "#e9ddff",
+            "on-secondary": "#3c0091",
+            "on-surface-variant": "#c7c4d7",
+            "tertiary-container": "#009bd1",
+            "surface-tint": "#c0c1ff",
+            "secondary": "#d0bcff",
+            "surface-dim": "#13131b",
+            "tertiary": "#7bd0ff",
+            "primary": "#c0c1ff",
+            "inverse-surface": "#e4e1ed",
+            "tertiary-fixed": "#c4e7ff",
+            "surface-container-highest": "#34343d",
+            "on-background": "#e4e1ed",
+            "on-tertiary-fixed-variant": "#004c69",
+            "secondary-fixed-dim": "#d0bcff",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-container": "#002d40",
+            "surface": "#13131b",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "error-container": "#93000a",
+            "on-secondary-fixed": "#23005c",
+            "surface-container-high": "#292932",
+            "outline": "#908fa0",
+            "on-primary-fixed": "#07006c",
+            "background": "#13131b",
+            "on-tertiary": "#00354a",
+            "surface-variant": "#34343d",
+            "surface-bright": "#393842",
+            "primary-container": "#8083ff",
+            "on-primary-container": "#0d0096",
+            "outline-variant": "#464554"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "metric-numeral-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "headline-xl": ["Inter"]
+          },
+          "fontSize": {
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Liquid Obsidian custom enhancements */
+    body {
+      background-color: #0c0d12;
+      color: #e4e1ed;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    
+    .glass-panel {
+      background: rgba(19, 20, 27, 0.75);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    
+    .glass-card {
+      background: rgba(22, 24, 33, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(192, 193, 255, 0.25);
+      box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.65), 0 0 15px 0 rgba(99, 102, 241, 0.1);
+    }
+
+    .pulse-dot {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.15); }
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+<div class="flex h-screen w-screen overflow-hidden">
+<!-- SHARED COMPONENT: SideNavBar (Executive Dock) -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-40 flex flex-col justify-between p-4 border-r border-outline-variant/30 bg-surface-container-low/80 backdrop-blur-2xl">
+<!-- Top Brand Anchor -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-secondary-container to-primary flex items-center justify-center shadow-lg shadow-indigo-950/50 border border-white/20">
+<span class="material-symbols-outlined text-white text-xl" data-icon="movie">movie</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-on-surface tracking-tight font-semibold">Vanguard Global</span>
+<span class="text-label-sm font-label-sm text-outline tracking-wider uppercase">Enterprise Tier</span>
+</div>
+</div>
+<!-- Quick Create CTA Button -->
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3.5 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-headline-sm text-body-sm shadow-md shadow-indigo-900/30 border border-white/20 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>Quick Create</span>
+</button>
+<!-- Navigation Stack (9 Items with exact active matching) -->
+<nav class="flex flex-col space-y-1">
+<!-- Overview -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- Tasks (ACTIVE MATCH - EXACT JSON STYLES APPLIED) -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-surface-container-high text-primary font-headline-sm border-l-2 border-primary active:scale-[0.98] transition-transform duration-100 shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>
+<span>Tasks</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-md bg-secondary-container/60 text-secondary text-label-sm font-label-sm border border-secondary/20">18</span>
+</a>
+<!-- Projects -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="folder_special">folder_special</span>
+<span>Projects</span>
+</div>
+<span class="px-1.5 py-0.2 rounded-md bg-surface-container-highest text-outline text-label-sm">12</span>
+</a>
+<!-- CRM -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="group">group</span>
+<span>CRM</span>
+</a>
+<!-- Finance -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="payments">payments</span>
+<span>Finance</span>
+</a>
+<!-- Production -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="movie">movie</span>
+<span>Production</span>
+</div>
+<span class="px-1.5 py-0.5 rounded text-[9px] font-bold tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">LIVE</span>
+</a>
+<!-- Campaigns -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="campaign">campaign</span>
+<span>Campaigns</span>
+</a>
+<!-- AI Assistant -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="auto_awesome">auto_awesome</span>
+<span>AI Assistant</span>
+</div>
+<span class="text-[10px] text-secondary font-mono">v3.2</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Dock Footer: Executive Profile -->
+<div class="pt-3 border-t border-outline-variant/30">
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container/50 hover:bg-surface-container transition-all duration-150 cursor-pointer border border-white/5">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover border border-primary/40 shadow-sm" data-alt="Close-up executive headshot portrait of Marcus Vance, an authoritative film studio creative director with styled dark hair and tailored charcoal suit, bathed in subtle indigo studio edge lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjdk1SrsntMymbBTSLmBbxri99lwhHhAL3v2AFkbs_T-5LAxlRaphw9BD_i4f13_e-dz33E_JTllzqLaABrMQ35EN9eV8VyVGgAqB3zG0NRNPivLA_ehW7anprNRoZAQ-U0LgU0CwCVnWGKAxiBFa42FUzHy47N-JtpKlnFEeuueEtlpu_JzK-oPYsVoumU2XfKs43vY0vIfSdHyPDgfBSEEtFc1BSM-i5csvH6hNWAhae4ewaqhu3Ff1vNW9M77hPBTR999cUFZ9T"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-surface-container-low ring-1 ring-emerald-500/50"></span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-body-sm font-headline-sm text-on-surface truncate">Marcus Vance</span>
+<span class="text-label-sm font-label-sm text-outline truncate">Executive Producer</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-on-surface text-lg" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- MAIN APP CANVAS CONTAINER (ml-64 offset for fixed dock) -->
+<div class="flex flex-col flex-1 ml-64 h-screen overflow-hidden bg-[#0c0d12]">
+<!-- SHARED COMPONENT: TopNavBar (Executive Cockpit) -->
+<header class="h-14 z-30 flex items-center justify-between px-6 border-b border-outline-variant/20 bg-surface-container-low/70 backdrop-blur-2xl shrink-0">
+<!-- Left: Breadcrumb Context + Omnibox Search -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-body-sm font-body-sm">
+<span class="text-on-surface-variant hover:text-on-surface transition-colors">Tasks</span>
+<span class="text-outline/60">/</span>
+<span class="text-on-surface font-headline-sm flex items-center gap-1.5">
+<span>Sprint 24</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+</span>
+</div>
+<!-- Omnibox Search -->
+<div class="relative hidden lg:block w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-base" data-icon="search">search</span>
+<input class="w-full h-8 pl-9 pr-14 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/40 text-on-surface text-body-sm placeholder:text-outline focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/40 transition-all" placeholder="Search tasks, reels, shots..." type="text"/>
+<kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-high border border-outline-variant/50 text-[10px] font-mono text-outline">⌘K</kbd>
+</div>
+</div>
+<!-- Right: Actions, Live Timer Pill, Notifications, Settings -->
+<div class="flex items-center gap-3">
+<!-- Trailing Primary Action: Live REC Timer Pill -->
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-body-sm shadow-sm shadow-emerald-950/20">
+<span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+<span class="font-mono text-xs font-semibold tracking-wider">REC 01:24:08</span>
+</div>
+<!-- Global Action -->
+<button class="flex items-center gap-1.5 h-8 px-3 rounded-lg bg-primary text-on-primary-container font-headline-sm text-body-sm hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-base font-bold" data-icon="add">add</span>
+<span>Create</span>
+</button>
+<div class="h-4 w-px bg-outline-variant/40 mx-1"></div>
+<!-- Trailing Icon Actions -->
+<button class="relative w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-low"></span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="tune">tune</span>
+</button>
+<div class="w-7 h-7 rounded-full overflow-hidden border border-outline-variant/50 ml-1">
+<img class="w-full h-full object-cover" data-alt="Portrait of Marcus Vance in an executive cinematic production environment with high-end monitors and lighting consoles blurred softly in dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABngCgu4qnRTd87NtV9jzKNFrQjb2xz44_VAmb9ahygAYCNnNu7xQnDvwiye9AjEJTzIMUvlsi_JXwhOoa7NKEVI1xf0H6P0j2m9sCmwtgE2dKbrO_84_SyLyDA2xBEIVVEoI-ScePwGJD3DVGFIEEZh-FeSPkYapj97pzSMop3zGKgVUyecTtCCDAGYrz9NjQ2tTTzooAXX69w0dckvGuRd9z3cFm3dmEtXhNcx4o8yFP3vfaec81zZXssNIW6igQFAtgr-_W-2bh"/>
+</div>
+</div>
+</header>
+<!-- SUB-HEADER / SPRINT TELEMETRY CONTROLS -->
+<section class="px-6 py-4 border-b border-outline-variant/20 bg-surface-container-lowest/60 shrink-0">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Left: Title, Status, Sprint Metrics -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Tasks Studio</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 text-label-md font-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                Sprint 24 · Active
+              </span>
+</div>
+<p class="text-body-sm font-body-sm text-outline flex items-center gap-2">
+<span>Oct 14 – Oct 28</span>
+<span class="text-outline/40">•</span>
+<span class="text-on-surface-variant font-medium">5 days remaining</span>
+<span class="text-outline/40">•</span>
+<span class="text-primary font-medium">72% completed (32/44 Story Pts)</span>
+</p>
+</div>
+<!-- Right: Segmented View Switcher & Action Controls -->
+<div class="flex items-center gap-3">
+<!-- View Mode Switcher -->
+<div class="flex items-center p-0.5 rounded-lg bg-surface-container-high/80 border border-outline-variant/40">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface-container text-on-surface text-body-sm font-headline-sm shadow-sm border border-white/5">
+<span class="material-symbols-outlined text-base text-primary" data-icon="view_kanban">view_kanban</span>
+<span>Kanban Board</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface text-body-sm transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="table_rows">table_rows</span>
+<span>List Table</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface text-body-sm transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="calendar_month">calendar_month</span>
+<span>Sprint Calendar</span>
+</button>
+</div>
+<!-- Sprint Settings Icon -->
+<button class="w-9 h-9 rounded-lg border border-outline-variant/40 bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="settings">settings</span>
+</button>
+<!-- Add Task Primary Button -->
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-headline-sm text-body-sm shadow-md shadow-indigo-950/40 border border-white/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-base font-bold" data-icon="add">add</span>
+<span>Add Task</span>
+</button>
+</div>
+</div>
+<!-- QUICK FILTER BAR -->
+<div class="flex items-center justify-between gap-3 mt-4 pt-3 border-t border-outline-variant/15 overflow-x-auto custom-scrollbar">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-outline uppercase tracking-wider mr-1">Filters:</span>
+<!-- Assigned to Me (Active Pill) -->
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/30 border border-secondary/50 text-secondary font-headline-sm text-body-sm shadow-sm shadow-indigo-950/20">
+<span class="material-symbols-outlined text-xs" data-icon="person">person</span>
+<span>Assigned to Me</span>
+</button>
+<!-- Due in 48h -->
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface-variant text-body-sm transition-colors">
+<span>Due in 48h</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-[10px] font-mono text-on-surface font-semibold">4</span>
+</button>
+<!-- In Review / Client Sign-off -->
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface-variant text-body-sm transition-colors">
+<span>In Review / Client Sign-off</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-[10px] font-mono text-on-surface font-semibold">3</span>
+</button>
+<!-- Urgent / Blocker (Warning Tint) -->
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-950/25 hover:bg-rose-950/40 border border-rose-500/40 text-rose-300 text-body-sm transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+<span>Urgent / Blocker</span>
+<span class="px-1.5 py-0.2 rounded-full bg-rose-900/60 text-[10px] font-mono text-rose-200 font-bold">2</span>
+</button>
+<!-- Filter by Project Dropdown -->
+<button class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface text-body-sm transition-colors">
+<span class="text-outline">Project:</span>
+<span class="font-medium text-primary">Nike SS27</span>
+<span class="material-symbols-outlined text-sm text-outline" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-outline text-body-sm shrink-0">
+<span class="material-symbols-outlined text-base cursor-pointer hover:text-on-surface" data-icon="swap_vert">swap_vert</span>
+<span>Sort by Priority</span>
+</div>
+</div>
+</section>
+<!-- MAIN CONTENT: 4-COLUMN KANBAN BOARD + CONTEXTUAL INSPECTION DRAWER -->
+<main class="flex flex-1 overflow-hidden relative">
+<!-- KANBAN BOARD VIEWPORT -->
+<div class="flex-1 overflow-x-auto overflow-y-hidden p-6 custom-scrollbar">
+<div class="grid grid-cols-4 gap-5 min-w-[1180px] h-full pb-4">
+<!-- ================= COLUMN 1: TO DO ================= -->
+<div class="flex flex-col h-full rounded-2xl bg-surface-container-low/40 border border-outline-variant/20 p-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface tracking-tight">TO DO</h3>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-outline font-mono text-label-sm">6</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm text-outline">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+<span>18h est</span>
+</div>
+</div>
+<!-- Column Cards Container -->
+<div class="flex-1 overflow-y-auto space-y-3 pr-1 custom-scrollbar">
+<!-- Card 1.1 -->
+<div class="glass-card rounded-xl p-3.5 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">Nike SS27</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/25">MEDIUM</span>
+</div>
+<h4 class="text-body-md font-headline-sm text-on-surface mb-3 line-clamp-2">Color grade outdoor drone b-roll</h4>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-body-sm text-outline">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-xs">
+<span class="material-symbols-outlined text-xs" data-icon="checklist">checklist</span>
+<span>0/3</span>
+</div>
+<div class="flex items-center gap-1 text-xs">
+<span class="material-symbols-outlined text-xs" data-icon="calendar_today">calendar_today</span>
+<span>Oct 26</span>
+</div>
+</div>
+<img class="w-6 h-6 rounded-full object-cover border border-white/20" data-alt="Portrait avatar of Sarah Connor, senior aerial cinematographer and drone pilot with headlamp, cinematic amber rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvRMaiDpvRJZF9wXT2rGUT2G9BEZQRD6ubLsuElBhPdPgpmKqj7vo-op-6cnubX_Xsq3E2tUxjaiv2oO1uBc_gRjs7zN3Ho184ixbdiG2fhjCGwiUJ1fqum8in0S_9pELP5PsLzhEElt1PTAVxNcJ4dtOiNFcmq1-GOLJOzR48zX6mDdOdri6-MdzzVtqBBvjKzExKBW4eArmABsCWcgzu06TqEomNr7KKKTqJ1UO7W7OaPKMnzhhofLIq_jPKLbASSx37bNKmcVPz"/>
+</div>
+</div>
+<!-- Card 1.2 -->
+<div class="glass-card rounded-xl p-3.5 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">Sony FX6</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-orange-500/15 text-orange-300 border border-orange-500/30">HIGH</span>
+</div>
+<h4 class="text-body-md font-headline-sm text-on-surface mb-3 line-clamp-2">Export 4K ProRes master for Tokyo team</h4>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-body-sm text-outline">
+<div class="flex items-center gap-2 text-xs">
+<span class="material-symbols-outlined text-xs" data-icon="calendar_today">calendar_today</span>
+<span>Oct 25</span>
+</div>
+<img class="w-6 h-6 rounded-full object-cover border border-white/20" data-alt="Portrait avatar of Elena Rostova, lead color scientist and 3D technical director, sharp studio neon lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcsM-pA3DBJr700rNEJ7AgeLA1b13GtpnQPH3jFuHiQwRcy_WSWqi-qh2lBH5VRi1G00mdEusNdpSf4aQ_7XdH26ZTKMS5QRHfJsklPym018HuFTzYN-zyiq4FrGw-KfzlDD63jJWSx4fVdtzUDZjSbMJLvHNzqWDcriLczJPisLkosD8rg2zIFva1iBnosjKGJcywOqgGqwHIHAAZ9WjmlqLCkFtfljWyBY92Rb5vcQG3-B7SQRxZ_33y2SL3Lm-GqMQHx3LztC7w"/>
+</div>
+</div>
+<!-- Card 1.3 -->
+<div class="glass-card rounded-xl p-3.5 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-surface-container-highest text-on-surface-variant border border-outline-variant/40">Apex Global</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-container-high text-outline border border-outline-variant/20">NORMAL</span>
+</div>
+<h4 class="text-body-md font-headline-sm text-on-surface mb-3 line-clamp-2">Prep lighting setup for Stage 4 turntable</h4>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-body-sm text-outline">
+<div class="flex items-center gap-1 text-xs">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+<span>Est 4h</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-indigo-900 flex items-center justify-center text-[10px] font-bold text-indigo-200 border border-indigo-500/30">MC</div>
+</div>
+</div>
+<!-- Ghost New Task Slot -->
+<button class="w-full py-2.5 rounded-xl border border-dashed border-outline-variant/40 text-outline hover:text-on-surface hover:border-outline hover:bg-surface-container/30 flex items-center justify-center gap-2 text-body-sm transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>Add item</span>
+</button>
+</div>
+</div>
+<!-- ================= COLUMN 2: IN PROGRESS ================= -->
+<div class="flex flex-col h-full rounded-2xl bg-surface-container-low/40 border border-outline-variant/20 p-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface tracking-tight">IN PROGRESS</h3>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/40 text-secondary font-mono text-label-sm font-semibold">5</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="timelapse">timelapse</span>
+<span>24h active</span>
+</div>
+</div>
+<!-- Column Cards Container -->
+<div class="flex-1 overflow-y-auto space-y-3 pr-1 custom-scrollbar">
+<!-- Card 2.1 (ACTIVE & SELECTED WITH TIMER) -->
+<div class="glass-card rounded-xl p-3.5 border-2 border-primary/70 ring-2 ring-primary/20 shadow-xl bg-surface-container/90 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">Sony FX6</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/40">URGENT</span>
+</div>
+<h4 class="text-body-md font-headline-sm text-on-surface mb-2 font-semibold">Sony Venice Commercial · Color Grading Suite 4</h4>
+<!-- Active Stopwatch Pill -->
+<div class="flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 my-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+<span class="font-mono text-xs font-bold text-emerald-300">01:24:08</span>
+</div>
+<span class="text-[10px] font-medium text-emerald-400">Suite 4 / DaVinci</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/30 text-body-sm text-outline">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-[10px] text-on-surface-variant font-mono">TASK-8492</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-on-surface-variant font-medium">Marcus V.</span>
+<img class="w-6 h-6 rounded-full object-cover border border-primary" data-alt="Portrait headshot avatar of Marcus Vance, lead executive colorist with headphones in a dark grading suite with DaVinci Resolve panels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvkt4WOPrrE84wqGSmmap-6LqFW2boC-nn9qPv7JZwq_0L_7dkiXEs0wV8U1sWVBivxEc---rfSS9ZL-QRwJ7Ty-dGC_dPgsIrIoucbTPJCUOUt_KrvxKUgaxN-Gq9LVJe9-v7YqYw9vClsx49S7NBzWIPpxBI8E_-OOWmITyMBVaH7WsxGN6__SM3VaT2COfH2vFM1KujwiPrJBOadGXS_DuPavNZiT5md0TMAEGZXA_cmHhZOVnwbXwM7VQukoIBcKRp8C1Sz_za"/>
+</div>
+</div>
+</div>
+<!-- Card 2.2 -->
+<div class="glass-card rounded-xl p-3.5 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-amber-500/15 text-amber-300 border border-amber-500/30">Red Bull Dailies</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-orange-500/15 text-orange-300 border border-orange-500/30">HIGH</span>
+</div>
+<h4 class="text-body-md font-headline-sm text-on-surface mb-2 line-clamp-2">Conform sound mix &amp; Foley stems</h4>
+<!-- Progress bar -->
+<div class="w-full my-2">
+<div class="flex justify-between text-[11px] text-outline mb-1 font-mono">
+<span>Progress</span>
+<span class="text-on-surface">75% (3/4)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-indigo-500 rounded-full w-3/4"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-body-sm text-outline">
+<span class="text-xs text-amber-300 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="alarm">alarm</span>
+                      Today 18:00
+                    </span>
+<div class="w-6 h-6 rounded-full bg-emerald-900 flex items-center justify-center text-[10px] font-bold text-emerald-200 border border-emerald-500/30">DK</div>
+</div>
+</div>
+<!-- Card 2.3 -->
+<div class="glass-card rounded-xl p-3.5 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">Nike SS27</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/25">MEDIUM</span>
+</div>
+<h4 class="text-body-md font-headline-sm text-on-surface mb-3 line-clamp-2">Dynamic chase sequence camera tracking</h4>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-body-sm text-outline">
+<div class="flex items-center gap-1 text-xs">
+<span class="material-symbols-outlined text-xs" data-icon="hub">hub</span>
+<span>Blender / Nuke</span>
+</div>
+<img class="w-6 h-6 rounded-full object-cover border border-white/20" data-alt="Portrait of Elena Rostova with sleek dark hair and high-tech glasses, softly illuminated in cool cyan hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdH8LfAB3lz0hnuVSxSL5wXeRNT8_82Qr6_JRsE5VbV7Cx3qA7kJFAkGFZrPY0pk0hOnFt9_RZHZ09Ym-SdNZAXa_SD-Y3hcHG5CiKa9AnPNNs6ZMnuNtCpHaATnv7asJIaFYmuUf0Q4pq0A1ELtTCKBJWhj94ySiCHSPqA8RAqJH3e81uJzOU6ahcZxwZ2AI6gD-dmF18nqAwIH8pdA6mVR5rdtWxrZ76vThXXe20yzU-pin7PCW-lTEHYT3saBuAlVVwAxzn6f3q"/>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= COLUMN 3: IN REVIEW ================= -->
+<div class="flex flex-col h-full rounded-2xl bg-surface-container-low/40 border border-outline-variant/20 p-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface tracking-tight">IN REVIEW</h3>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-outline font-mono text-label-sm">4</span>
+</div>
+<span class="text-label-sm text-secondary font-medium">Needs Sign-off</span>
+</div>
+<!-- Column Cards Container -->
+<div class="flex-1 overflow-y-auto space-y-3 pr-1 custom-scrollbar">
+<!-- Card 3.1 -->
+<div class="glass-card rounded-xl p-3.5 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">Nike SS27</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-orange-500/15 text-orange-300 border border-orange-500/30">HIGH</span>
+</div>
+<h4 class="text-body-md font-headline-sm text-on-surface mb-2 line-clamp-2">VFX 3D composite on shoe splash</h4>
+<div class="flex flex-wrap gap-1.5 mb-3">
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/40 text-secondary text-[10px] font-mono border border-secondary/30">VFX Shot 04</span>
+<span class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 text-[10px] border border-amber-500/30 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                      Client Review Required
+                    </span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-body-sm text-outline">
+<div class="flex items-center gap-1 text-xs">
+<span class="material-symbols-outlined text-xs" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+<span>5 comments</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-purple-900 flex items-center justify-center text-[10px] font-bold text-purple-200 border border-purple-500/30">ML</div>
+</div>
+</div>
+<!-- Card 3.2 -->
+<div class="glass-card rounded-xl p-3.5 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-teal-500/15 text-teal-300 border border-teal-500/30">Aura FinTech</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/25">MEDIUM</span>
+</div>
+<h4 class="text-body-md font-headline-sm text-on-surface mb-3 line-clamp-2">Audio master loudnorm check (-14 LUFS)</h4>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-body-sm text-outline">
+<div class="flex items-center gap-1 text-xs">
+<span class="material-symbols-outlined text-xs" data-icon="graphic_eq">graphic_eq</span>
+<span>Stereo Final</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-sky-900 flex items-center justify-center text-[10px] font-bold text-sky-200 border border-sky-500/30">JL</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= COLUMN 4: DONE ================= -->
+<div class="flex flex-col h-full rounded-2xl bg-surface-container-low/40 border border-outline-variant/20 p-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface tracking-tight">DONE</h3>
+<span class="px-2 py-0.5 rounded-md bg-emerald-950/40 text-emerald-300 font-mono text-label-sm font-semibold">7</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm text-emerald-400">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+<span>32h delivered</span>
+</div>
+</div>
+<!-- Column Cards Container -->
+<div class="flex-1 overflow-y-auto space-y-3 pr-1 custom-scrollbar">
+<!-- Card 4.1 -->
+<div class="glass-card rounded-xl p-3.5 opacity-80 hover:opacity-100 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">Nike SS27</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]" data-icon="done_all">done_all</span>
+                      COMPLETED
+                    </span>
+</div>
+<h4 class="text-body-md font-headline-sm text-outline line-through mb-3 line-clamp-2">Storyboards and shotlist sign-off</h4>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-body-sm text-outline">
+<span class="text-[11px] text-emerald-400">Signed by Director</span>
+<img class="w-6 h-6 rounded-full object-cover border border-emerald-500/40" data-alt="Portrait thumbnail of Marcus Vance in commercial film executive suit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnMNRTbPbw2agZKXooW_SCCl361qTAt0ezgIc8BJYna_ODvvPas7f0W92vQi0hKAdecGVfD3wFUWe0ylFiNH0S83x89gMIrFvbkUpUoH9axZKRLh2Yxj8K0yR9mAXrOSzAz3zIfM4_NbTMBgf4zGjqVDGiQlQ4OUwKzdohDk_Q31ms9fSZ2m6xoZts-G39Cfx_1r4XfGht6qIhfEwG05dT9CjjkOzw4t9qbqfT82-QFzdTxk9Nya0aQ1yqhEa1nhUz5C9I2b4HcHwm"/>
+</div>
+</div>
+<!-- Card 4.2 -->
+<div class="glass-card rounded-xl p-3.5 opacity-80 hover:opacity-100 transition-all duration-150 cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">Sony FX6</span>
+<span class="material-symbols-outlined text-emerald-400 text-sm" data-icon="check_circle">check_circle</span>
+</div>
+<h4 class="text-body-md font-headline-sm text-on-surface mb-3 line-clamp-2">Dailies ingest from ARRI Alexa 35 card</h4>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-body-sm text-outline">
+<span class="text-[10px] text-outline">Completed today 11:30 AM</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-[10px] font-mono text-outline">1.2 TB</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= SLIDE-OVER CONTEXTUAL INSPECTION DRAWER (Right 460px Panel) ================= -->
+<aside class="w-[460px] h-full shrink-0 border-l border-outline-variant/30 bg-surface-container-lowest/90 backdrop-blur-2xl flex flex-col shadow-2xl z-20">
+<!-- Drawer Header -->
+<div class="p-5 border-b border-outline-variant/20 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-body-sm text-outline">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-mono text-xs text-primary font-semibold">TASK-8492</span>
+<span>/</span>
+<span class="text-on-surface-variant font-medium">Sony FX6 Media Launch</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="share">share</span>
+</button>
+<button class="w-7 h-7 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="more_horiz">more_horiz</span>
+</button>
+<button class="w-7 h-7 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors ml-1">
+<span class="material-symbols-outlined text-base" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Task Title -->
+<h2 class="text-headline-md font-headline-md text-on-surface font-semibold tracking-tight">
+              Sony Venice Commercial · Color Grading Suite 4
+            </h2>
+<!-- Quick Status & Priority Controls -->
+<div class="flex items-center gap-3 pt-1">
+<button class="flex items-center gap-2 px-3 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/40 text-on-surface text-body-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+<span class="font-headline-sm text-xs font-semibold">IN PROGRESS</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="expand_more">expand_more</span>
+</button>
+<span class="px-2.5 py-1 rounded-md bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="flag">flag</span>
+                URGENT
+              </span>
+</div>
+</div>
+<!-- Drawer Scrollable Content -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-5 space-y-6">
+<!-- Active Live Timer Control Dock -->
+<div class="rounded-xl p-3.5 bg-gradient-to-r from-emerald-950/30 to-surface-container border border-emerald-500/30 flex items-center justify-between shadow-lg shadow-emerald-950/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+<span class="material-symbols-outlined text-lg" data-icon="timer">timer</span>
+</div>
+<div>
+<div class="font-mono text-base font-bold text-emerald-300">01:24:08</div>
+<div class="text-[10px] text-outline uppercase tracking-wider">Active DaVinci Session</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm font-medium border border-outline-variant/40 transition-colors">
+                  Pause
+                </button>
+<button class="px-3 py-1 rounded-md bg-emerald-500 hover:bg-emerald-400 text-surface-container-lowest text-body-sm font-semibold transition-colors shadow-sm">
+                  Log Time
+                </button>
+</div>
+</div>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-2 gap-4 py-2 border-y border-outline-variant/20">
+<!-- Assignee -->
+<div class="flex flex-col gap-1.5">
+<span class="text-label-sm font-label-sm text-outline uppercase">Assignee</span>
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover border border-primary/40" data-alt="Marcus Vance executive avatar, clean cinematic keylight portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhSlAThvo5F4ZB6To8LTl_u7jtrKrOYFSoXuYKIIw9o4FW1HWoeh35kQ0DalqYvPxzcuHqBqu3ucbg8YcpFQtT6WWsnd6Rv77P4dMdkv6CSquFgQ5FQVsToxvBw2iWTwU8sPmvuBeO4NPhyxCA03kD7ltEOBOBRuxk4Y86XAHLqnPK9W0XcM6hA4cXBSdjvy8mBnkFkD5duyAFRPosGd2fsKrlwtZuOViA74QI_sEiRhG4KVKsZEIC4Hckf46OpanG-_lKy1o6DIH8"/>
+<div class="flex flex-col">
+<span class="text-body-sm font-headline-sm text-on-surface">Marcus Vance</span>
+<span class="text-[10px] text-outline">Lead Colorist</span>
+</div>
+</div>
+</div>
+<!-- Due Date -->
+<div class="flex flex-col gap-1.5">
+<span class="text-label-sm font-label-sm text-outline uppercase">Due Date</span>
+<div class="flex items-center gap-1.5 text-body-sm font-headline-sm text-amber-300">
+<span class="material-symbols-outlined text-sm" data-icon="event">event</span>
+<span>Tomorrow, Oct 25 · 17:00</span>
+</div>
+</div>
+<!-- Project & Milestone -->
+<div class="flex flex-col gap-1.5 col-span-2">
+<span class="text-label-sm font-label-sm text-outline uppercase">Milestone Target</span>
+<div class="flex items-center gap-2 text-body-sm text-on-surface">
+<span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 font-medium text-xs">Sony FX6</span>
+<span class="text-outline">›</span>
+<span class="font-medium text-on-surface-variant">Milestone 2: Director's Cut Deliverable</span>
+</div>
+</div>
+</div>
+<!-- Media Production Custom Fields -->
+<div class="space-y-3">
+<h4 class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Cinematic Master Specs</h4>
+<div class="grid grid-cols-2 gap-2.5">
+<div class="p-2.5 rounded-lg bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="text-[10px] text-outline uppercase">Camera Format</span>
+<span class="font-mono text-body-sm text-on-surface font-medium">X-OCN 6K Raw</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="text-[10px] text-outline uppercase">Color Space</span>
+<span class="font-mono text-body-sm text-on-surface font-medium">S-Log3 / S-Gamut3.Cine</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="text-[10px] text-outline uppercase">Deliverable Spec</span>
+<span class="font-mono text-body-sm text-primary font-medium">DCI 4K Flat (ACEScg 1.3)</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="text-[10px] text-outline uppercase">Grading Suite</span>
+<span class="font-mono text-body-sm text-on-surface font-medium">Suite 4 (Barco HDR)</span>
+</div>
+</div>
+</div>
+<!-- Subtasks / Checklist -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<h4 class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Subtasks (2/3 completed)</h4>
+<button class="text-xs text-primary hover:underline">+ Add subtask</button>
+</div>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2 rounded-lg bg-surface-container/40 hover:bg-surface-container transition-colors cursor-pointer border border-white/5">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest border-outline-variant/50 text-indigo-500 focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-sm text-outline line-through">Base primary grade balance &amp; exposure matching</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg bg-surface-container/40 hover:bg-surface-container transition-colors cursor-pointer border border-white/5">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest border-outline-variant/50 text-indigo-500 focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-sm text-outline line-through">Highlight recovery on exterior sun flare shots</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg bg-surface-container/40 hover:bg-surface-container transition-colors cursor-pointer border border-white/5">
+<input class="w-4 h-4 rounded bg-surface-container-highest border-outline-variant/50 text-indigo-500 focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-sm text-on-surface font-medium">Skin tone qualify and conform on hero talent</span>
+</label>
+</div>
+</div>
+<!-- Activity Tabs & Live Feed -->
+<div class="space-y-4 pt-2">
+<!-- Tabs -->
+<div class="flex border-b border-outline-variant/20 gap-4 text-body-sm">
+<button class="pb-2 text-outline hover:text-on-surface font-medium">Details</button>
+<button class="pb-2 text-primary border-b-2 border-primary font-headline-sm flex items-center gap-1.5">
+<span>Activity &amp; Comments</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-container/50 text-[10px] text-secondary font-mono">4</span>
+</button>
+<button class="pb-2 text-outline hover:text-on-surface font-medium">Work Logs</button>
+</div>
+<!-- Comment Stream -->
+<div class="space-y-4">
+<!-- Comment 1 -->
+<div class="flex gap-3">
+<img class="w-7 h-7 rounded-full object-cover shrink-0 border border-white/20" data-alt="Portrait photo of Elena Rostova, senior visual effects supervisor in film production studio, cool toned lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD98_jIDL-WStwUGHpW8Hm_Qufj-QZewGGktk1EI2dgFk9WBe604lfo5Gg7efQ4adEeyCgoKyR2G-oL9l0wEXctx2DIxX_YAaJ0iaZ5RQouoqrVX_wkyJH2c5E9zzKdHm_cfJHUu0-_BMRNyGirbY0cfaOeJvyL42Q2tFEf_FYbl6ULGRJhwKM6KQtu55IRJGqR9sBiwCBl2pQ1kWRH3mGHMNuwHqHJsw-86PHsoqbYpxmVYLzVApVw88h_e8iuYDbLBQEKb3bHxLnv"/>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex items-center justify-between">
+<span class="text-body-sm font-headline-sm text-on-surface">Elena Rostova</span>
+<span class="text-[10px] text-outline">20m ago</span>
+</div>
+<p class="text-body-sm text-on-surface-variant p-2.5 rounded-lg bg-surface-container/60 border border-white/5">
+                      Uploaded v2.4 4K master grade with ACES gamut conform. Ready for client review in DaVinci cloud.
+                    </p>
+</div>
+</div>
+<!-- Comment 2 -->
+<div class="flex gap-3">
+<img class="w-7 h-7 rounded-full object-cover shrink-0 border border-white/20" data-alt="Portrait photo of Alexander Vance, senior commercial executive producer and studio managing partner in dark obsidian suite." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVTWLFrOvJoKhS7DbMf7hLmAUFaeZtm4yYy57M5ZvMhsCu2Mj9CW5dN-kdJauCqoPEY54vEBEwHuLKdbwOBPKrxE8-Bbj_Z9SeVh7vtrNtHWJ9eckrUP60RIa11kkcX_cw1WRystNy8naZjpVh_yY1Vb3Cl9K2sA2eALHdRw4vOoWp3HRThDgVXah-0MQ-pC_eO7-MM4RL9oDJ1jJrX2yESoZSS5_ArIFr1BpGnJwJnOQaNbaHFUl_atT7KLD-36-CknX59Ws3A1r6"/>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex items-center justify-between">
+<span class="text-body-sm font-headline-sm text-on-surface">Alexander Vance</span>
+<span class="text-[10px] text-outline">10m ago</span>
+</div>
+<p class="text-body-sm text-on-surface-variant p-2.5 rounded-lg bg-surface-container/60 border border-white/5">
+                      Sheen looks immaculate on rim light. Let's finish skin qualifiers before 5 PM Tokyo sync.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer: Comment Composer -->
+<div class="p-4 border-t border-outline-variant/20 bg-surface-container-low/70">
+<div class="rounded-xl border border-outline-variant/40 bg-surface-container-lowest p-2.5 focus-within:border-primary/60 transition-all">
+<textarea class="w-full bg-transparent border-0 p-0 text-on-surface placeholder:text-outline/60 text-body-sm focus:ring-0 resize-none" placeholder="Write a comment or type @ to mention..." rows="2"></textarea>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/15">
+<div class="flex items-center gap-1 text-outline">
+<button class="w-6 h-6 rounded flex items-center justify-center hover:text-on-surface hover:bg-surface-container">
+<span class="material-symbols-outlined text-sm" data-icon="attach_file">attach_file</span>
+</button>
+<button class="w-6 h-6 rounded flex items-center justify-center hover:text-on-surface hover:bg-surface-container">
+<span class="material-symbols-outlined text-sm" data-icon="alternate_email">alternate_email</span>
+</button>
+<button class="w-6 h-6 rounded flex items-center justify-center hover:text-on-surface hover:bg-surface-container">
+<span class="material-symbols-outlined text-sm" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono text-outline">⌘ + Enter</span>
+<button class="px-2.5 py-1 rounded-md bg-primary hover:bg-primary-fixed text-on-primary-container text-xs font-semibold transition-colors">
+                    Send
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</main>
+</div>
+</div>
+</body></html>

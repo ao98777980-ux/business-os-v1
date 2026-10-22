@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>003VXA / BusinessOS - Media Production Operations Studio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed": "#e9ddff",
+            "surface-container": "#1f1f28",
+            "secondary-container": "#571bc1",
+            "on-error": "#690005",
+            "surface-container-low": "#1b1b23",
+            "surface-container-high": "#292932",
+            "on-secondary-fixed-variant": "#5516be",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#e4e1ed",
+            "surface-tint": "#c0c1ff",
+            "outline-variant": "#464554",
+            "error-container": "#93000a",
+            "on-secondary": "#3c0091",
+            "background": "#13131b",
+            "on-tertiary-fixed": "#001e2c",
+            "on-tertiary-container": "#002d40",
+            "secondary-fixed-dim": "#d0bcff",
+            "primary-fixed": "#e1e0ff",
+            "tertiary-container": "#009bd1",
+            "surface-bright": "#393842",
+            "surface-container-lowest": "#0d0d16",
+            "on-secondary-fixed": "#23005c",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "outline": "#908fa0",
+            "inverse-primary": "#494bd6",
+            "tertiary": "#7bd0ff",
+            "surface": "#13131b",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "tertiary-fixed": "#c4e7ff",
+            "surface-dim": "#13131b",
+            "secondary": "#d0bcff",
+            "error": "#ffb4ab",
+            "on-primary": "#1000a9",
+            "surface-variant": "#34343d",
+            "primary": "#c0c1ff",
+            "surface-container-highest": "#34343d",
+            "on-surface-variant": "#c7c4d7",
+            "on-secondary-container": "#c4abff",
+            "on-background": "#e4e1ed",
+            "on-tertiary": "#00354a",
+            "on-primary-fixed": "#07006c",
+            "inverse-on-surface": "#302f39",
+            "on-primary-container": "#0d0096",
+            "on-tertiary-fixed-variant": "#004c69",
+            "primary-container": "#8083ff",
+            "inverse-surface": "#e4e1ed",
+            "primary-fixed-dim": "#c0c1ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "metric-numeral-lg": ["Inter"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "label-sm": ["10px", {"lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+            "headline-sm": ["15px", {"lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+            "body-lg": ["15px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "headline-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+            "headline-xl": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-md": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-md": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "metric-numeral-sm": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500"}],
+            "headline-lg": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "metric-numeral-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(13, 13, 22, 0.4);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(70, 69, 84, 0.4);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(123, 208, 255, 0.4);
+    }
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printable-callsheet, #printable-callsheet * {
+        visibility: visible;
+      }
+      #printable-callsheet {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+        color: black !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- Ambient Obsidian / Indigo Field Lighting -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-primary-container/10 rounded-full blur-[140px]"></div>
+<div class="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-secondary-container/10 rounded-full blur-[160px]"></div>
+<div class="absolute -bottom-40 left-1/3 w-[700px] h-[700px] bg-tertiary-container/5 rounded-full blur-[180px]"></div>
+</div>
+<!-- 1. Left 240px Dock Sidebar (SideNavBar - Shared Component Exact Specs) -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-40 flex flex-col justify-between p-4 border-r border-outline-variant/30 bg-surface-container-low/80 backdrop-blur-2xl">
+<!-- Brand Anchor & Quick Create -->
+<div>
+<div class="flex items-center gap-3 px-2 py-1 mb-4">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest border border-outline-variant/40 flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-[20px]">movie</span>
+</div>
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface tracking-tight font-semibold">Vanguard Global</div>
+<div class="text-label-sm font-label-sm text-primary tracking-widest uppercase">Enterprise Tier</div>
+</div>
+</div>
+<!-- Primary Action CTA -->
+<button class="w-full mb-5 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-gradient-to-r from-primary-container to-inverse-primary text-on-primary font-headline-sm shadow-lg shadow-primary-container/25 border-t border-white/20 active:scale-[0.98] transition-transform duration-100">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Quick Create</span>
+</button>
+<!-- Navigation Tabs (JSON items: Overview, Tasks, Projects, CRM, Finance, Production, Campaigns, AI Assistant, Settings) -->
+<nav class="space-y-1">
+<!-- Overview -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 font-body-md active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- Tasks -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 font-body-md active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Tasks</span>
+</a>
+<!-- Projects -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 font-body-md active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[18px]">folder_special</span>
+<span>Projects</span>
+</a>
+<!-- CRM -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 font-body-md active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>CRM</span>
+</a>
+<!-- Finance -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 font-body-md active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>Finance</span>
+</a>
+<!-- Production (ACTIVE NAVIGATION ITEM) -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-surface-container-high text-primary font-headline-sm border-l-2 border-primary active:scale-[0.98] transition-transform duration-100 shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">movie</span>
+<span>Production</span>
+</div>
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+</a>
+<!-- Campaigns -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 font-body-md active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+<span>Campaigns</span>
+</a>
+<!-- AI Assistant -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 font-body-md active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>AI Assistant</span>
+</div>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary border border-outline-variant/30">v3.2</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 font-body-md active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Executive Profile Footer -->
+<div class="pt-3 border-t border-outline-variant/30">
+<div class="flex items-center gap-3 p-2 rounded-lg bg-surface-container/60 border border-outline-variant/20 hover:border-outline-variant/50 transition-colors">
+<div class="relative">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/40" data-alt="Marcus Vance, an executive creative director wearing sleek obsidian minimalist tailored apparel in a dark film studio environment with soft rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq1UdaAGzRfdPHacamzAzC744Hmu83VadCpMts8RgFHqazEkbbqHVzujuDVpYgEWIQ-T_p0lxvr19N2tPf1Vavayc_V8jH285nsV3MDfb113Yjrc1nrR8JD8DKdsUKKoig7Se52DNgIMvB5xSQtiW7h3msKl0KH_FaHxXYpJv-fAbYLguXjTwXic796PVxUP4ob8PD2RH9AC0wXAy5trA_wOFx8a8mZMquJf1PNZ1r01aU-fBtIQh8C4Ux3sD9axyhJnOPt1_p2lt0"/>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 border border-surface-container-low"></span>
+</div>
+<div class="overflow-hidden">
+<div class="text-body-sm font-headline-sm text-on-surface truncate font-medium">Marcus Vance</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant truncate">Executive Producer</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline ml-auto">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- 2. Sticky TopNavBar (Shared Component Executed) -->
+<header class="sticky top-0 right-0 h-16 z-30 flex items-center justify-between px-6 border-b border-outline-variant/20 bg-surface-container-low/70 backdrop-blur-2xl ml-64">
+<!-- Breadcrumb & Global Search -->
+<div class="flex items-center gap-5">
+<div class="flex items-center gap-2 text-label-md font-label-md">
+<span class="text-on-surface-variant hover:text-on-surface cursor-pointer">Production</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          Shoot Day Operations
+        </span>
+</div>
+<!-- Search Omnibox -->
+<div class="relative w-80 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest/80 border border-outline-variant/40 rounded-lg pl-9 pr-14 py-1.5 text-body-sm text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Omnibox search scenes, reels, crew, slate..." type="text"/>
+<kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 bg-surface-container-high px-1.5 py-0.5 rounded text-[10px] text-on-surface-variant border border-outline-variant/40 font-mono">⌘K</kbd>
+</div>
+</div>
+<!-- Right Cockpit Actions -->
+<div class="flex items-center gap-3">
+<!-- Live Stopwatch / REC indicator -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-rose-600"></span>
+</span>
+<span class="text-label-sm font-mono uppercase tracking-wider text-error">REC</span>
+<span class="text-body-sm font-mono font-medium text-on-surface">01:24:08</span>
+</div>
+<!-- Primary Action -->
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-headline-sm text-body-sm hover:bg-primary-fixed-dim active:scale-[0.97] transition-all duration-150">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Create</span>
+</button>
+<!-- Quick Action Icons -->
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors active:scale-[0.97]">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary border border-surface-container-low"></span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors active:scale-[0.97]">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+<div class="h-5 w-px bg-outline-variant/30 mx-1"></div>
+<!-- Profile Avatar -->
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary font-medium cursor-pointer overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Marcus Vance close-up portrait with studio glasses and high-tech minimalist creative agency lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_bybpeyQuRfE6MKP7Zw6Z0-hIgZKBndhWzQUTe1JdQhg9odL6FN9DjubWGHP7JjP6rSNhtl8ypO2BdRLb3hxvYcNfVHjo6Id3d8ur7AvB-90sgzN35Vwc7fjFXD5iNVMuMH_S1Xt6_h6IXRbzfhxB1btStUjKa1kxpEYuCi6ga0Di3eLMoMTlwovTLAcPpPHbkmB_h9EKy7GrkKIpXrHxtgKLWWYyxHb62l5FfecmPJOt8H6WfJIQdYDe60vERU9AbhGc309WVD1P"/>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS AREA -->
+<main class="ml-64 p-6 space-y-6">
+<!-- 3. Page Header Section -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-2">
+<div>
+<div class="flex items-center gap-3">
+<h1 class="text-headline-xl font-headline-xl text-on-surface font-semibold tracking-tight">Media Production Studio</h1>
+<div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-label-sm font-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            LIVE ON LOCATION
+          </div>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<button class="flex items-center gap-2 text-body-sm font-body-md text-on-surface-variant bg-surface-container/60 hover:bg-surface-container border border-outline-variant/30 px-3 py-1.5 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-primary text-[18px]">videocam</span>
+<span class="text-on-surface font-medium">Nike SS27 Commercial Campaign</span>
+<span class="text-outline">·</span>
+<span class="text-tertiary">Day 2 of 5</span>
+<span class="material-symbols-outlined text-outline text-[16px]">expand_more</span>
+</button>
+<span class="text-label-sm font-mono text-outline-variant px-2 py-1 bg-surface-container-lowest rounded border border-outline-variant/20">SLATE: #082-C</span>
+</div>
+</div>
+<!-- Primary Action Bar -->
+<div class="flex items-center gap-2.5 flex-wrap">
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface font-headline-sm text-body-sm transition-all duration-150 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Add Shot</span>
+</button>
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface font-headline-sm text-body-sm transition-all duration-150 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">event</span>
+<span>Create Shoot Day</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-container to-inverse-primary text-on-primary font-headline-sm text-body-sm shadow-lg shadow-primary-container/20 border-t border-white/20 transition-all duration-150 active:scale-[0.98]" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Export Call Sheet PDF</span>
+</button>
+</div>
+</div>
+<!-- 4. Module Navigation Tabs -->
+<div class="flex items-center gap-2 border-b border-outline-variant/20 pb-3 overflow-x-auto custom-scrollbar">
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-high text-primary font-headline-sm text-body-sm border border-outline-variant/40 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span>Shoot Days &amp; Call Sheets</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all text-body-sm font-body-md">
+<span class="material-symbols-outlined text-[18px]">view_timeline</span>
+<span>Shot List &amp; Scenes</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all text-body-sm font-body-md">
+<span class="material-symbols-outlined text-[18px]">cloud_upload</span>
+<span>Media Ingest &amp; Dailies</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all text-body-sm font-body-md">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>Productions &amp; Budgets</span>
+</button>
+</div>
+<!-- 5. 4 Production KPI Metrics Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metric 1 -->
+<div class="p-4 rounded-xl bg-surface-container-low/60 border border-outline-variant/25 backdrop-blur-xl relative overflow-hidden group hover:border-outline-variant/50 transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">
+<span>Shoot Days Active</span>
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_today</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface font-semibold">4</span>
+<span class="text-label-sm font-label-sm text-emerald-400 flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> On Track
+          </span>
+</div>
+<div class="mt-2 text-body-sm font-body-sm text-outline flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          2 on location, 2 soundstage
+        </div>
+<div class="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-primary to-transparent opacity-40"></div>
+</div>
+<!-- Metric 2 -->
+<div class="p-4 rounded-xl bg-surface-container-low/60 border border-outline-variant/25 backdrop-blur-xl relative overflow-hidden group hover:border-outline-variant/50 transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">
+<span>Crew Confirmation</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-amber-500/10 text-amber-300 border border-amber-500/20 font-mono">1 Pending</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface font-semibold">96%</span>
+<span class="text-body-sm font-mono text-outline">24/25 calls</span>
+</div>
+<!-- Progress bar -->
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-gradient-to-r from-emerald-500 to-tertiary h-full rounded-full" style="width: 96%"></div>
+</div>
+<div class="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-emerald-400 to-transparent opacity-40"></div>
+</div>
+<!-- Metric 3 -->
+<div class="p-4 rounded-xl bg-surface-container-low/60 border border-outline-variant/25 backdrop-blur-xl relative overflow-hidden group hover:border-outline-variant/50 transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">
+<span>Dailies Ingested</span>
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface font-semibold">4.2 TB</span>
+<span class="text-label-sm font-mono text-emerald-400">100% Checksum</span>
+</div>
+<div class="mt-2 text-body-sm font-body-sm text-outline truncate">
+          ProRes 4444 XQ proxies verified
+        </div>
+<div class="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-tertiary to-transparent opacity-40"></div>
+</div>
+<!-- Metric 4 -->
+<div class="p-4 rounded-xl bg-surface-container-low/60 border border-outline-variant/25 backdrop-blur-xl relative overflow-hidden group hover:border-outline-variant/50 transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">
+<span>Gear Fleet Deployed</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">videocam</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface font-semibold font-mono">$240,500</span>
+</div>
+<div class="mt-2 text-body-sm font-body-sm text-outline truncate">
+          ARRI Alexa Mini LF + Cooke Anamorphic
+        </div>
+<div class="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-secondary to-transparent opacity-40"></div>
+</div>
+</div>
+<!-- 6. Main Cockpit Area (Split Grid with Slide-Over Drawer) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- Left / Center Operations Section (Span 8) -->
+<div class="xl:col-span-8 space-y-6" id="printable-callsheet">
+<!-- Call Sheet Banner Card -->
+<div class="p-5 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-xl shadow-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-outline-variant/20 pb-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">description</span>
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">Official Call Sheet #02 · Stage 4 Soundstage</h2>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Production: Nike SS27 "Electric Motion" · Stage 4 Main Rig &amp; Exterior Tank</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-tertiary font-mono text-label-sm border border-tertiary/20">CALL: 06:30 AM</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-emerald-400 font-mono text-label-sm border border-emerald-500/20">STATUS: SHOOTING</span>
+</div>
+</div>
+<!-- Vital Specs Ribbon -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 text-body-sm font-body-sm">
+<div class="p-2.5 rounded-lg bg-surface-container-lowest/60 border border-outline-variant/20">
+<div class="text-label-sm font-label-sm text-outline uppercase tracking-wider">General Call</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-mono mt-0.5">06:30 AM PST</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest/60 border border-outline-variant/20">
+<div class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Sun Phase</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-mono mt-0.5">06:48 / 18:14</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest/60 border border-outline-variant/20">
+<div class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Weather Conditions</div>
+<div class="text-headline-sm font-headline-sm text-on-surface mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-[16px]">wb_sunny</span> 68°F Clear
+              </div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest/60 border border-outline-variant/20">
+<div class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Nearest Trauma Center</div>
+<div class="text-body-sm font-body-sm text-rose-300 font-medium truncate mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_hospital</span> St. Jude Level 1 (9m)
+              </div>
+</div>
+</div>
+</div>
+<!-- High-Fidelity Production Shooting Schedule Timeline -->
+<div class="p-5 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-xl">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Shooting Schedule &amp; Slate Breakdown</h3>
+</div>
+<div class="text-label-sm font-label-sm text-outline-variant font-mono">ALL TIMES LOCAL (PST)</div>
+</div>
+<div class="space-y-3">
+<!-- Item 1: Breakfast -->
+<div class="flex items-start gap-4 p-3.5 rounded-xl bg-surface-container-lowest/40 border border-outline-variant/20">
+<div class="w-20 font-mono text-body-sm font-medium text-outline pt-0.5">07:00 AM</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-container text-on-surface-variant border border-outline-variant/30">BASECAMP</span>
+<span class="text-body-md font-headline-sm text-on-surface font-medium">Crew Breakfast &amp; Mandatory Safety Briefing</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1 flex items-center gap-3">
+<span>Location: Soundstage Annex 4B</span>
+<span>·</span>
+<span class="text-outline">Catering Truck Unit 01</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">done</span>
+</div>
+<!-- Item 2: Scene 14A (Active / In Progress) -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-primary-container/10 border-l-4 border-l-primary border-t border-r border-b border-primary/30 shadow-lg shadow-primary-container/5 relative overflow-hidden">
+<div class="w-20 font-mono text-body-sm font-bold text-primary pt-0.5">07:30 - 10:00</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-primary text-on-primary font-bold">SCENE 14A</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-semibold">Ext. Rain Courtyard - Hero Sprint Sequence</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> IN PROGRESS
+                  </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-2 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">videocam</span>
+<span>ARRI Mini LF · 24fps</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">precision_manufacturing</span>
+<span>TechnoCrane 30 Extension</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">water_drop</span>
+<span>Rain Rig Tank #2 Engaged</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: Scene 18 (Queued) -->
+<div class="flex items-start gap-4 p-3.5 rounded-xl bg-surface-container-lowest/50 border border-outline-variant/20 hover:border-outline-variant/40 transition-colors">
+<div class="w-20 font-mono text-body-sm text-on-surface-variant pt-0.5">10:30 - 13:00</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-container-high text-on-surface font-medium border border-outline-variant/30">SCENE 18</span>
+<span class="text-body-md font-headline-sm text-on-surface font-medium">Int. Loft Dialogue - Brand Narrative Exposition</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-surface-container text-outline font-mono">NEXT UP</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1 flex items-center gap-4">
+<span>Cooke 50mm Anamorphic</span>
+<span>·</span>
+<span>Steadicam Ultra Rig</span>
+<span>·</span>
+<span>Talent: J. Alvarez, S. Ward</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">hourglass_empty</span>
+</div>
+<!-- Item 4: Lunch -->
+<div class="flex items-start gap-4 p-3.5 rounded-xl bg-surface-container-lowest/30 border border-outline-variant/15">
+<div class="w-20 font-mono text-body-sm text-outline pt-0.5">13:00 - 14:00</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-container text-outline">MEAL</span>
+<span class="text-body-md font-headline-sm text-on-surface-variant">Company Lunch &amp; DIT Proxy Preview Reel</span>
+</div>
+<div class="text-body-sm font-body-sm text-outline mt-1">Catering Unit #2 · Production Pavillion</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">restaurant</span>
+</div>
+<!-- Item 5: Scene 22 High-Speed Phantom -->
+<div class="flex items-start gap-4 p-3.5 rounded-xl bg-surface-container-lowest/50 border border-outline-variant/20">
+<div class="w-20 font-mono text-body-sm text-on-surface-variant pt-0.5">14:30 - 18:00</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-container-high text-on-surface font-medium border border-outline-variant/30">SCENE 22</span>
+<span class="text-body-md font-headline-sm text-on-surface font-medium">High-Speed Water Impact Macro Shot</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-secondary-container/30 text-secondary border border-secondary/30 font-mono">1000 FPS</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1 flex items-center gap-4">
+<span>Phantom Flex 4K High-Speed</span>
+<span>·</span>
+<span>Bolt High-Speed Cinebot Motion Arm</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+</div>
+<!-- Item 6: Wrap -->
+<div class="flex items-start gap-4 p-3.5 rounded-xl bg-surface-container-lowest/30 border border-outline-variant/15">
+<div class="w-20 font-mono text-body-sm text-outline pt-0.5">18:30</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-container text-outline">WRAP</span>
+<span class="text-body-md font-headline-sm text-on-surface-variant">Estimated Camera Wrap &amp; Dailies Hand-off to QTAKE / DIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">flag</span>
+</div>
+</div>
+</div>
+<!-- Crew Department Roster & Call Times -->
+<div class="p-5 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-xl">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Crew Department Roster &amp; Confirmation Status</h3>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30 hover:text-on-surface">Filter Depts</button>
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30 hover:text-on-surface">Export CSV</button>
+</div>
+</div>
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/20 text-label-sm font-label-sm text-outline uppercase tracking-wider">
+<th class="py-2.5 px-3">Role &amp; Name</th>
+<th class="py-2.5 px-3">Call Time</th>
+<th class="py-2.5 px-3">Contact Direct</th>
+<th class="py-2.5 px-3">Confirmation Status</th>
+<th class="py-2.5 px-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15 text-body-sm font-body-sm">
+<!-- Row 1: Director -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="Maya Lin, an award-winning creative film director on a cinematic film set in low key obsidian lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6BoxXrWNT9h-TE8pxdKTyS2jX_4kPAf5rGVGyOc4zagXJBvxosa29dZdWaYMBcPGe3daAH4IsGRM-fMZazdIUQ1EcdLCdeqZvd7FNqDYs0UCxocsiQvAqAO_iW4QKv70ahnvxvFTO_NTJ2y91makol3L8dHxw3ZaRyur45vgZfucjf_qyMvLhYNDW4VYqmeuEx1cmt6DKPoe2fNFUzbsYqQxGr1Bep2HOV_fJa0G5a_B1j0SQryhX2R9pnfI4Bf7AHi0FgdRveL1X"/>
+<div>
+<div class="font-headline-sm text-on-surface font-medium">Maya Lin</div>
+<div class="text-label-sm text-tertiary">Director</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-mono font-medium text-on-surface">06:15 AM</td>
+<td class="py-3 px-3">
+<a class="text-on-surface-variant hover:text-primary font-mono text-[11px] flex items-center gap-1" href="tel:+13105550192">
+<span class="material-symbols-outlined text-[14px]">call</span> +1 (310) 555-0192
+                    </a>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> CONFIRMED VIA SMS
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</td>
+</tr>
+<!-- Row 2: DP / Cinematographer -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="Marcus Vance, lead director of photography checking camera monitors with cold blue backlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK4xw0yaY1CC3zdnMAPdU3whTxrv-XyeOOMtBIOjumwNq_AWvaL409ZlsqnFRF4rdV3HFnBgTK_JbVeAcs-v8fWVGJ7v-Et0Hxdh83AzsuqjK9gIS3Ui3tBM7cyDRQvnWxQNIOUxH5EaRhThI8pIG9l5VSMfFzwptcx_0esYga8J9KVBMms3uQ7plIrAlvTwPlXvb2B0CN79wYVeYKVYgEiK2GSq1cr9Yq2poOh-cVO7LSbbCvaJZq7zXTVvWe-VeePCZLCE7HRXZO"/>
+<div>
+<div class="font-headline-sm text-on-surface font-medium">Marcus Vance</div>
+<div class="text-label-sm text-secondary">Director of Photography</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-mono font-medium text-on-surface">06:00 AM</td>
+<td class="py-3 px-3">
+<a class="text-on-surface-variant hover:text-primary font-mono text-[11px] flex items-center gap-1" href="tel:+13105550882">
+<span class="material-symbols-outlined text-[14px]">call</span> +1 (310) 555-0882
+                    </a>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> CONFIRMED VIA APP
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</td>
+</tr>
+<!-- Row 3: 1st AD -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="Jordan Lee, professional first assistant director holding a digital slate and production headset in obsidian dark room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQkKO7qkos-suaQmOSHZVF2zIuTVpZ0eiTpxgVLL-6maQPRCDPcJR-rmJtWKl0LOYdD6gyh7SMV6SbOffbpHqEkBvUesnTWUtHJobfOi1buGmDb99Q579lHL9gJcjcdh3YPxseE71d-MiO_tILTEO6BLmEYOdG7NO_LGRJPRjliMXH_pBC1hCqAQY4m7Fv1k-ZUFntvA8C2xpPSr7GSujNiSOht_XBrXSG1kzYkZNmLpuUI1W0mTWtViljBA_Y-bSCJA0i5k5QYFrq"/>
+<div>
+<div class="font-headline-sm text-on-surface font-medium">Jordan Lee</div>
+<div class="text-label-sm text-primary">1st Assistant Director</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-mono font-medium text-on-surface">06:00 AM</td>
+<td class="py-3 px-3">
+<a class="text-on-surface-variant hover:text-primary font-mono text-[11px] flex items-center gap-1" href="tel:+13105550419">
+<span class="material-symbols-outlined text-[14px]">call</span> +1 (310) 555-0419
+                    </a>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> CONFIRMED VIA APP
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</td>
+</tr>
+<!-- Row 4: DIT Lead -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="Elena Rostova, digital imaging technician sitting before high precision color graded OLED monitors in mobile DIT cart." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-qQJqIxV4IjlUB1vnrkAMFOUMPVkII8qnhxWI_Lo0wegEZGYAF8HLWDtDIRSBwNPT-M_gvJBCb_WxQPQ2OPKpCSJcXvbtRUzTEXRyjK7FuNKZjBQxjo1l8Kw0EjuHmZUflArak3MmvSSrfRH0cMFXlW9FJIPAPz5eb1NDkYixhHCOxgfftSJtPUS26x1gq77tEah3bLThSsXyMmP5g1T4OkTVVorG6hBhAFOhiVKkN6HaaaPKtrVomqXYQCBJ_5VyNRFJZCwG4QA1"/>
+<div>
+<div class="font-headline-sm text-on-surface font-medium">Elena Rostova</div>
+<div class="text-label-sm text-tertiary">DIT Lead &amp; Colorist</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-mono font-medium text-on-surface">06:30 AM</td>
+<td class="py-3 px-3">
+<a class="text-on-surface-variant hover:text-primary font-mono text-[11px] flex items-center gap-1" href="tel:+13105550993">
+<span class="material-symbols-outlined text-[14px]">call</span> +1 (310) 555-0993
+                    </a>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> CONFIRMED VIA APP
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</td>
+</tr>
+<!-- Row 5: Key Gaffer -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="David Park, experienced key gaffer adjusting high power LED lighting arrays on a film studio soundstage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHLSgtdsQJVKrkA5Wr8HxPbHgQiOAyrme9kVMWGvQzVAYV-KFFnNJef14V5YwWUNb21DqMG_Fz0_FovzeFS6MELuKKhdOQbWQUidlMuWDlBglG24cRuO7vUAjckuZ2O9O3AJgAGDqihOKOwFb5wUpTzXc0ful8UU9DOE76DVPx-jQ4ne-10adHKREaRKx04M5TsZCMLbR66j8CKBym0dJWYt6HRdWhzA7oXtIiHxm8m8iWA5vJLUxERKWv-Ep9_pSSFTldcT9h9JzH"/>
+<div>
+<div class="font-headline-sm text-on-surface font-medium">David Park</div>
+<div class="text-label-sm text-on-surface-variant">Key Gaffer</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-mono font-medium text-on-surface">06:15 AM</td>
+<td class="py-3 px-3">
+<a class="text-on-surface-variant hover:text-primary font-mono text-[11px] flex items-center gap-1" href="tel:+13105550212">
+<span class="material-symbols-outlined text-[14px]">call</span> +1 (310) 555-0212
+                    </a>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> CONFIRMED VIA SMS
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</td>
+</tr>
+<!-- Row 6: Sound Mixer (Awaiting Confirmation) -->
+<tr class="hover:bg-surface-container/40 transition-colors bg-amber-500/5">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover border border-amber-500/30" data-alt="Leo Rossi, sound mixer with over-ear reference headphones and Sound Devices audio recorder in dark studio environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUEyCoEfnn8AMcGhcfFmVVrcxG-Kf-k95D6kWAVXBUQrN-FJr3XDAfrKGBChRJOiMW-1E_V-RL5UH2Q2TAFTAOs2GxeRGAonpV3WiGQEKCMnwUgYc2Enl2rOpwT0_vOTRAMBcVviGQwc8YEuP_fW-NEbB1LEC_41fjHClRomaPi2KQfUrdQRLhmBEKDThcEo56uqAD496yGtRUymSOy_zk4F7qYxvtNKj5WwVoRChh_vmGhrS60Wo9RJC_wFV-HnCBzP_nPE3Fvce6"/>
+<div>
+<div class="font-headline-sm text-on-surface font-medium">Leo Rossi</div>
+<div class="text-label-sm text-amber-300">Sound Mixer</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-mono font-medium text-on-surface">06:30 AM</td>
+<td class="py-3 px-3">
+<a class="text-on-surface-variant hover:text-primary font-mono text-[11px] flex items-center gap-1" href="tel:+13105550744">
+<span class="material-symbols-outlined text-[14px]">call</span> +1 (310) 555-0744
+                    </a>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-amber-500/15 text-amber-300 border border-amber-500/30">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> AWAITING CONFIRMATION
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-200 border border-amber-500/40 text-label-sm font-medium hover:bg-amber-500/30 transition-colors">
+                      Ping SMS
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- 7. Slide-Over Detail Drawer (Right side 480px / 4-cols Glass Panel) -->
+<div class="xl:col-span-4 space-y-6">
+<!-- Inspector Card Container -->
+<div class="p-5 rounded-2xl bg-surface-container-low/80 border border-outline-variant/30 backdrop-blur-2xl shadow-2xl relative">
+<!-- Drawer Header -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">Call Sheet Inspector</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-primary/20 text-primary border border-primary/30 font-mono">Rev 3.1 Final</span>
+</div>
+<div class="text-body-sm font-body-sm text-outline mt-0.5">Day 02 · Soundstage 4 Main</div>
+</div>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Crew Confirmation Meter Gauge -->
+<div class="mt-4 p-4 rounded-xl bg-surface-container-lowest/60 border border-outline-variant/20">
+<div class="flex items-center justify-between">
+<div class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Crew Check-In Progress</div>
+<span class="text-label-sm font-mono text-emerald-400 font-bold">96%</span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="text-headline-md font-headline-md text-on-surface font-mono font-semibold">24 / 25 Checked In</span>
+<span class="text-body-sm text-amber-300 font-medium">1 Awaiting</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2.5 overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-emerald-400 h-full rounded-full" style="width: 96%"></div>
+</div>
+<button class="w-full mt-3 py-1.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface text-body-sm font-medium flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[16px]">sms</span>
+<span>Send All SMS Pings</span>
+</button>
+</div>
+<!-- Hospital Emergency Route Card -->
+<div class="mt-4 p-4 rounded-xl bg-rose-500/5 border border-rose-500/20">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-rose-300 uppercase tracking-wider">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">emergency</span>
+                Hospital Emergency Route
+              </span>
+<span class="px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-200 text-[10px] font-mono">LEVEL 1 TRAUMA</span>
+</div>
+<div class="mt-2">
+<div class="text-headline-sm font-headline-sm text-on-surface font-semibold">St. Jude Level 1 Trauma Center</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">1240 Medical Center Way, Burbank CA</div>
+<div class="mt-2 flex items-center gap-3 text-body-sm font-mono text-rose-300">
+<span>⏱ 9 mins away</span>
+<span>·</span>
+<span>3.4 miles</span>
+</div>
+</div>
+<!-- Route Map Visual Anchor -->
+<div class="relative w-full h-24 rounded-lg overflow-hidden mt-3 border border-outline-variant/30 bg-surface-container-lowest">
+<img class="w-full h-full object-cover opacity-70" data-alt="A dark mode satellite GPS vector navigation map showing the emergency route to St Jude Hospital with glowing crimson polyline path and high contrast road geometry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD115j-Bf-3DiI5pgD6B4TsTAtMhqVoFV2if4W_nJHuF6GSm6qscwYmv_Ze6UrP8h27OWJw6d4zjG1Dqry90HKNPvbJI3_iQK9Q1SSIUhvyP6dB5Kl84M2_n-81LlYByj0MDDSDtOsc0ygLesn8JhZQli3FpwmxbXN-8lnXM2QTK4Ml9PGwrjVE-dPlDDnQdFZ1UQtMy_GSyHPtupEStAj93Sz16b5eyjlfXENhE9iomjE1DMWBz4RqwDDf4pOwEnQwAmPJqbAO9V_U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<a class="absolute bottom-2 right-2 flex items-center gap-1 px-2 py-1 rounded bg-rose-600 hover:bg-rose-500 text-white text-[11px] font-medium shadow transition-colors" href="#">
+<span class="material-symbols-outlined text-[14px]">directions</span> Direct GPS
+              </a>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<a class="flex-1 py-1.5 px-2 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/30 text-rose-200 text-body-sm font-medium flex items-center justify-center gap-1.5 transition-colors" href="tel:911">
+<span class="material-symbols-outlined text-[16px]">phone_in_talk</span> Dispatch 911
+              </a>
+<button class="py-1.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface text-body-sm font-medium flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">share</span> Share
+              </button>
+</div>
+</div>
+<!-- Bound Equipment Vault Package Checklist -->
+<div class="mt-4 p-4 rounded-xl bg-surface-container-lowest/60 border border-outline-variant/20">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-outline uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">inventory_2</span>
+                Bound Equipment Vault Package
+              </div>
+<span class="text-label-sm font-mono text-tertiary">4 Items</span>
+</div>
+<div class="divide-y divide-outline-variant/15 text-body-sm font-body-sm">
+<!-- Item 1 -->
+<div class="py-2.5 flex items-start justify-between gap-2">
+<div>
+<div class="text-on-surface font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    ARRI Alexa Mini LF
+                  </div>
+<div class="text-label-sm font-mono text-outline mt-0.5">SN #ALX-4821 · Insured $82,000</div>
+</div>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">Rigged</span>
+</div>
+<!-- Item 2 -->
+<div class="py-2.5 flex items-start justify-between gap-2">
+<div>
+<div class="text-on-surface font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    Cooke Anamorphic /i Prime 50mm
+                  </div>
+<div class="text-label-sm font-mono text-outline mt-0.5">SN #CK-9904 · Insured $28,500</div>
+</div>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 whitespace-nowrap">Camera A</span>
+</div>
+<!-- Item 3 -->
+<div class="py-2.5 flex items-start justify-between gap-2">
+<div>
+<div class="text-on-surface font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    DJI Ronin 2 3-Axis Gimbal
+                  </div>
+<div class="text-label-sm font-mono text-outline mt-0.5">SN #RN2-1082 · Insured $14,500</div>
+</div>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30 whitespace-nowrap">Ready</span>
+</div>
+<!-- Item 4 -->
+<div class="py-2.5 flex items-start justify-between gap-2">
+<div>
+<div class="text-on-surface font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    Astera Titan Tube 8-Light Kit
+                  </div>
+<div class="text-label-sm font-mono text-outline mt-0.5">SN #AST-3301 · Insured $9,800</div>
+</div>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">Pre-rigged</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Dock -->
+<div class="mt-4 space-y-2">
+<button class="w-full py-2.5 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface text-body-sm font-medium flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">save_as</span>
+<span>1-Click Sync to Crew Calendars</span>
+</span>
+<span class="text-label-sm font-mono text-outline">iCal / GCal</span>
+</button>
+<button class="w-full py-2.5 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface text-body-sm font-medium flex items-center justify-between transition-colors" onclick="window.print()">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">print</span>
+<span>Print Formatted Call Sheet</span>
+</span>
+<span class="text-label-sm font-mono text-outline">@media print</span>
+</button>
+<button class="w-full py-2.5 px-3 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-rose-300 text-body-sm font-medium flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-rose-400">cell_tower</span>
+<span>Broadcast SMS Notification</span>
+</span>
+<span class="text-label-sm font-mono text-rose-400">All 25</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+    // Lightweight micro-interaction for active timer counter incrementation
+    let seconds = 8;
+    let minutes = 24;
+    let hours = 1;
+    const timerDisplay = document.querySelector('header .font-mono.font-medium');
+    if (timerDisplay) {
+      setInterval(() => {
+        seconds++;
+        if (seconds >= 60) {
+          seconds = 0;
+          minutes++;
+        }
+        if (minutes >= 60) {
+          minutes = 0;
+          hours++;
+        }
+        const h = hours < 10 ? '0' + hours : hours;
+        const m = minutes < 10 ? '0' + minutes : minutes;
+        const s = seconds < 10 ? '0' + seconds : seconds;
+        timerDisplay.textContent = `${h}:${m}:${s}`;
+      }, 1000);
+    }
+  </script>
+</body></html>

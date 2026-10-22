@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STITCH-G04: Client Portal Invoices & Payment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#004c69",
+            "on-background": "#e4e1ed",
+            "on-tertiary-container": "#002d40",
+            "surface": "#13131b",
+            "tertiary": "#7bd0ff",
+            "on-secondary-fixed-variant": "#5516be",
+            "tertiary-fixed": "#c4e7ff",
+            "error-container": "#93000a",
+            "on-tertiary": "#00354a",
+            "on-secondary-fixed": "#23005c",
+            "tertiary-container": "#009bd1",
+            "outline-variant": "#464554",
+            "surface-dim": "#13131b",
+            "on-primary-fixed": "#07006c",
+            "on-secondary-container": "#c4abff",
+            "primary-fixed-dim": "#c0c1ff",
+            "surface-variant": "#34343d",
+            "surface-container-lowest": "#0d0d16",
+            "surface-tint": "#c0c1ff",
+            "on-tertiary-fixed": "#001e2c",
+            "on-surface": "#e4e1ed",
+            "on-primary": "#1000a9",
+            "inverse-surface": "#e4e1ed",
+            "primary-container": "#8083ff",
+            "on-primary-container": "#0d0096",
+            "on-surface-variant": "#c7c4d7",
+            "on-error-container": "#ffdad6",
+            "inverse-on-surface": "#302f39",
+            "surface-bright": "#393842",
+            "secondary-fixed": "#e9ddff",
+            "surface-container": "#1f1f28",
+            "secondary": "#d0bcff",
+            "surface-container-highest": "#34343d",
+            "primary": "#c0c1ff",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "primary-fixed": "#e1e0ff",
+            "on-error": "#690005",
+            "secondary-container": "#571bc1",
+            "error": "#ffb4ab",
+            "surface-container-high": "#292932",
+            "outline": "#908fa0",
+            "inverse-primary": "#494bd6",
+            "surface-container-low": "#1b1b23",
+            "secondary-fixed-dim": "#d0bcff",
+            "on-secondary": "#3c0091",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "background": "#13131b"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "2rem",
+            "margin-md": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "space-md": "0.75rem",
+            "space-2xl": "2rem",
+            "gutter-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-xl": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "metric-numeral-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-24 md:pb-12 antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar Component -->
+<header class="sticky top-0 z-40 bg-surface dark:bg-surface-container-lowest shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-4 md:px-8 max-w-7xl mx-auto h-20">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed text-3xl" style="font-variation-settings: 'FILL' 1;">hub</span>
+<div>
+<h1 class="text-headline-md font-headline-md font-extrabold text-on-surface dark:text-on-surface tracking-tight">BusinessOS Client Portal</h1>
+<p class="text-body-sm text-on-surface-variant flex items-center space-x-2">
+<span class="font-semibold text-on-surface">003VXA</span>
+<span class="opacity-40">×</span>
+<span class="font-semibold text-on-surface">OmniCorp</span>
+</p>
+</div>
+</div>
+<!-- Desktop Navigation Cluster -->
+<nav class="hidden md:flex items-center space-x-1 bg-surface-container-low px-2 py-1.5 rounded-xl border border-white/5">
+<a class="text-on-surface-variant hover:bg-surface-variant hover:text-on-surface px-4 py-2 rounded-lg font-headline-sm text-headline-sm transition-all duration-200" href="#">Overview</a>
+<a class="text-on-surface-variant hover:bg-surface-variant hover:text-on-surface px-4 py-2 rounded-lg font-headline-sm text-headline-sm transition-all duration-200" href="#">Deliverables</a>
+<a class="text-on-surface-variant hover:bg-surface-variant hover:text-on-surface px-4 py-2 rounded-lg font-headline-sm text-headline-sm transition-all duration-200" href="#">Roadmap</a>
+<a class="bg-secondary-container text-on-secondary-container font-bold px-4 py-2 rounded-xl font-headline-sm text-headline-sm transition-all duration-200" href="#">Invoices</a>
+</nav>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main class="max-w-7xl mx-auto px-4 md:px-8 pt-8 space-y-8">
+<!-- Section Header / Breadcrumb context -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/5 pb-6">
+<div>
+<div class="flex items-center space-x-2 text-label-md text-primary mb-1 uppercase tracking-wider">
+<span>Financial Dashboard</span>
+<span class="text-white/20">/</span>
+<span>Invoices & Settlement</span>
+</div>
+<h2 class="text-headline-xl font-headline-xl text-on-surface tracking-tight">Billing & Secure Payments</h2>
+</div>
+<div class="flex items-center space-x-3">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-high border border-white/10 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+          Stripe SSL Encrypted Gateway
+        </span>
+</div>
+</div>
+<!-- 1. Top Financial Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Outstanding Balance Card -->
+<div class="relative bg-surface-container-low/75 backdrop-blur-2xl rounded-xl p-6 border border-white/10 shadow-xl overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Outstanding Balance</span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm bg-amber-500/15 text-amber-300 border border-amber-500/30">
+            Due in 12 Days
+          </span>
+</div>
+<div class="flex items-baseline space-x-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-white tracking-tight">$24,000.00</span>
+</div>
+<div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Active milestone remaining</span>
+<span class="text-primary font-semibold">1 Invoice</span>
+</div>
+</div>
+<!-- Total Contract Card -->
+<div class="relative bg-surface-container-low/75 backdrop-blur-2xl rounded-xl p-6 border border-white/10 shadow-xl overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Total Contract Value</span>
+<span class="material-symbols-outlined text-primary/70 text-xl">account_balance</span>
+</div>
+<div class="flex items-baseline space-x-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-white tracking-tight">$96,000.00</span>
+</div>
+<div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>OmniCorp Q1-Q2 Master Agreement</span>
+<span class="text-emerald-400 font-semibold">Verified</span>
+</div>
+</div>
+<!-- Paid to Date Card -->
+<div class="relative bg-surface-container-low/75 backdrop-blur-2xl rounded-xl p-6 border border-white/10 shadow-xl overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Paid to Date</span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+            75% Settled
+          </span>
+</div>
+<div class="flex items-baseline space-x-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-white tracking-tight">$72,000.00</span>
+</div>
+<div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>3 of 4 milestones cleared</span>
+<span class="text-on-surface font-semibold">3 Receipts</span>
+</div>
+</div>
+</div>
+<!-- 2. Primary Outstanding Invoice Card -->
+<div class="relative bg-surface-container/90 backdrop-blur-3xl rounded-xl p-6 md:p-8 border border-white/10 shadow-2xl overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pb-6 border-b border-white/15">
+<div>
+<div class="flex items-center space-x-3 mb-2">
+<span class="px-2.5 py-1 rounded text-label-sm font-mono bg-primary/20 text-primary border border-primary/30">INV-2026-0042</span>
+<span class="text-body-sm text-amber-400 font-semibold flex items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400 mr-2"></span>
+              Action Required
+            </span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-white tracking-tight">Milestone 4: VFX & Color Grading</h3>
+<p class="text-body-md text-on-surface-variant mt-1">Final delivery assets, multi-format grading suites, and high-res master exports.</p>
+</div>
+<div class="text-left lg:text-right">
+<div class="text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Amount Due</div>
+<div class="text-3xl md:text-4xl font-metric-numeral-lg font-semibold text-white tracking-tight">$24,000.00</div>
+<div class="text-body-sm text-on-surface-variant mt-1">Due Date: April 14, 2026</div>
+</div>
+</div>
+<!-- Invoice Itemized Breakdown -->
+<div class="py-6 space-y-4">
+<h4 class="text-label-md text-on-surface-variant uppercase tracking-wider">Itemized Scope Summary</h4>
+<div class="bg-surface-container-lowest/50 rounded-xl p-4 border border-white/5 divide-y divide-white/5">
+<div class="flex justify-between py-2 text-body-md text-on-surface">
+<span>Advanced Visual Effects & Compositing (Shots 101-140)</span>
+<span class="font-semibold text-white">$14,500.00</span>
+</div>
+<div class="flex justify-between py-2 text-body-md text-on-surface">
+<span>HDR & Dolby Vision Color Master Grading</span>
+<span class="font-semibold text-white">$7,500.00</span>
+</div>
+<div class="flex justify-between py-2 text-body-md text-on-surface">
+<span>Client Revisions & Stem Master Deliverables Package</span>
+<span class="font-semibold text-white">$2,000.00</span>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
+<a class="inline-flex items-center space-x-2 text-body-sm text-on-surface-variant hover:text-white transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Download PDF Invoice</span>
+</a>
+<div class="flex items-center space-x-4 w-full sm:w-auto">
+<button class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#6366f1] to-[#4f46e5] hover:from-[#4f46e5] hover:to-[#4338ca] text-white font-headline-sm text-headline-sm shadow-xl shadow-indigo-500/25 border border-white/25 transition-all duration-200 transform active:scale-98" type="button">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Pay with Stripe (Apple Pay / Card)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 3. Paid Receipts Ledger Table -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-headline-md font-headline-md text-white tracking-tight">Paid Receipts Ledger</h3>
+<p class="text-body-sm text-on-surface-variant">Verified historical settlements for completed project milestones.</p>
+</div>
+</div>
+<div class="bg-surface-container-low/75 backdrop-blur-2xl rounded-xl border border-white/10 overflow-hidden shadow-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white/10 text-label-md text-on-surface-variant uppercase tracking-wider bg-surface-container/50">
+<th class="py-4 px-6 font-semibold">Invoice Ref</th>
+<th class="py-4 px-6 font-semibold">Milestone Description</th>
+<th class="py-4 px-6 font-semibold">Settled Date</th>
+<th class="py-4 px-6 font-semibold">Amount</th>
+<th class="py-4 px-6 font-semibold">Status</th>
+<th class="py-4 px-6 font-semibold text-right">Receipt</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5 text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-white/[0.03] transition-colors duration-150 group">
+<td class="py-4 px-6 font-mono text-primary font-semibold">INV-2026-0031</td>
+<td class="py-4 px-6 text-white font-medium">Milestone 3: Principal Photography Assembly</td>
+<td class="py-4 px-6 text-on-surface-variant">March 02, 2026</td>
+<td class="py-4 px-6 font-metric-numeral-sm text-white">$24,000.00</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Paid
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<a class="inline-flex items-center space-x-1 text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-base">receipt_long</span>
+<span>PDF</span>
+</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-white/[0.03] transition-colors duration-150 group">
+<td class="py-4 px-6 font-mono text-primary font-semibold">INV-2026-0019</td>
+<td class="py-4 px-6 text-white font-medium">Milestone 2: Concept Art & Pre-Viz Design</td>
+<td class="py-4 px-6 text-on-surface-variant">February 14, 2026</td>
+<td class="py-4 px-6 font-metric-numeral-sm text-white">$24,000.00</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Paid
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<a class="inline-flex items-center space-x-1 text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-base">receipt_long</span>
+<span>PDF</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-white/[0.03] transition-colors duration-150 group">
+<td class="py-4 px-6 font-mono text-primary font-semibold">INV-2026-0004</td>
+<td class="py-4 px-6 text-white font-medium">Milestone 1: Discovery & Executive Kickoff</td>
+<td class="py-4 px-6 text-on-surface-variant">January 10, 2026</td>
+<td class="py-4 px-6 font-metric-numeral-sm text-white">$24,000.00</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Paid
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<a class="inline-flex items-center space-x-1 text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-base">receipt_long</span>
+<span>PDF</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Component (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface dark:bg-surface-container-lowest shadow-lg dark:shadow-none py-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-label-sm mt-1">Overview</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-xl">folder</span>
+<span class="text-label-sm mt-1">Deliverables</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-xl">timeline</span>
+<span class="text-label-sm mt-1">Roadmap</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-container text-on-secondary-container dark:text-on-secondary-container rounded-2xl px-4 py-2 transition-all" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">receipt</span>
+<span class="text-label-sm mt-1 font-bold">Invoices</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects Portfolio Hub · 003VXA / BusinessOS</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#d0bcff",
+            "tertiary-container": "#009bd1",
+            "on-tertiary-fixed-variant": "#004c69",
+            "surface-container": "#1f1f28",
+            "inverse-on-surface": "#302f39",
+            "primary-fixed": "#e1e0ff",
+            "surface-container-lowest": "#0d0d16",
+            "primary-container": "#8083ff",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "on-secondary-fixed-variant": "#5516be",
+            "on-secondary-container": "#c4abff",
+            "surface-dim": "#13131b",
+            "on-secondary-fixed": "#23005c",
+            "secondary-fixed-dim": "#d0bcff",
+            "error-container": "#93000a",
+            "tertiary-fixed": "#c4e7ff",
+            "secondary-container": "#571bc1",
+            "error": "#ffb4ab",
+            "on-surface": "#e4e1ed",
+            "inverse-primary": "#494bd6",
+            "surface-bright": "#393842",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "primary": "#c0c1ff",
+            "surface-container-low": "#1b1b23",
+            "outline": "#908fa0",
+            "surface": "#13131b",
+            "surface-variant": "#34343d",
+            "tertiary": "#7bd0ff",
+            "surface-container-high": "#292932",
+            "on-background": "#e4e1ed",
+            "on-tertiary-fixed": "#001e2c",
+            "background": "#13131b",
+            "inverse-surface": "#e4e1ed",
+            "on-tertiary": "#00354a",
+            "on-surface-variant": "#c7c4d7",
+            "outline-variant": "#464554",
+            "on-primary-fixed": "#07006c",
+            "on-secondary": "#3c0091",
+            "surface-container-highest": "#34343d",
+            "on-primary-container": "#0d0096",
+            "on-tertiary-container": "#002d40",
+            "surface-tint": "#c0c1ff",
+            "on-error-container": "#ffdad6",
+            "on-primary": "#1000a9",
+            "on-error": "#690005",
+            "secondary-fixed": "#e9ddff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline-xl": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "metric-numeral-sm": ["JetBrains Mono", "monospace"],
+            "headline-md": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "display-lg": ["Inter"],
+            "metric-numeral-lg": ["JetBrains Mono", "monospace"],
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 20;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    /* Liquid Obsidian custom styling */
+    body {
+      background-color: #0e1012;
+      color: #e4e1ed;
+      font-family: 'Inter', sans-serif;
+    }
+    .obsidian-card {
+      background: rgba(26, 29, 33, 0.72);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+    }
+    .obsidian-card-interactive {
+      background: rgba(26, 29, 33, 0.65);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.35);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .obsidian-card-interactive:hover {
+      background: rgba(32, 36, 42, 0.82);
+      border-color: rgba(192, 193, 255, 0.3);
+      box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.55), 0 0 20px 0 rgba(99, 102, 241, 0.12);
+      transform: translateY(-2px);
+    }
+    .hairline-border {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .top-edge-highlight {
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0e1012;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #292932;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #464554;
+    }
+  </style>
+</head>
+<body class="bg-[#0e1012] text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container flex">
+<!-- ==================== LEFT FIXED DOCK SIDEBAR (SideNavBar) ==================== -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-40 flex flex-col justify-between p-4 border-r border-outline-variant/30 bg-surface-container-low/80 backdrop-blur-2xl">
+<!-- Top Brand & Header -->
+<div class="flex flex-col gap-5">
+<!-- Monogram & Workspace Brand -->
+<div class="flex items-center gap-3 px-1 pt-1">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-primary-container to-secondary flex items-center justify-center font-mono font-bold text-headline-sm text-surface-container-lowest shadow-lg shadow-primary-container/20 border border-white/20">
+          VX
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="text-headline-sm font-headline-sm text-on-surface tracking-tight font-semibold truncate">Vanguard Global</span>
+<span class="text-label-sm font-label-sm text-outline tracking-wider font-mono">003VXA / BusinessOS</span>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface text-body-md font-body-md active:scale-[0.98] transition-all duration-150 shadow-sm group">
+<span class="material-symbols-outlined text-primary group-hover:rotate-90 transition-transform duration-200" data-icon="add">add</span>
+<span class="font-medium">Quick Create</span>
+</button>
+<!-- 9 Primary Nav Links with active Projects mapping -->
+<nav class="flex flex-col gap-1">
+<!-- 1. Overview -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 active:scale-[0.98] text-body-md font-body-md" href="#overview">
+<span class="material-symbols-outlined text-outline" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- 2. Tasks -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 active:scale-[0.98] text-body-md font-body-md" href="#tasks">
+<span class="material-symbols-outlined text-outline" data-icon="check_circle">check_circle</span>
+<span>Tasks</span>
+</a>
+<!-- 3. Projects (ACTIVE via Shared Components JSON spec) -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-container-high text-primary font-headline-sm border-l-2 border-primary active:scale-[0.98] transition-all duration-150 shadow-inner" href="#projects">
+<span class="material-symbols-outlined text-primary" data-icon="movie" data-weight="fill" style="font-variation-settings: 'FILL' 1;">movie</span>
+<span class="flex-1 font-semibold text-headline-sm">Projects</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</a>
+<!-- 4. CRM -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 active:scale-[0.98] text-body-md font-body-md" href="#crm">
+<span class="material-symbols-outlined text-outline" data-icon="group">group</span>
+<span>CRM</span>
+</a>
+<!-- 5. Finance -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 active:scale-[0.98] text-body-md font-body-md" href="#finance">
+<span class="material-symbols-outlined text-outline" data-icon="payments">payments</span>
+<span>Finance</span>
+</a>
+<!-- 6. Production -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 active:scale-[0.98] text-body-md font-body-md" href="#production">
+<span class="material-symbols-outlined text-outline" data-icon="folder_special">folder_special</span>
+<span>Production</span>
+</a>
+<!-- 7. Campaigns -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 active:scale-[0.98] text-body-md font-body-md" href="#campaigns">
+<span class="material-symbols-outlined text-outline" data-icon="campaign">campaign</span>
+<span>Campaigns</span>
+</a>
+<!-- 8. AI Assistant -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 active:scale-[0.98] text-body-md font-body-md" href="#ai">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<span class="flex-1">AI Assistant</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-tertiary/10 text-tertiary border border-tertiary/30">v3.2</span>
+</a>
+<!-- 9. Settings -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-150 active:scale-[0.98] text-body-md font-body-md" href="#settings">
+<span class="material-symbols-outlined text-outline" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom Area: System Health, Support & Executive Profile -->
+<div class="flex flex-col gap-3 pt-3 border-t border-outline-variant/30">
+<!-- Operational Telemetry Signal -->
+<div class="flex items-center justify-between px-3 py-1.5 rounded-lg bg-surface-container/60 border border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+<span class="text-label-sm font-label-sm text-on-surface">Core Systems</span>
+</div>
+<span class="text-label-sm font-label-sm text-emerald-400 font-mono">100% OK</span>
+</div>
+<!-- Executive Profile Card -->
+<div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-high/60 border border-outline-variant/20 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="relative">
+<img class="w-9 h-9 rounded-lg object-cover border border-outline-variant/50" data-alt="Sophisticated executive editorial portrait of Alexander Vance, senior agency managing partner in tailored black minimalist attire, shot with cinema key lighting and deep moody shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1iiZ19ZVxRq4e4DtRM0mLp2Mdp62auBcCWwP_5_ahyu9h3H0OEpnpZNIe51q5DrWinVoiWVWGnW29jGsyaMuCWX3BbJxqCDy_v3yzC5T5os-7bdiPtDLZGS-DPDDgB5xagiwzUAmesvY7tygtowQFlc3GeQ_smqoXjTd6N6Yp3NYdfaauUnF3ndyz-FvYQCt6z7VMDJbf4iMOTJKaeAjV6RW8gDqToxkBTd9qRNIPz3VuLSGMlDn_86XUCf_6GIsD4YhqlqLG7OK2"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="text-body-sm font-body-sm font-semibold text-on-surface truncate">Alexander Vance</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant truncate">Managing Partner</span>
+</div>
+<span class="material-symbols-outlined text-outline text-lg" data-icon="tune">tune</span>
+</div>
+</div>
+</aside>
+<!-- ==================== MAIN COCKPIT VIEWPORT (Canvas) ==================== -->
+<div class="flex-1 ml-64 flex flex-col min-w-0">
+<!-- Top Cockpit Bar (TopNavBar) -->
+<header class="sticky top-0 right-0 h-16 z-30 flex items-center justify-between px-6 border-b border-outline-variant/20 bg-surface-container-low/70 backdrop-blur-2xl">
+<!-- Left: Breadcrumb hierarchy & Omnibox search -->
+<div class="flex items-center gap-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-body-md font-body-md">
+<span class="text-on-surface-variant font-medium">Projects</span>
+<span class="text-outline text-xs">/</span>
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+            Portfolio Hub
+            <span class="inline-flex w-1.5 h-1.5 rounded-full bg-primary"></span>
+</span>
+</div>
+<!-- Omnibox Search -->
+<div class="relative w-80 hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-base" data-icon="search">search</span>
+<input class="w-full h-9 pl-9 pr-14 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/30 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Omnibox search or run action..." type="text"/>
+<div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-[10px] font-mono text-outline">
+<span>⌘</span><span>K</span>
+</div>
+</div>
+</div>
+<!-- Right: Live REC pill, Quick Actions & Avatars -->
+<div class="flex items-center gap-3">
+<!-- Live Recording Pill -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest/90 border border-outline-variant/30 text-label-sm font-mono text-on-surface shadow-sm">
+<span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+<span class="text-rose-400 font-semibold tracking-wider">REC</span>
+<span class="text-on-surface font-mono text-body-sm">01:24:08</span>
+</div>
+<!-- Notification Bell -->
+<button class="relative w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface-container-low"></span>
+</button>
+<!-- Tune Settings -->
+<button class="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="tune">tune</span>
+</button>
+<!-- Primary Create Project Action Button -->
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#4f46e5] text-white font-headline-sm text-body-sm top-edge-highlight shadow-lg shadow-indigo-500/25 border border-white/20 hover:brightness-110 active:scale-[0.97] transition-all">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="add">add</span>
+<span>Create Project</span>
+</button>
+</div>
+</header>
+<!-- ==================== MAIN WORKSPACE CONTENT ==================== -->
+<main class="p-8 max-w-[1720px] w-full mx-auto space-y-7">
+<!-- 1. Header & Executive Bar -->
+<section class="flex flex-col xl:flex-row xl:items-end justify-between gap-6 pb-2 border-b border-outline-variant/20">
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 text-label-sm font-label-sm font-mono text-primary tracking-widest uppercase">
+<span>Agency Portfolio</span>
+<span class="text-outline">·</span>
+<span>Commercial Production Suites / Q4 Conform</span>
+</div>
+<div class="flex items-center gap-3">
+<h1 class="text-headline-xl font-headline-xl text-on-surface tracking-tight">Projects Portfolio</h1>
+<div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-label-sm font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+<span>18 Active Projects</span>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-3xl">
+            Cross-client agency engagements, campaign velocity, and active production budgets monitored across global soundstages.
+          </p>
+</div>
+<!-- Controls: View Switcher & Action Cluster -->
+<div class="flex items-center gap-3 self-start xl:self-auto">
+<!-- View Switcher Toggle -->
+<div class="flex items-center p-1 rounded-xl bg-surface-container-lowest border border-outline-variant/30">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high text-primary font-headline-sm text-body-sm shadow-sm border border-outline-variant/40">
+<span class="material-symbols-outlined text-sm" data-icon="grid_view">grid_view</span>
+<span>Grid Cards</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md text-body-sm transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="view_list">view_list</span>
+<span>List Table</span>
+</button>
+</div>
+<!-- Share/Export Button -->
+<button class="w-9 h-9 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-base" data-icon="ios_share">ios_share</span>
+</button>
+<!-- Quick Filters Drawer Toggle -->
+<button class="w-9 h-9 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-base" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</section>
+<!-- 2. KPI Metric Ribbon (5-column High Density Cards) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<!-- Metric 1: Active Projects -->
+<div class="obsidian-card rounded-2xl p-4 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-20 h-20 rounded-full bg-indigo-500/5 blur-xl group-hover:bg-indigo-500/10 transition-all"></div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline uppercase tracking-wider">
+<span>Active Projects</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-base" data-icon="folder_special">folder_special</span>
+</div>
+<div class="my-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-on-surface">18</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant ml-1 font-mono">contracts</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Across 12 global client accounts</span>
+</div>
+</div>
+<!-- Metric 2: On Track -->
+<div class="obsidian-card rounded-2xl p-4 flex flex-col justify-between relative overflow-hidden group border-emerald-500/20">
+<div class="absolute -right-4 -bottom-4 w-20 h-20 rounded-full bg-emerald-500/5 blur-xl group-hover:bg-emerald-500/10 transition-all"></div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline uppercase tracking-wider">
+<span>On Track</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">+2 this wk</span>
+</div>
+<div class="my-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-emerald-400">14</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant ml-1 font-mono">pacing nominal</span>
+</div>
+<div class="text-body-sm font-body-sm text-emerald-400/80 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span>SLA conformed &amp; on pacing</span>
+</div>
+</div>
+<!-- Metric 3: At Risk -->
+<div class="obsidian-card rounded-2xl p-4 flex flex-col justify-between relative overflow-hidden group border-amber-500/20">
+<div class="absolute -right-4 -bottom-4 w-20 h-20 rounded-full bg-amber-500/5 blur-xl group-hover:bg-amber-500/10 transition-all"></div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline uppercase tracking-wider">
+<span>At Risk</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">Alert</span>
+</div>
+<div class="my-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-amber-400">3</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant ml-1 font-mono">flagged</span>
+</div>
+<div class="text-body-sm font-body-sm text-amber-400/80 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+<span>Stage SLA pacing variance</span>
+</div>
+</div>
+<!-- Metric 4: Critical Action -->
+<div class="obsidian-card rounded-2xl p-4 flex flex-col justify-between relative overflow-hidden group border-rose-500/20">
+<div class="absolute -right-4 -bottom-4 w-20 h-20 rounded-full bg-rose-500/5 blur-xl group-hover:bg-rose-500/10 transition-all"></div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline uppercase tracking-wider">
+<span>Critical Action</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20">Blocked</span>
+</div>
+<div class="my-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-rose-400">1</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant ml-1 font-mono">gate stop</span>
+</div>
+<div class="text-body-sm font-body-sm text-rose-400/80 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+<span>Immediate sign-off required</span>
+</div>
+</div>
+<!-- Metric 5: Total Portfolio Value -->
+<div class="obsidian-card rounded-2xl p-4 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-20 h-20 rounded-full bg-purple-500/5 blur-xl group-hover:bg-purple-500/10 transition-all"></div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline uppercase tracking-wider">
+<span>Portfolio Value</span>
+<span class="material-symbols-outlined text-outline text-base" data-icon="payments">payments</span>
+</div>
+<div class="my-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-primary tracking-tight font-mono">$1,420,000</span>
+</div>
+<div class="text-body-sm font-body-sm text-secondary-fixed flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+<span>+18.4% QoQ contracted</span>
+</div>
+</div>
+</section>
+<!-- 3. Filter & Search Toolbar -->
+<section class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 p-3 rounded-2xl bg-surface-container-lowest border border-outline-variant/30">
+<!-- Search bar inside toolbar -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-xl bg-surface-container-low border border-outline-variant/30 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Filter projects by name, client, director, code..." type="text"/>
+</div>
+<!-- Filter Dropdown Triggers & Pill Clusters -->
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Quick client filter -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 rounded-xl bg-surface-container-low border border-outline-variant/30 text-body-sm font-body-sm text-on-surface appearance-none focus:outline-none focus:border-primary cursor-pointer">
+<option>All Clients</option>
+<option>Nike Global</option>
+<option>Sony Electronics</option>
+<option>Red Bull Media</option>
+<option>Aura Capital</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-sm pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Quick status filter -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 rounded-xl bg-surface-container-low border border-outline-variant/30 text-body-sm font-body-sm text-on-surface appearance-none focus:outline-none focus:border-primary cursor-pointer">
+<option>All Statuses</option>
+<option>In Progress</option>
+<option>At Risk</option>
+<option>Critical Action</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-sm pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Quick dept filter -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 rounded-xl bg-surface-container-low border border-outline-variant/30 text-body-sm font-body-sm text-on-surface appearance-none focus:outline-none focus:border-primary cursor-pointer">
+<option>Film &amp; CGI</option>
+<option>Color Grading</option>
+<option>Audio &amp; Foley</option>
+<option>Brand Identity</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-sm pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Quick Sort filter -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 rounded-xl bg-surface-container-low border border-outline-variant/30 text-body-sm font-body-sm text-on-surface appearance-none focus:outline-none focus:border-primary cursor-pointer">
+<option>Budget High to Low</option>
+<option>Due Date Imminent</option>
+<option>Recently Updated</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-sm pointer-events-none" data-icon="swap_vert">swap_vert</span>
+</div>
+</div>
+<!-- Category Filter Pills -->
+<div class="flex items-center gap-1.5 border-t lg:border-t-0 pt-2 lg:pt-0 border-outline-variant/20">
+<button class="px-2.5 py-1 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-label-md">All (18)</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-label-md transition-colors">Commercial Film (8)</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-label-md transition-colors">3D &amp; VFX (6)</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-label-md transition-colors">Brand Strategy (4)</button>
+</div>
+</section>
+<!-- 4. Bento Grid View (4 Featured Project Cards in 2x2 Layout) -->
+<section class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+<!-- CARD 1: Nike SS27 Global Campaign -->
+<article class="obsidian-card-interactive rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group">
+<div class="space-y-4">
+<!-- Header: Project metadata & Live Status badge -->
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-label-sm font-mono text-outline">
+<span class="text-primary font-bold">PRJ-8812</span>
+<span>·</span>
+<span class="text-on-surface-variant">Nike Global</span>
+<span>·</span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-on-surface">Commercial Film</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface group-hover:text-primary transition-colors">Nike SS27 Global Campaign</h3>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-label-sm font-mono font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>IN PROGRESS</span>
+</div>
+</div>
+<!-- Description -->
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Tier-1 Olympic-season launch film capturing sub-zero athletic kinetics. Live production linked to Burbank Soundstage 4.
+            </p>
+<!-- Active Stage Telemetry Box -->
+<div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="videocam">videocam</span>
+<div>
+<span class="text-label-sm font-label-sm text-outline block uppercase tracking-wider">Active Stage</span>
+<span class="text-body-sm font-body-sm font-medium text-on-surface">Stage 4 Shoot · Soundstage 4, Burbank CA</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary/10 text-tertiary text-[10px] font-mono border border-tertiary/20">LIVE FEED</span>
+</div>
+<!-- Budget Burn & Milestone Gauge -->
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Budget Burn</span>
+<div class="font-mono text-on-surface">
+<span class="font-semibold text-primary">$285,000</span>
+<span class="text-outline"> / $350,000</span>
+<span class="text-emerald-400 text-xs ml-1">(81.4% · $65k buffer safe)</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-500" style="width: 81.4%;"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-mono text-outline pt-0.5">
+<span>Milestone: Hard Lock: Nov 15, 2024</span>
+<span class="text-on-surface font-semibold">75% complete</span>
+</div>
+</div>
+<!-- Deliverable tags -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant">4K Master ProRes</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant">Dolby Atmos 5.1</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant">Vertical 9:16</span>
+</div>
+</div>
+<!-- Footer: Specialist Avatar Stack & CTA -->
+<div class="flex items-center justify-between pt-6 mt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Close up profile picture of a female senior visual effects supervisor with glasses in a dark modern studio environment, lit by subtle violet and blue computer monitor glows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEh6gIEO-pZ6w7IEWolaoiacPqMnjP5tdRlZkqgpxIsFCxsa1-Sm5ZlYsQ0_DSQw524O0xcBXfzi727nmOCcCpOZ-pV7RRJAMvtBusv_uKNGJMBh4YxMLbGyCJ0IHhdOyu25zz6B9R8EnlV9C12_t_myrTE0HpvlLrJqhdgKXoPaq7KY_s_kE7ToNKrPx8RWnzH4qmmq_mG15vJuhBW3JtEmZlpqrQvr9fKJM2LSsMMf0PBiY7r9_dp89kr8u4B9mCpCRKaHXN8xSb"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of an experienced male commercial film director with headphones on set, soft tungsten key light and deep dark production shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWb84s2yYkfcWOstk3Du0hLw1vJJnFphHH4IiqPUuY1EFQjefvjdO6itQZ8RZtmE48aWv-TnmzA0J7-hcoTmYHexT65wL4TNLXz0g2yZic6dF5EuKmTqM7uSO4tj5xVjRZeD7mq8fT47SBFeuj9ziHR1gBp9FmudhHJm4f24XaTA3f_imU72FWSi58iLo3mn3IxzitZjuGyHRlsl79sP2kpW4F0Fyst2aYuYroeli_bGTjNgS_HqZP1Zb82L_ED9C_xROvkK7MloRr"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of a creative lead designer with short silver hair in minimal black turtleneck against an architectural concrete studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Yxp_2IDVVwtJJtP0mzra_d3YtNTMLa-td1u5LQkTDDQMpombEGrZN6O_8soHkycNemG4-wwkM8s8EqLzJi8XkpH3SqNP4SraLj7yoNubZCkvwfRi2HtLIzFP-WvDeTEUR6louUuUAeiRMzSEes5rEOyYj5p92XMddUlxENvROqoZjFNq_iCEMCLU16CnOP5DUqxzeBcHrEF_nNqv0hD-RlzIJ4E4twhWs1rWAez1B9colptW_YOxd6s3kle_7Gvy1g5l6YYZyjXm"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-surface-container flex items-center justify-center text-[10px] font-mono font-bold text-on-surface">
+                  +5
+                </div>
+</div>
+<span class="text-body-sm font-body-sm text-outline hidden sm:inline">Lead Team Assigned</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface hover:text-primary font-headline-sm text-body-sm transition-all duration-150 group/btn">
+<span>Open Studio Hub</span>
+<span class="material-symbols-outlined text-sm group-hover/btn:translate-x-0.5 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Sony FX6 Media Launch -->
+<article class="obsidian-card-interactive rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group">
+<div class="space-y-4">
+<!-- Header: Project metadata & Live Status badge -->
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-label-sm font-mono text-outline">
+<span class="text-primary font-bold">PRJ-9042</span>
+<span>·</span>
+<span class="text-on-surface-variant">Sony Electronics</span>
+<span>·</span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-on-surface">Cinema Tech</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface group-hover:text-primary transition-colors">Sony FX6 Media Launch</h3>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-label-sm font-mono font-semibold">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span>AT RISK</span>
+</div>
+</div>
+<!-- Description -->
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Global product reveal film showcasing 4K full-frame sensor agility and Venice color science conformance.
+            </p>
+<!-- Active Stage Telemetry Box -->
+<div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-amber-400 text-lg" data-icon="palette">palette</span>
+<div>
+<span class="text-label-sm font-label-sm text-outline block uppercase tracking-wider">Active Stage</span>
+<span class="text-body-sm font-body-sm font-medium text-on-surface">Color Conform · Suite 4 DaVinci Resolve</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 text-[10px] font-mono border border-amber-500/20">RESOLVE LINK</span>
+</div>
+<!-- Budget Burn & Milestone Gauge -->
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Budget Burn</span>
+<div class="font-mono text-on-surface">
+<span class="font-semibold text-amber-400">$88,000</span>
+<span class="text-outline"> / $220,000</span>
+<span class="text-amber-400/90 text-xs ml-1">(40% consumed · Pacing Lag)</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full rounded-full bg-amber-400 transition-all duration-500" style="width: 40%;"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-mono text-outline pt-0.5">
+<span>Milestone: Target: Nov 04, 2024</span>
+<span class="text-amber-400 font-semibold">40% complete</span>
+</div>
+</div>
+<!-- Deliverable tags -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant">X-OCN 6K Raw</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant">S-Log3 AcesCG</span>
+</div>
+</div>
+<!-- Footer: Specialist Avatar Stack & CTA -->
+<div class="flex items-center justify-between pt-6 mt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of a master colorist working in a dark grade suite, back-lit by neutral grey grading reference displays with calibrated color swatches visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCGsXcTN4KCtqEXzULc7mcASbwG9NkEOqvmRcH9zyDpIkWZ5oUZQm4qXfWTKoRl0rRWusLK4Hg5pEwvT3d4devGSgZnvcU-gYkb8uQ_tfSzFndoY_cMDb2VQcXuXtmY5gFyTYfCa4avfeHj5Li4PyrO0O21Lq1Kq4Oa7ZEEE2lycJEqW_ESf77979mU0mSO2wifg_bWk4lZ-T0Uunsybvi2in87ahqN0C46kPPX6chmAzn0klIZwxFPFx9w2ejMMIUky0J2B1mUUr5"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of an audio mastering engineer with studio over-ear monitor headphones, illuminated by low subtle amber vu-meter lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTe5DLdTmzg3QNWjFBx-6BmeaY9ySU5CWSmRdI-Px-Pn1764ITET9GxQCDvhzlECZWJe8SPi9_ywpECTY_ZDW4iRP9Dt1im3cqakNWJYdhTT3ds0EkxDbZb2bWvofdO-wGeEfiAm1AlHp0ylcg2V0cmNOL2j74QieFmBNh5XsoLrz25Fb88JzLH3Zb9zz9IrdUjn3fZZNwT_L0uBEcDhxxjBzTmmxSZOI-PMigPRlOIhnlGVvMazXCSbDFNLBx5ULShEDLFxlmeVUt"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-surface-container flex items-center justify-center text-[10px] font-mono font-bold text-on-surface">
+                  +2
+                </div>
+</div>
+<span class="text-body-sm font-body-sm text-outline hidden sm:inline">Colorist &amp; DIT</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface hover:text-primary font-headline-sm text-body-sm transition-all duration-150 group/btn">
+<span>Open Studio Hub</span>
+<span class="material-symbols-outlined text-sm group-hover/btn:translate-x-0.5 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: Red Bull Mountain Dailies -->
+<article class="obsidian-card-interactive rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group">
+<div class="space-y-4">
+<!-- Header: Project metadata & Live Status badge -->
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-label-sm font-mono text-outline">
+<span class="text-primary font-bold">PRJ-7650</span>
+<span>·</span>
+<span class="text-on-surface-variant">Red Bull Media</span>
+<span>·</span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-on-surface">High-Altitude Action</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface group-hover:text-primary transition-colors">Red Bull Mountain Dailies</h3>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-label-sm font-mono font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>IN PROGRESS</span>
+</div>
+</div>
+<!-- Description -->
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Extreme freeride documentary multi-cam sequence conform, spatial audio mastering, and telemetry overlay.
+            </p>
+<!-- Active Stage Telemetry Box -->
+<div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="graphic_eq">graphic_eq</span>
+<div>
+<span class="text-label-sm font-label-sm text-outline block uppercase tracking-wider">Active Stage</span>
+<span class="text-body-sm font-body-sm font-medium text-on-surface">Audio Mix &amp; Foley · Suite 2 Dolby Atmos</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container/40 text-secondary text-[10px] font-mono border border-secondary/30">7.1.4 READY</span>
+</div>
+<!-- Budget Burn & Milestone Gauge -->
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Budget Burn</span>
+<div class="font-mono text-on-surface">
+<span class="font-semibold text-primary">$162,000</span>
+<span class="text-outline"> / $180,000</span>
+<span class="text-emerald-400 text-xs ml-1">(90% · Healthy Margin)</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-500" style="width: 90%;"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-mono text-outline pt-0.5">
+<span>Milestone: Delivery Lock: Oct 28, 2024</span>
+<span class="text-on-surface font-semibold">90% complete</span>
+</div>
+</div>
+<!-- Deliverable tags -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant">5.1 Surround Stems</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant">ProRes 4444 XQ</span>
+</div>
+</div>
+<!-- Footer: Specialist Avatar Stack & CTA -->
+<div class="flex items-center justify-between pt-6 mt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of an extreme sports cinematic camera operator in outdoor gear holding heavy gimbal rig on a snowy mountain ridge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWcd7EC8PA26a3G2vCp8Ilv5GD_DXStpsz_77zA2hwATV14BnmnQQlEsnJqqeREF7OnSe0j8STeP7V4uh-j92bGXNA8XNgvCICoIlKalTYFUbftagW0VbEg2J7GOGCdOsnf1N4HEg_g_O-5zZvK-RTXTMWCcT4kCZdLnLYYc9amA8NH6IQySjyNXQNb3PuzE3oNsYknm5pcVMg9V6g5dFqQZpuT86iTEZOQgZ9rWqMM81o15Rl2pfBEQYlfX6Q8_N5GoP-G5uIrY6u"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Editorial profile portrait of an experienced documentary editor reviewing timelines with double monitors glowing in an obsidian edit suite." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXQ4dXfsowoAiDkMYE5Fysv6cYVEQV6D02uqKAFi0wA5pORb86rBZrafW1di6HgIzp9ybZdhoAw6jr4dmxXmHZRCO2akFvlj7Uq0nDOfaL_OC75ExwwpXU5hHwMRJmPVKkpnk1fJH52qn3jCGP068YifwYBFjhzSZcLbRCo4nfFhx51ve9ByFavM_Te-tBSl_Ct9OYPmbC4b56OSqgleK6xeJS9KxzqklbG4L9g6SPKL2j23E4jUD3lYtN9So5czgnj8Rzdpwne4OX"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of a young technical sound designer with high precision studio microphone gear in an acoustic sound-treated room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfBnWEr4eVsV_6K5UOOAgp44ctXuFOGwZesR0Wj2HhsfX1C05TwTRkVrRxER_EvlSNzm_f6VZnC8gEsTiEORhR1n_VyLyA5iJKsMAENJLVSOvKkqS5rVIK5iK-VIynIaBOPO86bB_ZuQYRVlr3etbS3Otx23sYjLdbYuJ_p-XqJnT3ydEmzC9iS0d10z2vCGL1aY6JhdS-wT8a0MulouNALcmtKuFcHD4voBettKeNFwchlxW4LKR4C10VPwAGFTLmM359g9bleNpu"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-surface-container flex items-center justify-center text-[10px] font-mono font-bold text-on-surface">
+                  +3
+                </div>
+</div>
+<span class="text-body-sm font-body-sm text-outline hidden sm:inline">Production Crew</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface hover:text-primary font-headline-sm text-body-sm transition-all duration-150 group/btn">
+<span>Open Studio Hub</span>
+<span class="material-symbols-outlined text-sm group-hover/btn:translate-x-0.5 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- CARD 4: Aura FinTech Rebrand -->
+<article class="obsidian-card-interactive rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group border-rose-500/30">
+<div class="space-y-4">
+<!-- Header: Project metadata & Live Status badge -->
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-label-sm font-mono text-outline">
+<span class="text-primary font-bold">PRJ-6310</span>
+<span>·</span>
+<span class="text-on-surface-variant">Aura Capital</span>
+<span>·</span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-on-surface">3D Motion &amp; Design System</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface group-hover:text-rose-400 transition-colors">Aura FinTech Rebrand</h3>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-label-sm font-mono font-semibold">
+<span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+<span>CRITICAL ACTION</span>
+</div>
+</div>
+<!-- Description -->
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Corporate identity overhaul, kinetic 3D typography, and interactive holographic keynote assets.
+            </p>
+<!-- Active Stage Telemetry Box -->
+<div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-rose-400 text-lg" data-icon="view_in_ar">view_in_ar</span>
+<div>
+<span class="text-label-sm font-label-sm text-outline block uppercase tracking-wider">Active Stage</span>
+<span class="text-body-sm font-body-sm font-medium text-on-surface">3D Key Visuals · Octane / C4D Cluster 02</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 text-[10px] font-mono border border-rose-500/20">RENDER PAUSED</span>
+</div>
+<!-- Budget Burn & Milestone Gauge -->
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Budget Burn</span>
+<div class="font-mono text-on-surface">
+<span class="font-semibold text-rose-400">$19,000</span>
+<span class="text-outline"> / $95,000</span>
+<span class="text-rose-400/90 text-xs ml-1">(20% · Stage gate delayed)</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full rounded-full bg-rose-500 transition-all duration-500" style="width: 20%;"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-mono text-outline pt-0.5">
+<span class="text-rose-400 font-medium">Milestone: Oct 19 (Overdue review)</span>
+<span class="text-rose-400 font-semibold">20% complete</span>
+</div>
+</div>
+<!-- Deliverable tags -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant">8K Key Visuals</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container border border-outline-variant/30 text-[11px] font-mono text-on-surface-variant">Design System Spec</span>
+</div>
+</div>
+<!-- Footer: Specialist Avatar Stack & CTA -->
+<div class="flex items-center justify-between pt-6 mt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of a female 3D procedural artist sitting beside high end dual GPU workstation monitors showing complex procedural wireframe nodes in obsidian dark workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClil-VPpChUAwpU02mg9hR2YxQXl4jiS3uxA7ZAojtHxF9U_oprwPjPRh4d0xE4a56SwtRfShQtisazddOn2idqrIoGa9f0mJNbUvTb9bzxLDViEicd-Es9JNL0W2rEX_9t70g3Gvl31HaZLF592BjzkWwkTy7r2S4C7GpjLl_v0AEkt4WHAvO2e5P8-lbUvUTWTSuIYnOgXeEa5CpmcSyGquihY_0ZJmh7USpKRjqiWpFgDsxm_f6suFWcMrlARwQsj-o3OnkG8_D"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of a creative executive strategist in crisp minimal charcoal suit sitting in modern glass executive boardroom." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt9aSNv82qsUD3kEmVuc-6otu1QTFQOSLmSgJpg0WakymI_lH7PlJPkZQkOyjIdnx4tgl-U0BcP7LIGpgtXugUGiSOmH4-AKaf-ZDYI5feqVM1HUg_WmD0liIOhS7le6_654HzgNqJ7UbTo1s_qS61z_5yQ_QaMsbkay8Pi4UrDJRor5C5IaBT39FoaOChO3bO7eDCce-dOcj8ySo1EuXEx18TMgJmDKTTXTAPvAHZYX3h3d0tXf3qTsG4lFclRybbTUj7nxjsAfD7"/>
+</div>
+<span class="text-body-sm font-body-sm text-outline hidden sm:inline">Lead Design Guild</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/40 text-rose-300 font-headline-sm text-body-sm transition-all duration-150 group/btn">
+<span>Open Studio Hub</span>
+<span class="material-symbols-outlined text-sm group-hover/btn:translate-x-0.5 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+</section>
+<!-- 5. System Status Footer Bar -->
+<footer class="obsidian-card rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 text-body-sm font-mono text-outline">
+<!-- Left: Systems Operational telemetry -->
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="text-on-surface font-medium">All Systems Operational</span>
+</div>
+<span class="text-outline-variant hidden sm:inline">|</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="database">database</span>
+<span>PostgreSQL Primary Synced</span>
+</div>
+<span class="text-outline-variant hidden sm:inline">|</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-emerald-400" data-icon="verified">verified</span>
+<span>ACEScg Color Pipeline Verified</span>
+</div>
+</div>
+<!-- Right: Telemetry data, cloud storage and latency -->
+<div class="flex items-center gap-5">
+<div class="flex items-center gap-2">
+<span>Production NVMe Storage:</span>
+<span class="text-on-surface font-semibold">3.9 TB / 5.0 TB</span>
+<div class="w-16 h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary" style="width: 78%;"></div>
+</div>
+<span class="text-xs text-primary">78%</span>
+</div>
+<span class="text-outline-variant hidden lg:inline">|</span>
+<div class="flex items-center gap-1.5 text-emerald-400">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span>14ms Latency</span>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

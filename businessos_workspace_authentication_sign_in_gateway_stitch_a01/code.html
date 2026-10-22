@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STITCH-A01: Workspace Authentication &amp; Sign-In Gateway</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container": "#1f1f28",
+            "primary-container": "#8083ff",
+            "tertiary": "#7bd0ff",
+            "inverse-surface": "#e4e1ed",
+            "error": "#ffb4ab",
+            "secondary": "#d0bcff",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "inverse-on-surface": "#302f39",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "on-surface-variant": "#c7c4d7",
+            "on-tertiary": "#00354a",
+            "background": "#13131b",
+            "outline-variant": "#464554",
+            "on-secondary": "#3c0091",
+            "on-secondary-fixed-variant": "#5516be",
+            "surface-dim": "#13131b",
+            "on-primary-fixed": "#07006c",
+            "on-primary": "#1000a9",
+            "surface-tint": "#c0c1ff",
+            "surface-variant": "#34343d",
+            "secondary-container": "#571bc1",
+            "on-secondary-container": "#c4abff",
+            "surface-bright": "#393842",
+            "on-secondary-fixed": "#23005c",
+            "on-primary-container": "#0d0096",
+            "on-tertiary-fixed-variant": "#004c69",
+            "surface-container-high": "#292932",
+            "surface": "#13131b",
+            "primary-fixed-dim": "#c0c1ff",
+            "primary": "#c0c1ff",
+            "on-surface": "#e4e1ed",
+            "on-background": "#e4e1ed",
+            "inverse-primary": "#494bd6",
+            "on-error": "#690005",
+            "on-tertiary-fixed": "#001e2c",
+            "secondary-fixed": "#e9ddff",
+            "tertiary-fixed": "#c4e7ff",
+            "surface-container-highest": "#34343d",
+            "secondary-fixed-dim": "#d0bcff",
+            "surface-container-lowest": "#0d0d16",
+            "primary-fixed": "#e1e0ff",
+            "error-container": "#93000a",
+            "tertiary-container": "#009bd1",
+            "surface-container-low": "#1b1b23",
+            "on-error-container": "#ffdad6",
+            "outline": "#908fa0",
+            "on-tertiary-container": "#002d40"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-xl": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-sm": ["Inter"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex items-center justify-center relative overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Ambient background glow elements -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-violet-600/5 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Main Centered Floating Solid Card -->
+<main class="w-full max-w-[440px] mx-4 relative z-10">
+<div class="bg-surface-container-lowest/80 backdrop-blur-2xl border border-white/[0.08] rounded-2xl shadow-[0_24px_64px_0_rgba(0,0,0,0.60),0_0_24px_0_rgba(99,102,241,0.15)] p-8 relative overflow-hidden">
+<!-- Top specular highlight line -->
+<div class="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+<!-- 1. Top geometric 003VXA monogram brand mark -->
+<div class="flex flex-col items-center mb-8">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high border border-white/10 flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.3)] mb-4 group relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-violet-500/20 rounded-xl"></div>
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+</div>
+<!-- 2. Header & workspace indicator -->
+<h1 class="text-headline-xl text-on-surface font-headline-xl text-center tracking-tight mb-1">Sign in to BusinessOS</h1>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/30 text-label-md text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>003VXA Production Studio</span>
+</div>
+</div>
+<!-- 3. Segmented tab toggle -->
+<div class="grid grid-cols-2 p-1 bg-surface-container rounded-xl mb-6 border border-white/[0.04]">
+<button class="py-2 text-label-md font-label-md rounded-lg bg-surface-container-high text-on-surface shadow-sm transition-all duration-200" type="button">Sign In</button>
+<button class="py-2 text-label-md font-label-md rounded-lg text-on-surface-variant hover:text-on-surface transition-all duration-200" type="button">Create Workspace</button>
+</div>
+<!-- Form Inputs & Actions -->
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<!-- 4. Work Email Input -->
+<div class="space-y-1.5">
+<label class="block text-label-md text-on-surface-variant">Work Email</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-lg">mail</span>
+</span>
+<input class="w-full bg-black/30 border border-white/[0.08] rounded-xl py-3 pl-10 pr-4 text-body-md text-on-surface placeholder:text-white/30 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-200" placeholder="name@company.com" required="" type="email"/>
+</div>
+</div>
+<!-- 4. Password Input with Show/Hide Toggle -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="block text-label-md text-on-surface-variant">Password</label>
+<a class="text-label-md text-primary hover:underline" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-lg">lock</span>
+</span>
+<input class="w-full bg-black/30 border border-white/[0.08] rounded-xl py-3 pl-10 pr-12 text-body-md text-on-surface placeholder:text-white/30 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-200" id="password-input" placeholder="••••••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-outline hover:text-on-surface transition-colors" onclick="togglePassword()" type="button">
+<span class="material-symbols-outlined text-lg" id="toggle-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- 5. Remember session checkbox -->
+<div class="flex items-center py-1">
+<label class="relative flex items-center gap-3 cursor-pointer group">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="w-4 h-4 rounded border border-white/20 bg-black/30 peer-checked:bg-gradient-to-tr peer-checked:from-indigo-600 peer-checked:to-indigo-500 peer-checked:border-indigo-500 flex items-center justify-center transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined text-white text-xs opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<span class="text-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Remember this session for 30 days</span>
+</label>
+</div>
+<!-- 6. Primary Sign In Button -->
+<button class="w-full relative group overflow-hidden rounded-xl p-px font-semibold shadow-[0_4px_16px_rgba(99,102,241,0.35)] active:scale-[0.98] transition-all duration-200" type="submit">
+<div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-600 transition-all duration-300 group-hover:brightness-110"></div>
+<div class="absolute inset-x-0 top-0 h-[1px] bg-white/35"></div>
+<div class="relative px-4 py-3 flex items-center justify-center gap-2 text-on-primary-fixed font-headline-md text-body-lg text-white">
+<span>Sign In to Workspace</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative flex py-4 items-center">
+<div class="flex-grow border-t border-white/[0.08]"></div>
+<span class="flex-shrink mx-4 text-label-sm text-on-surface-variant uppercase tracking-wider">or enterprise SSO</span>
+<div class="flex-grow border-t border-white/[0.08]"></div>
+</div>
+<!-- 7. Continue with Google Workspace SSO Button -->
+<button class="w-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 rounded-xl py-3 px-4 flex items-center justify-center gap-3 text-body-lg text-on-surface font-medium transition-all duration-200 active:scale-[0.98]" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.9C6.2 7.3 8.9 5 12 5z" fill="#EA4335"></path>
+<path d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z" fill="#4285F4"></path>
+<path d="M5.3 14.7c-.2-.8-.4-1.7-.4-2.7s.2-1.9.4-2.7L1.6 6.4C.6 8.4 0 10.6 0 13s.6 4.6 1.6 6.6l3.7-2.9z" fill="#FBBC05"></path>
+<path d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.3-6.7-5.3L1.6 15.9C3.5 19.7 7.4 23 12 23z" fill="#34A853"></path>
+</svg>
+<span>Continue with Google Workspace</span>
+</button>
+<!-- 8. Footer Links -->
+<div class="mt-8 pt-4 border-t border-white/[0.04] flex items-center justify-between text-body-sm text-on-surface-variant">
+<a class="hover:text-on-surface transition-colors" href="#">Privacy &amp; Terms</a>
+<div class="flex items-center gap-1.5 text-emerald-400">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-label-sm font-semibold tracking-wider">SOC-2 TYPE II CERTIFIED</span>
+</div>
+</div>
+</div>
+</main>
+<script>
+    function togglePassword() {
+      const passwordInput = document.getElementById('password-input');
+      const toggleIcon = document.getElementById('toggle-icon');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.textContent = 'visibility_off';
+      } else {
+        passwordInput.type = 'password';
+        toggleIcon.textContent = 'visibility';
+      }
+    }
+  </script>
+</body></html>

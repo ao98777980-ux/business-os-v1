@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vanguard Global BusinessOS - Sprint Kanban Board</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#c4abff",
+            "secondary-fixed": "#e9ddff",
+            "surface-container-lowest": "#0d0d16",
+            "on-secondary-fixed": "#23005c",
+            "on-background": "#e4e1ed",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "on-secondary-fixed-variant": "#5516be",
+            "surface-dim": "#13131b",
+            "inverse-primary": "#494bd6",
+            "inverse-on-surface": "#302f39",
+            "inverse-surface": "#e4e1ed",
+            "surface-container-high": "#292932",
+            "on-tertiary-container": "#002d40",
+            "surface": "#13131b",
+            "primary-container": "#8083ff",
+            "outline-variant": "#464554",
+            "surface-container": "#1f1f28",
+            "on-surface": "#e4e1ed",
+            "on-secondary": "#3c0091",
+            "on-primary-container": "#0d0096",
+            "surface-container-low": "#1b1b23",
+            "primary": "#c0c1ff",
+            "tertiary-fixed": "#c4e7ff",
+            "surface-tint": "#c0c1ff",
+            "on-tertiary-fixed": "#001e2c",
+            "on-primary-fixed": "#07006c",
+            "secondary-container": "#571bc1",
+            "secondary": "#d0bcff",
+            "on-tertiary-fixed-variant": "#004c69",
+            "secondary-fixed-dim": "#d0bcff",
+            "outline": "#908fa0",
+            "on-primary": "#1000a9",
+            "on-error": "#690005",
+            "surface-bright": "#393842",
+            "background": "#13131b",
+            "on-error-container": "#ffdad6",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-tertiary": "#00354a",
+            "primary-fixed": "#e1e0ff",
+            "error-container": "#93000a",
+            "error": "#ffb4ab",
+            "surface-container-highest": "#34343d",
+            "surface-variant": "#34343d",
+            "tertiary-container": "#009bd1",
+            "on-surface-variant": "#c7c4d7",
+            "tertiary": "#7bd0ff",
+            "tertiary-fixed-dim": "#7bd0ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "gutter-lg": "1.5rem",
+            "margin-md": "1.5rem",
+            "space-md": "0.75rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "space-2xl": "2rem",
+            "space-xl": "1.5rem",
+            "margin-lg": "2rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Inter"],
+            "metric-numeral-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "metric-numeral-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "headline-sm": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "500" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom subtle glass and optical material refractions */
+    .glass-panel {
+      background: rgba(17, 18, 34, 0.65);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    }
+    .glass-card {
+      background: rgba(26, 28, 54, 0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+    .glass-card:hover {
+      background: rgba(32, 34, 64, 0.60);
+      border-color: rgba(192, 193, 255, 0.3);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2), 0 8px 24px rgba(99, 102, 241, 0.15);
+    }
+    .specular-rim {
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+    }
+    /* Custom Scrollbar for Obsidian Dock */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(13, 13, 22, 0.6);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(70, 69, 84, 0.5);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(128, 131, 255, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased overflow-x-hidden min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- Ambient Deep Space Obsidian Radial Glows -->
+<div class="fixed top-0 left-64 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-10 right-10 w-[500px] h-[500px] bg-secondary-container/10 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT 1: SideNavBar (Executive Dock)                          -->
+<!-- ========================================================================= -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-40 flex flex-col justify-between p-4 border-r border-outline-variant/30 bg-surface-container-low/80 backdrop-blur-2xl">
+<!-- Top Brand & Hierarchy Anchor -->
+<div class="space-y-6">
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-secondary-container via-primary-container to-primary flex items-center justify-center shadow-lg shadow-primary-container/20 border border-white/20">
+<span class="material-symbols-outlined text-on-primary font-bold" data-icon="token">token</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-on-surface tracking-tight font-semibold">Vanguard Global</span>
+<span class="text-label-sm font-label-sm text-tertiary flex items-center gap-1.5 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            Enterprise Tier
+          </span>
+</div>
+</div>
+<!-- Quick Action Action Anchor -->
+<div class="px-1">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-primary-container/80 to-secondary-container/90 text-on-primary font-headline-sm text-body-md shadow-lg shadow-indigo-950/50 hover:brightness-110 active:scale-[0.98] transition-all border border-white/20 specular-rim">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+<span>Quick Create</span>
+</button>
+</div>
+<!-- Navigation Tabs (JSON source strictly transcribed) -->
+<nav class="space-y-1">
+<!-- 1. Overview -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#overview">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="flex-1">Overview</span>
+</a>
+<!-- 2. Tasks (ACTIVE: Primary Intent of this Kanban page) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-surface-container-high text-primary font-headline-sm border-l-2 border-primary transition-all duration-150 active:scale-[0.98]" href="#tasks">
+<span class="material-symbols-outlined text-[20px] text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="flex-1 font-semibold">Tasks</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-primary/20 text-primary border border-primary/30">12</span>
+</a>
+<!-- 3. Projects -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#projects">
+<span class="material-symbols-outlined text-[20px]" data-icon="folder_special">folder_special</span>
+<span class="flex-1">Projects</span>
+</a>
+<!-- 4. CRM -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#crm">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span class="flex-1">CRM</span>
+</a>
+<!-- 5. Finance -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#finance">
+<span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
+<span class="flex-1">Finance</span>
+</a>
+<!-- 6. Production -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#production">
+<span class="material-symbols-outlined text-[20px]" data-icon="movie">movie</span>
+<span class="flex-1">Production</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</a>
+<!-- 7. Campaigns -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#campaigns">
+<span class="material-symbols-outlined text-[20px]" data-icon="campaign">campaign</span>
+<span class="flex-1">Campaigns</span>
+</a>
+<!-- 8. AI Assistant -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98] group" href="#ai-assistant">
+<span class="material-symbols-outlined text-[20px] text-tertiary group-hover:rotate-12 transition-transform" data-icon="auto_awesome">auto_awesome</span>
+<span class="flex-1">AI Assistant</span>
+<span class="text-[9px] font-label-sm tracking-wider uppercase px-1.5 py-0.5 rounded bg-tertiary-container/30 text-tertiary border border-tertiary/20">v2.4</span>
+</a>
+<!-- 9. Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md hover:bg-surface-container transition-all duration-150 active:scale-[0.98]" href="#settings">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="flex-1">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Dock Footer: Executive Profile -->
+<div class="pt-4 border-t border-outline-variant/30 space-y-2">
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container/50 hover:bg-surface-container transition-colors border border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-700 flex items-center justify-center text-on-surface font-bold text-label-md border border-white/20">
+              AV
+            </div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-body-md font-headline-sm text-on-surface font-medium leading-tight">Alexander Vance</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Managing Partner</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg hover:bg-surface-container-high transition-colors" title="Executive Profile">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT 2: TopNavBar (Executive Cockpit)                        -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 right-0 h-16 z-30 flex items-center justify-between px-6 border-b border-outline-variant/20 bg-surface-container-low/70 backdrop-blur-2xl ml-64">
+<!-- Breadcrumbs & Tactical Path -->
+<div class="flex items-center gap-3">
+<span class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight hidden lg:inline text-primary">BusinessOS</span>
+<span class="text-outline hidden lg:inline">/</span>
+<div class="flex items-center gap-1.5 text-body-md font-body-md">
+<span class="text-on-surface-variant hover:text-on-surface cursor-pointer">Agency Command</span>
+<span class="text-outline/60 text-xs">/</span>
+<span class="text-on-surface-variant hover:text-on-surface cursor-pointer">Operations</span>
+<span class="text-outline/60 text-xs">/</span>
+<span class="text-on-surface font-headline-sm font-semibold text-primary-fixed-dim">Sprint Board</span>
+</div>
+</div>
+<!-- Center Search & Command Palette Bar -->
+<div class="relative w-80 max-w-xs xl:max-w-md hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest/80 border border-outline-variant/30 rounded-lg pl-9 pr-14 py-1.5 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search deliverables, tasks, clients..." type="text"/>
+<kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface-variant">Cmd+K</kbd>
+</div>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- Live Production Sprint Timer -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container border border-outline-variant/30 text-tertiary">
+<span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+<span class="text-label-md font-label-md tracking-wider">Timer: 02:41:18</span>
+</div>
+<!-- Icon Actions -->
+<div class="flex items-center gap-1 border-l border-outline-variant/30 pl-3">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative" title="Notifications">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container shadow-sm shadow-primary"></span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Settings / Fine-tune">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- Cockpit User Status Pill -->
+<div class="flex items-center gap-2 pl-2">
+<div class="w-8 h-8 rounded-full ring-2 ring-primary/30 p-0.5">
+<div class="w-full h-full rounded-full bg-surface-container-high flex items-center justify-center text-xs font-bold text-primary">
+            AV
+          </div>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN KANBAN CANVAS & SPRINT TELEMETRY (Margin Left: 64 to clear SideNav) -->
+<!-- ========================================================================= -->
+<main class="ml-64 p-6 xl:p-8 space-y-6">
+<!-- 1. SPRINT CONTROL & SUMMARY HEADER -->
+<section class="space-y-5">
+<!-- Title & High-level actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-3">
+<h1 class="text-headline-xl font-headline-xl text-on-surface tracking-tight font-bold">
+              Sprint 14: Q3 Hero Campaign Delivery
+            </h1>
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-container/20 text-primary border border-primary/30 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active Production
+            </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+            Production sprint tracking 32 active creative deliverables across 4 client workstreams
+          </p>
+</div>
+<!-- Master CTAs & Actions -->
+<div class="flex items-center gap-2.5 flex-wrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md border border-outline-variant/30 flex items-center gap-2 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="analytics">analytics</span>
+<span>Sprint Analytics</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md border border-outline-variant/30 flex items-center gap-2 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="layers">layers</span>
+<span>Bulk Update</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-gradient-to-r from-primary-container to-inverse-primary text-on-primary font-headline-sm shadow-lg shadow-indigo-950/60 hover:brightness-110 flex items-center gap-2 transition-all active:scale-[0.97] border border-white/20 specular-rim">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span>+ New Task</span>
+<kbd class="ml-1 px-1.5 py-0.2 rounded bg-black/30 text-[10px] text-white/80 font-mono">N</kbd>
+</button>
+</div>
+</div>
+<!-- SPRINT HEALTH TELEMETRY METRIC STRIP (Bento Glass Strip) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Metric 1: Sprint Progress -->
+<div class="glass-panel rounded-xl p-4 flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">
+<span>Sprint Progress</span>
+<span class="text-tertiary">On Track</span>
+</div>
+<div class="my-2 flex items-baseline gap-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-white font-bold">68%</span>
+<span class="text-body-sm text-on-surface-variant font-body-sm">+14% vs last week</span>
+</div>
+<!-- High-tech Progress Line -->
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-tertiary h-1.5 rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Metric 2: Story Points Velocity -->
+<div class="glass-panel rounded-xl p-4 flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">
+<span>Velocity Target</span>
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="bolt">bolt</span>
+</div>
+<div class="my-2 flex items-baseline gap-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-white font-bold">42 <span class="text-body-lg text-outline font-normal">/ 56</span></span>
+<span class="text-body-sm text-primary font-body-sm font-medium">Story Pts</span>
+</div>
+<!-- Progress Line -->
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-gradient-to-r from-secondary to-primary-container h-1.5 rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Metric 3: Blocked / At Risk (Amber/Crimson Glow) -->
+<div class="glass-panel rounded-xl p-4 flex flex-col justify-between relative overflow-hidden border border-rose-500/20 group">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-error uppercase tracking-wider">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+              Blocked / At Risk
+            </span>
+<span class="px-1.5 py-0.2 rounded bg-error-container/40 text-error text-[10px]">Action Req</span>
+</div>
+<div class="my-2 flex items-baseline gap-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-rose-300 font-bold">2 Items</span>
+<span class="text-body-sm text-rose-400/80 font-body-sm">4K Master &amp; Cuts</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-rose-500 h-1.5 rounded-full shadow-[0_0_8px_rgba(244,63,94,0.6)]" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Metric 4: Sprint Days Left -->
+<div class="glass-panel rounded-xl p-4 flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">
+<span>Sprint Cadence</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="event_upcoming">event_upcoming</span>
+</div>
+<div class="my-2 flex items-baseline gap-2">
+<span class="text-metric-numeral-lg font-metric-numeral-lg text-white font-bold">4 <span class="text-body-lg text-outline font-normal">of 14</span></span>
+<span class="text-body-sm text-tertiary font-body-sm">Days Left</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-1.5 rounded-full" style="width: 71%;"></div>
+</div>
+</div>
+</div>
+<!-- VIEW TOGGLE SEGMENTED SWITCH & SMART FILTER TOOLBAR -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pt-1">
+<!-- Left: Segmented Switch & Instant Filter Input -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- View switcher pill -->
+<div class="flex items-center p-1 rounded-xl bg-surface-container border border-outline-variant/30">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-primary font-headline-sm text-body-sm shadow-sm border border-outline-variant/40">
+<span class="material-symbols-outlined text-[16px]" data-icon="view_kanban">view_kanban</span>
+<span>Kanban</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm hover:bg-surface-container-high/60 transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="list">list</span>
+<span>List view</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm hover:bg-surface-container-high/60 transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="calendar_month">calendar_month</span>
+<span>Calendar</span>
+</button>
+</div>
+<!-- Glass Search Filter input -->
+<div class="relative w-64 md:w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[16px]" data-icon="filter_list">filter_list</span>
+<input class="w-full bg-surface-container/60 border border-outline-variant/30 rounded-lg pl-8 pr-3 py-1.5 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-all" placeholder="Filter deliverables, clients, tags..." type="text"/>
+</div>
+</div>
+<!-- Right: Filter Dropdown Filter Badges -->
+<div class="flex items-center gap-2 flex-wrap">
+<!-- Priority dropdown chip -->
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container border border-outline-variant/30 text-body-sm text-on-surface-variant cursor-pointer transition-colors">
+<span class="text-outline">Priority:</span>
+<span class="text-on-surface font-medium">All</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Assignees dropdown chip -->
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container border border-outline-variant/30 text-body-sm text-on-surface-variant cursor-pointer transition-colors">
+<span class="text-outline">Assignees:</span>
+<span class="text-primary font-medium">Team (4)</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Client dropdown chip -->
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container border border-outline-variant/30 text-body-sm text-on-surface-variant cursor-pointer transition-colors">
+<span class="text-outline">Client:</span>
+<span class="text-on-surface font-medium">Nike &amp; Aura</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Tags chip -->
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container border border-outline-variant/30 text-body-sm text-on-surface-variant cursor-pointer transition-colors">
+<span class="text-outline">Tags:</span>
+<span class="text-on-surface font-medium">All</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Clear Filters -->
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Clear Filters">
+<span class="material-symbols-outlined text-[18px]" data-icon="restart_alt">restart_alt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 2. FOUR-COLUMN KANBAN BOARD SYSTEM                                       -->
+<!-- ========================================================================= -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 items-start pb-12">
+<!-- ======================================================= -->
+<!-- COLUMN 1: BACKLOG (5)                                   -->
+<!-- ======================================================= -->
+<section class="rounded-2xl bg-surface-container-low/50 border border-outline-variant/20 p-3.5 space-y-3.5 flex flex-col">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-1.5 pt-1">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-slate-400/80"></div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">Backlog</h2>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">5</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-label-sm font-label-sm text-outline">16 pts</span>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Add item to Backlog">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Backlog Cards Stack -->
+<div class="space-y-3">
+<!-- Card 1.1: Audio Stems -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-indigo-300 border border-indigo-400/20 font-medium">NovaPeak</span>
+<span class="px-2 py-0.5 rounded-full bg-indigo-500/10 text-primary border border-primary/20">Normal</span>
+</div>
+<h3 class="text-body-md font-headline-sm text-on-surface font-medium leading-snug">
+              Dolby Atmos Master Audio Stems
+            </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#Audio</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#Deliverable</span>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="checklist">checklist</span>
+                  1/4
+                </span>
+<span class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                  Aug 24
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-outline px-1.5 py-0.5 rounded bg-surface-container">5pts</span>
+<div class="w-6 h-6 rounded-full bg-indigo-600/60 text-white flex items-center justify-center text-[10px] font-bold" title="David K.">
+                  DK
+                </div>
+</div>
+</div>
+</article>
+<!-- Card 1.2: Subtitles -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-pink-300 border border-pink-400/20 font-medium">Sephora</span>
+<span class="px-2 py-0.5 rounded-full bg-slate-700/30 text-on-surface-variant border border-outline-variant/30">Low</span>
+</div>
+<h3 class="text-body-md font-headline-sm text-on-surface font-medium leading-snug">
+              Localization &amp; Subtitle Conform (FR/ES/JP)
+            </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#Editorial</span>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="checklist">checklist</span>
+                  0/3
+                </span>
+<span class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                  Aug 26
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-outline px-1.5 py-0.5 rounded bg-surface-container">3pts</span>
+<div class="w-6 h-6 rounded-full bg-emerald-600/60 text-white flex items-center justify-center text-[10px] font-bold" title="Elena R.">
+                  ER
+                </div>
+</div>
+</div>
+</article>
+<!-- Card 1.3: Motion Graphics Title -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-cyan-300 border border-cyan-400/20 font-medium">Aura AI</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20">High</span>
+</div>
+<h3 class="text-body-md font-headline-sm text-on-surface font-medium leading-snug">
+              Motion Graphics Title Sequence v2
+            </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#VFX</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#3D</span>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="checklist">checklist</span>
+                  2/5
+                </span>
+<span class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                  Aug 22
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-outline px-1.5 py-0.5 rounded bg-surface-container">8pts</span>
+<div class="w-6 h-6 rounded-full bg-amber-600/60 text-white flex items-center justify-center text-[10px] font-bold" title="Marcus C.">
+                  MC
+                </div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ======================================================= -->
+<!-- COLUMN 2: IN PROGRESS (4) - Active Sprint Focus         -->
+<!-- ======================================================= -->
+<section class="rounded-2xl bg-surface-container-low/70 border-2 border-primary/30 p-3.5 space-y-3.5 flex flex-col relative shadow-xl shadow-indigo-950/20">
+<!-- Active column highlight rim -->
+<div class="absolute -top-[1px] left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+<!-- Column Header -->
+<div class="flex items-center justify-between px-1.5 pt-1">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">In Progress</h2>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-primary/20 text-primary border border-primary/30">4</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-label-sm font-label-sm text-primary">29 pts</span>
+<button class="p-1 rounded text-primary hover:text-white hover:bg-surface-container transition-colors" title="Add item to In Progress">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- In Progress Cards Stack -->
+<div class="space-y-3">
+<!-- Card 2.1: Color Grade 4K Master (URGENT / CRITICAL) -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab transition-all duration-200 border-rose-500/40 bg-gradient-to-b from-surface-container-high/60 to-surface-container-low/70">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-rose-950/40 text-rose-300 border border-rose-500/30 font-medium">NovaPeak Summer Shoot</span>
+<span class="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/50 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-ping"></span> Urgent
+              </span>
+</div>
+<h3 class="text-body-md font-headline-sm text-white font-semibold leading-snug">
+              Color Grade 4K Master (Arri LogC3 to ACES)
+            </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#Color</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#Finishing</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-rose-500/10 text-rose-300 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="attachment">attachment</span> 2 renders
+              </span>
+</div>
+<!-- Micro Progress Bar -->
+<div class="space-y-1">
+<div class="flex justify-between text-[11px] text-on-surface-variant font-label-sm">
+<span>Pass 3 of 4: Conform Check</span>
+<span class="text-rose-300">5/6 subtasks</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 overflow-hidden">
+<div class="bg-gradient-to-r from-rose-500 to-amber-400 h-1 rounded-full" style="width: 83%;"></div>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-rose-950/50 text-rose-300 border border-rose-500/30 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]" data-icon="warning">warning</span>
+<span>Today, 6:00 PM</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-rose-300 px-1.5 py-0.5 rounded bg-rose-950/50 border border-rose-500/20 font-bold">13pts</span>
+<div class="w-6 h-6 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px] font-bold" title="Sarah J.">
+                  SJ
+                </div>
+</div>
+</div>
+</article>
+<!-- Card 2.2: Sound Mix 5.1 Surround -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-cyan-300 border border-cyan-400/20 font-medium">Aura AI</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30">High</span>
+</div>
+<h3 class="text-body-md font-headline-sm text-on-surface font-medium leading-snug">
+              Sound Mix 5.1 Surround &amp; Stereo Broadcast
+            </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#SoundDesign</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 overflow-hidden">
+<div class="bg-primary h-1 rounded-full" style="width: 57%;"></div>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1 text-[11px] text-amber-300">
+<span class="material-symbols-outlined text-[14px]" data-icon="alarm">alarm</span>
+                Tomorrow, 11:00 AM
+              </div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-outline px-1.5 py-0.5 rounded bg-surface-container">8pts</span>
+<div class="flex -space-x-1.5">
+<div class="w-6 h-6 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[10px] font-bold border border-surface-container" title="David K.">
+                    DK
+                  </div>
+<div class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold border border-surface-container" title="Elena R.">
+                    ER
+                  </div>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2.3: 3D Packshot Lumina Lux Photoreal -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-purple-300 border border-purple-400/20 font-medium">Lumina Lux</span>
+<span class="px-2 py-0.5 rounded-full bg-indigo-500/10 text-primary border border-primary/20">Normal</span>
+</div>
+<h3 class="text-body-md font-headline-sm text-on-surface font-medium leading-snug">
+              3D Packshot Lumina Lux Photoreal Renders
+            </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#Unreal</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#CGI</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 overflow-hidden">
+<div class="bg-tertiary h-1 rounded-full" style="width: 87%;"></div>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="checklist">checklist</span>
+                7/8 Done
+              </div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-outline px-1.5 py-0.5 rounded bg-surface-container">8pts</span>
+<div class="w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center text-[10px] font-bold" title="Marcus C.">
+                  MC
+                </div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ======================================================= -->
+<!-- COLUMN 3: IN REVIEW (3)                                 -->
+<!-- ======================================================= -->
+<section class="rounded-2xl bg-surface-container-low/50 border border-outline-variant/20 p-3.5 space-y-3.5 flex flex-col">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-1.5 pt-1">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim"></div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">In Review</h2>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">3</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-label-sm font-label-sm text-outline">10 pts</span>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Add item to Review">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- In Review Cards Stack -->
+<div class="space-y-3">
+<!-- Card 3.1: Director's Cut v3 -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab transition-all duration-200 border-secondary/30">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-red-400 border border-red-500/20 font-medium">Nike HyperRev</span>
+<span class="px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30">Urgent</span>
+</div>
+<h3 class="text-body-md font-headline-sm text-on-surface font-semibold leading-snug">
+              Client Deliverable Review: Director's Cut v3
+            </h3>
+<!-- Executive Partner Signoff Banner -->
+<div class="p-2 rounded-lg bg-secondary-container/20 border border-secondary/20 flex items-center gap-2 text-label-sm font-label-sm text-secondary">
+<span class="material-symbols-outlined text-[15px]" data-icon="verified_user">verified_user</span>
+<span>Awaiting: Executive Partner Signoff</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#ClientApproval</span>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1 text-[11px] text-rose-300">
+<span class="material-symbols-outlined text-[14px]" data-icon="event_busy">event_busy</span>
+                Today, 5:00 PM
+              </div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-secondary px-1.5 py-0.5 rounded bg-surface-container border border-secondary/20 font-medium">5pts</span>
+<div class="flex -space-x-1.5">
+<div class="w-6 h-6 rounded-full bg-indigo-700 text-white flex items-center justify-center text-[10px] font-bold border border-surface-container" title="Alexander Vance">
+                    AV
+                  </div>
+<div class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold border border-surface-container" title="Elena R.">
+                    ER
+                  </div>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3.2: Chronos App UI Motion -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-sky-300 border border-sky-400/20 font-medium">Chronos</span>
+<span class="px-2 py-0.5 rounded-full bg-indigo-500/10 text-primary border border-primary/20">Normal</span>
+</div>
+<h3 class="text-body-md font-headline-sm text-on-surface font-medium leading-snug">
+              Chronos App UI Motion Kinetic Package
+            </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#DesignSystem</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#Lottie</span>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="done_all">done_all</span>
+                4/4 Subtasks
+              </div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-outline px-1.5 py-0.5 rounded bg-surface-container">5pts</span>
+<div class="w-6 h-6 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px] font-bold" title="Sarah J.">
+                  SJ
+                </div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ======================================================= -->
+<!-- COLUMN 4: COMPLETED (6)                                 -->
+<!-- ======================================================= -->
+<section class="rounded-2xl bg-surface-container-low/50 border border-outline-variant/20 p-3.5 space-y-3.5 flex flex-col">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-1.5 pt-1">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">Completed</h2>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">6</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-label-sm font-label-sm text-emerald-400">13 pts</span>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Completed options">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Completed Cards Stack -->
+<div class="space-y-3">
+<!-- Card 4.1: Ingest & Proxy RED 8K -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab opacity-80 hover:opacity-100 transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline font-medium">NovaPeak</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span> Done
+              </span>
+</div>
+<h3 class="text-body-md font-headline-sm text-outline font-medium leading-snug line-through">
+              Raw Footage Ingest &amp; Proxy Generation (RED 8K)
+            </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-outline">#Ingest</span>
+</div>
+<div class="pt-2 border-t border-outline-variant/10 flex items-center justify-between text-body-sm text-outline">
+<div class="flex items-center gap-1 text-[11px] text-emerald-400/80">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+                Completed 4h ago
+              </div>
+<span class="text-label-sm font-label-sm text-outline px-1.5 py-0.5 rounded bg-surface-container">5pts</span>
+</div>
+</article>
+<!-- Card 4.2: Aura AI Moodboard -->
+<article class="glass-card rounded-xl p-4 space-y-3 cursor-grab opacity-80 hover:opacity-100 transition-all duration-200">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-cyan-300/80 font-medium">Aura AI</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="task_alt">task_alt</span> Approved
+              </span>
+</div>
+<h3 class="text-body-md font-headline-sm text-on-surface font-medium leading-snug">
+              Aura AI Keynote Moodboard &amp; Art Direction
+            </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant">#BrandStrategy</span>
+</div>
+<div class="pt-2 border-t border-outline-variant/10 flex items-center justify-between text-body-sm text-outline">
+<div class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[13px]" data-icon="check">check</span>
+                Approved yesterday
+              </div>
+<span class="text-label-sm font-label-sm text-outline px-1.5 py-0.5 rounded bg-surface-container">8pts</span>
+</div>
+</article>
+</div>
+</section>
+</div>
+</main>
+<!-- Interactive Drag-and-drop & Micro-interaction script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Micro interaction keyboard shortcut 'N' for quick task
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'n' || e.key === 'N') {
+          if (!['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+            const btn = document.querySelector('button:has(kbd)');
+            if (btn) {
+              btn.classList.add('scale-95', 'ring-2', 'ring-primary');
+              setTimeout(() => {
+                btn.classList.remove('scale-95', 'ring-2', 'ring-primary');
+              }, 200);
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body></html>

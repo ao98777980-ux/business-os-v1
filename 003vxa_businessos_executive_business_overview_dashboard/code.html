@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>003VXA / BusinessOS — Executive Overview</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#c0c1ff",
+            "inverse-surface": "#e4e1ed",
+            "on-surface-variant": "#c7c4d7",
+            "surface-dim": "#13131b",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "tertiary": "#7bd0ff",
+            "outline-variant": "#464554",
+            "on-primary-fixed": "#07006c",
+            "surface-tint": "#c0c1ff",
+            "on-tertiary-container": "#002d40",
+            "secondary-fixed": "#e9ddff",
+            "primary-container": "#8083ff",
+            "inverse-on-surface": "#302f39",
+            "on-tertiary-fixed": "#001e2c",
+            "on-tertiary-fixed-variant": "#004c69",
+            "background": "#13131b",
+            "surface-container": "#1f1f28",
+            "surface": "#13131b",
+            "outline": "#908fa0",
+            "on-secondary-fixed-variant": "#5516be",
+            "secondary-container": "#571bc1",
+            "secondary-fixed-dim": "#d0bcff",
+            "tertiary-fixed": "#c4e7ff",
+            "on-secondary-fixed": "#23005c",
+            "primary-fixed": "#e1e0ff",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "surface-container-low": "#1b1b23",
+            "secondary": "#d0bcff",
+            "error-container": "#93000a",
+            "on-secondary-container": "#c4abff",
+            "inverse-primary": "#494bd6",
+            "surface-container-lowest": "#0d0d16",
+            "surface-variant": "#34343d",
+            "on-background": "#e4e1ed",
+            "on-error-container": "#ffdad6",
+            "on-error": "#690005",
+            "on-primary-container": "#0d0096",
+            "surface-container-highest": "#34343d",
+            "error": "#ffb4ab",
+            "on-primary": "#1000a9",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-secondary": "#3c0091",
+            "on-surface": "#e4e1ed",
+            "surface-bright": "#393842",
+            "surface-container-high": "#292932",
+            "on-tertiary": "#00354a",
+            "tertiary-container": "#009bd1"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20px": "20px",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "metric-numeral-sm": ["JetBrains Mono", "Inter"],
+            "headline-sm": ["Inter"],
+            "metric-numeral-lg": ["JetBrains Mono", "Inter"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          fontSize: {
+            "label-md": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }],
+            "body-sm": ["12px", { lineHeight: "18px", letterSpacing: "0.005em", fontWeight: "400" }],
+            "headline-xl": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "body-lg": ["15px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "400" }],
+            "body-md": ["13px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.025em", fontWeight: "600" }],
+            "metric-numeral-sm": ["24px", { lineHeight: "30px", letterSpacing: "-0.025em", fontWeight: "500" }],
+            "headline-sm": ["15px", { lineHeight: "22px", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "metric-numeral-lg": ["32px", { lineHeight: "38px", letterSpacing: "-0.03em", fontWeight: "500" }],
+            "label-sm": ["10px", { lineHeight: "12px", letterSpacing: "0.06em", fontWeight: "600" }],
+            "headline-md": ["18px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["22px", { lineHeight: "30px", letterSpacing: "-0.015em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    /* Custom refined scrollbars */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0e1012;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #292932;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #464554;
+    }
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="bg-[#0e1012] text-on-surface font-body-md antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- ==================== LEFT NAVIGATION SIDEBAR (DOCK) ==================== -->
+<aside class="fixed top-0 left-0 h-screen w-60 z-40 flex flex-col justify-between p-3.5 border-r border-white/[0.08] bg-[#121417]/90 backdrop-blur-xl select-none">
+<!-- Top Workspace Selector & Brand Anchor -->
+<div class="space-y-4">
+<!-- Monogram & Workspace switcher -->
+<div class="px-2 pt-1 pb-2 flex items-center justify-between border-b border-white/[0.06]">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-700 flex items-center justify-center shadow-inner border border-white/20">
+<span class="text-white font-mono font-bold text-[11px] tracking-wider">003</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-sm text-white font-semibold tracking-tight">Apex Media</span>
+<span class="material-symbols-outlined text-outline text-[14px]">unfold_more</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="text-[10px] font-mono text-outline uppercase tracking-wider font-medium">Enterprise Tier</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action: Quick Create CTA -->
+<div class="px-1">
+<button class="w-full flex items-center justify-center gap-2 py-1.5 px-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-white font-headline-sm text-xs border border-white/[0.08] active:scale-[0.98] transition-all duration-150 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-violet-400">add</span>
+<span>Quick Create</span>
+<kbd class="ml-auto text-[9px] font-mono bg-black/40 text-outline px-1.5 py-0.5 rounded border border-white/[0.06]">C</kbd>
+</button>
+</div>
+<!-- Main Navigation Menu Tabs -->
+<nav class="space-y-0.5 text-xs">
+<!-- 1. Overview (Active Match) -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-violet-500/10 text-violet-300 font-headline-sm font-medium border-l-[3px] border-violet-500 transition-colors" href="#overview">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-violet-400">dashboard</span>
+<span>Overview</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+</a>
+<!-- 2. Tasks -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors group" href="#tasks">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors">check_circle</span>
+<span>Tasks</span>
+</div>
+<span class="text-[10px] font-mono font-medium px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant border border-white/[0.05]">18</span>
+</a>
+<!-- 3. Projects -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors group" href="#projects">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors">folder_special</span>
+<span>Projects</span>
+</div>
+<span class="text-[10px] font-mono font-medium px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant border border-white/[0.05]">12</span>
+</a>
+<!-- 4. Production -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors group" href="#production">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors">movie</span>
+<span>Production</span>
+</div>
+<span class="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.2 rounded border border-emerald-500/20">LIVE</span>
+</a>
+<!-- 5. Campaigns -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors group" href="#campaigns">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors">campaign</span>
+<span>Campaigns</span>
+</div>
+</a>
+<!-- 6. CRM -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors group" href="#crm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors">group</span>
+<span>CRM</span>
+</div>
+</a>
+<!-- 7. Finance -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors group" href="#finance">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors">payments</span>
+<span>Finance</span>
+</div>
+</a>
+<!-- 8. Resources / Gear Vault -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors group" href="#resources">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors">inventory_2</span>
+<span>Gear Vault</span>
+</div>
+</a>
+<!-- 9. AI Assistant -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors group" href="#ai">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary">auto_awesome</span>
+<span class="text-on-surface">AI Assistant</span>
+</div>
+<span class="text-[9px] font-mono text-tertiary bg-tertiary/10 px-1.5 py-0.5 rounded border border-tertiary/20">v3.2</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Sidebar Section & Profile -->
+<div class="space-y-2 pt-3 border-t border-white/[0.06]">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-xs text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors" href="#settings">
+<span class="material-symbols-outlined text-outline text-[16px]">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-xs text-on-surface-variant hover:text-white hover:bg-white/[0.04] transition-colors" href="#docs">
+<span class="material-symbols-outlined text-outline text-[16px]">help_outline</span>
+<span>Documentation</span>
+</a>
+<!-- User Profile Row -->
+<div class="mt-2 p-2 rounded-xl bg-surface-container/60 border border-white/[0.06] flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-violet-600 via-indigo-600 to-purple-400 flex items-center justify-center font-bold text-xs text-white border border-white/20">
+              MV
+            </div>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-400 border border-[#121417]"></span>
+</div>
+<div class="truncate">
+<p class="text-xs font-semibold text-white truncate leading-tight">Marcus Vance</p>
+<p class="text-[10px] text-zinc-400 truncate">Executive Producer</p>
+</div>
+</div>
+<button class="text-outline hover:text-white transition-colors p-1" title="Account settings">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- ==================== MAIN SHELL (HEADER + CONTENT) ==================== -->
+<div class="ml-60 flex-1 flex flex-col min-w-0">
+<!-- Persistent Topbar Cockpit -->
+<header class="sticky top-0 right-0 h-14 z-30 flex items-center justify-between px-6 border-b border-white/[0.08] bg-[#121417]/85 backdrop-blur-xl">
+<!-- Breadcrumb Trail -->
+<div class="flex items-center gap-2 text-xs text-zinc-400">
+<span class="text-zinc-500 font-medium">BusinessOS</span>
+<span class="material-symbols-outlined text-[12px] text-zinc-600">chevron_right</span>
+<span class="text-zinc-400">Overview</span>
+<span class="material-symbols-outlined text-[12px] text-zinc-600">chevron_right</span>
+<span class="text-white font-medium flex items-center gap-1.5">
+          Executive Cockpit
+          <span class="px-1.5 py-0.5 rounded text-[9px] font-mono bg-violet-500/10 text-violet-300 border border-violet-500/20">LIVE OPS</span>
+</span>
+</div>
+<!-- Center Omnibox Search -->
+<div class="w-80">
+<button class="w-full h-8 px-3 rounded-lg bg-black/40 hover:bg-black/60 border border-white/[0.08] flex items-center justify-between text-xs text-zinc-400 transition-colors shadow-inner">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-zinc-500">search</span>
+<span class="text-[11px]">Search commands, projects, gear...</span>
+</div>
+<kbd class="text-[10px] font-mono bg-white/[0.06] text-zinc-400 px-1.5 py-0.5 rounded border border-white/[0.08]">⌘K</kbd>
+</button>
+</div>
+<!-- Right Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- Live Stopwatch Timer Dock -->
+<div class="h-8 px-2.5 rounded-lg bg-[#0e1012] border border-emerald-500/30 flex items-center gap-2 shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">REC</span>
+<span class="font-mono text-xs font-semibold text-emerald-400 tabular-nums tracking-wide">01:24:08</span>
+<button class="hover:text-white text-zinc-500 transition-colors flex items-center" title="Pause session">
+<span class="material-symbols-outlined text-[14px]">pause</span>
+</button>
+</div>
+<div class="h-4 w-[1px] bg-white/[0.08]"></div>
+<!-- Global + Create Button -->
+<button class="h-8 px-3 rounded-lg bg-violet-600 hover:bg-violet-500 text-white font-medium text-xs flex items-center gap-1.5 shadow-sm active:scale-[0.97] transition-all">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Create</span>
+</button>
+<!-- Notification Bell -->
+<button class="relative h-8 w-8 rounded-lg hover:bg-white/[0.05] border border-transparent hover:border-white/[0.08] flex items-center justify-center text-zinc-400 hover:text-white transition-all">
+<span class="material-symbols-outlined text-[17px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-violet-500"></span>
+</button>
+<!-- Workspace Tune Settings -->
+<button class="h-8 w-8 rounded-lg hover:bg-white/[0.05] border border-transparent hover:border-white/[0.08] flex items-center justify-center text-zinc-400 hover:text-white transition-all" title="View options">
+<span class="material-symbols-outlined text-[17px]">tune</span>
+</button>
+</div>
+</header>
+<!-- ==================== EXECUTIVE DASHBOARD CANVAS ==================== -->
+<main class="flex-1 p-6 space-y-6 max-w-[1440px] w-full mx-auto">
+<!-- 1. TOP ACTION TOOLBAR -->
+<section class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-1">
+<div>
+<h1 class="font-headline-xl text-2xl font-bold tracking-tight text-white flex items-center gap-3">
+            Executive Overview
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-white/[0.06] text-zinc-400 border border-white/[0.08] font-normal">Q4 FY2024</span>
+</h1>
+<p class="font-body-sm text-xs text-zinc-400 mt-1">Real-time agency operations, financial velocity, and active shoot status</p>
+</div>
+<!-- Scope & Date Filter Controls -->
+<div class="flex items-center gap-2.5">
+<!-- Segmented Toggle -->
+<div class="p-0.5 rounded-lg bg-[#141619] border border-white/[0.08] flex items-center text-xs">
+<button class="px-3 py-1 rounded-[6px] bg-white/10 text-white font-medium shadow-sm transition-all">
+              Agency Overview
+            </button>
+<button class="px-3 py-1 rounded-[6px] text-zinc-400 hover:text-white transition-colors">
+              My Work Queue
+            </button>
+</div>
+<!-- Date Range Selector -->
+<button class="h-8 px-3 rounded-lg bg-[#1a1d21] hover:bg-[#22262c] border border-white/[0.08] text-xs text-zinc-300 flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[15px] text-zinc-400">calendar_today</span>
+<span>Last 30 Days</span>
+<span class="material-symbols-outlined text-[14px] text-zinc-500">expand_more</span>
+</button>
+<!-- Export Snapshot Action -->
+<button class="h-8 w-8 rounded-lg bg-[#1a1d21] hover:bg-[#22262c] border border-white/[0.08] text-zinc-300 flex items-center justify-center transition-colors" title="Export report">
+<span class="material-symbols-outlined text-[15px]">file_download</span>
+</button>
+</div>
+</section>
+<!-- 2. TOP KPI METRIC ROW (4 CARDS) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1: Monthly Revenue -->
+<div class="bg-[#1a1d21] rounded-[20px] p-5 border border-white/[0.08] relative overflow-hidden flex flex-col justify-between hover:border-white/[0.14] transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-[11px] font-semibold tracking-wider uppercase text-zinc-400">Monthly Revenue</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>
+              +14.2% vs target
+            </span>
+</div>
+<div class="my-3">
+<div class="font-mono text-3xl font-bold text-white tabular-nums tracking-tight">
+              $148,250<span class="text-zinc-500 text-xl font-normal">.00</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs text-zinc-400">Billed in Current Cycle</span>
+<span class="text-[11px] text-zinc-600">•</span>
+<span class="text-xs text-zinc-400">Pacing $182k</span>
+</div>
+</div>
+<!-- Sparkline representation -->
+<div class="pt-2 border-t border-white/[0.04] flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+<span>Target: $165,000</span>
+<span class="text-emerald-400 font-medium">89.8% achieved</span>
+</div>
+</div>
+<!-- Card 2: Active Projects -->
+<div class="bg-[#1a1d21] rounded-[20px] p-5 border border-white/[0.08] relative overflow-hidden flex flex-col justify-between hover:border-white/[0.14] transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-[11px] font-semibold tracking-wider uppercase text-zinc-400">Active Projects</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-white/[0.06] text-zinc-300 border border-white/10">
+              3 in final delivery
+            </span>
+</div>
+<div class="my-3">
+<div class="font-mono text-3xl font-bold text-white tabular-nums tracking-tight">
+              12 <span class="text-zinc-500 text-lg font-normal">Campaigns</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs text-zinc-400">4 On Location Shoots</span>
+<span class="text-[11px] text-zinc-600">•</span>
+<span class="text-xs text-zinc-400">8 In Post-Production</span>
+</div>
+</div>
+<div class="pt-2 border-t border-white/[0.04] flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+<span>Stage: Stage 4 Soundstage</span>
+<span class="text-violet-400">100% On-Set Crew</span>
+</div>
+</div>
+<!-- Card 3: Team Capacity -->
+<div class="bg-[#1a1d21] rounded-[20px] p-5 border border-white/[0.08] relative overflow-hidden flex flex-col justify-between hover:border-white/[0.14] transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-[11px] font-semibold tracking-wider uppercase text-zinc-400">Team Capacity</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              36/40h avg load
+            </span>
+</div>
+<div class="my-3">
+<div class="font-mono text-3xl font-bold text-white tabular-nums tracking-tight">
+              88<span class="text-zinc-500 text-xl font-normal">%</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs text-zinc-400">42 Active Specialists</span>
+<span class="text-[11px] text-zinc-600">•</span>
+<span class="text-xs text-amber-400/90">6 Overloaded</span>
+</div>
+</div>
+<div class="pt-2 border-t border-white/[0.04] flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+<span>Color &amp; VFX Dept: 94%</span>
+<span class="text-zinc-400">3 freelance requests</span>
+</div>
+</div>
+<!-- Card 4: Overdue Invoices -->
+<div class="bg-[#1a1d21] rounded-[20px] p-5 border border-white/[0.08] relative overflow-hidden flex flex-col justify-between hover:border-white/[0.14] transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-[11px] font-semibold tracking-wider uppercase text-zinc-400">Overdue Invoices</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">
+              2 require follow-up
+            </span>
+</div>
+<div class="my-3">
+<div class="font-mono text-3xl font-bold text-white tabular-nums tracking-tight">
+              $14,200<span class="text-zinc-500 text-xl font-normal">.00</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs text-zinc-400">Avg Aging: 14 Days</span>
+<span class="text-[11px] text-zinc-600">•</span>
+<span class="text-xs text-rose-400">Sovereign Media #1048</span>
+</div>
+</div>
+<div class="pt-2 border-t border-white/[0.04] flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+<span>Collections rate: 96.4%</span>
+<span class="text-rose-400 underline cursor-pointer hover:text-rose-300">Ping Finance</span>
+</div>
+</div>
+</section>
+<!-- 3. PRIMARY BENTO TIER (12 COLUMNS) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+<!-- Left 8 Columns: Revenue Velocity & Pipeline Forecast AreaChart Gadget -->
+<div class="lg:col-span-8 bg-[#1a1d21] rounded-[20px] border border-white/[0.08] p-6 flex flex-col justify-between relative">
+<!-- Gadget Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/[0.06]">
+<div>
+<div class="flex items-center gap-2.5">
+<h3 class="font-headline-sm text-base text-white font-semibold">Revenue Velocity &amp; Pipeline Forecast</h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-violet-500/10 text-violet-300 border border-violet-500/20">
+                  Target: $180k
+                </span>
+</div>
+<p class="text-xs text-zinc-400 mt-0.5">Realized billing momentum against pacing quota milestones</p>
+</div>
+<!-- Timeframe Selector Tabs -->
+<div class="flex items-center gap-1 p-0.5 rounded-lg bg-[#141619] border border-white/[0.08] text-xs self-start sm:self-auto">
+<button class="px-2.5 py-1 rounded text-zinc-400 hover:text-white transition-colors">30d</button>
+<button class="px-2.5 py-1 rounded bg-white/10 text-white font-medium shadow-sm transition-all">90d</button>
+<button class="px-2.5 py-1 rounded text-zinc-400 hover:text-white transition-colors">YTD</button>
+</div>
+</div>
+<!-- High-Fidelity SVG Area Chart Canvas -->
+<div class="relative w-full h-64 mt-4 select-none">
+<!-- Target line legend label -->
+<div class="absolute top-4 right-4 flex items-center gap-3 text-[11px] font-mono z-10 bg-[#141619]/80 px-2.5 py-1 rounded border border-white/[0.06] backdrop-blur-md">
+<div class="flex items-center gap-1.5 text-zinc-300">
+<span class="w-2.5 h-2.5 rounded-sm bg-violet-500"></span>
+<span>Realized Cash</span>
+</div>
+<div class="flex items-center gap-1.5 text-zinc-400">
+<span class="w-3 h-0 border-t border-dashed border-zinc-400"></span>
+<span>Target Pacing</span>
+</div>
+</div>
+<!-- Interactive Hover Tooltip Simulation -->
+<div class="absolute top-10 left-[62%] -translate-x-1/2 z-20 pointer-events-none hidden md:block">
+<div class="bg-[#121417] border border-violet-500/40 shadow-2xl p-2.5 rounded-xl text-left whitespace-nowrap">
+<div class="flex items-center justify-between gap-3 text-[10px] font-mono text-zinc-400 pb-1 border-b border-white/[0.06]">
+<span>Aug 24, 2024</span>
+<span class="text-emerald-400 font-semibold">+18.4%</span>
+</div>
+<div class="mt-1.5">
+<span class="text-xs font-mono font-bold text-white">$148,250.00 Billed</span>
+<div class="text-[10px] text-violet-300 mt-0.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+                    Nike Master Delivery Milestone Signed
+                  </div>
+</div>
+</div>
+<!-- Tooltip vertical pin line -->
+<div class="w-[1px] h-28 bg-gradient-to-b from-violet-400 to-transparent mx-auto mt-1"></div>
+</div>
+<!-- Rendered SVG Graph -->
+<svg class="w-full h-full overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 760 220">
+<defs>
+<!-- Area gradient -->
+<lineargradient id="areaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.35"></stop>
+<stop offset="60%" stop-color="#6366f1" stop-opacity="0.10"></stop>
+<stop offset="100%" stop-color="#4f46e5" stop-opacity="0.0"></stop>
+</lineargradient>
+<!-- Line gradient -->
+<lineargradient id="strokeGrad" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#6366f1"></stop>
+<stop offset="70%" stop-color="#a78bfa"></stop>
+<stop offset="100%" stop-color="#c084fc"></stop>
+</lineargradient>
+</defs>
+<!-- Y-Axis Grid Lines & Numbers -->
+<g class="text-[10px] font-mono fill-zinc-500 stroke-white/[0.04]">
+<line stroke-dasharray="3 3" x1="36" x2="750" y1="20" y2="20"></line>
+<text fill="#71717a" x="0" y="24">$200k</text>
+<line stroke-dasharray="3 3" x1="36" x2="750" y1="70" y2="70"></line>
+<text fill="#71717a" x="0" y="74">$150k</text>
+<!-- Quota Target Line (180k) -->
+<line stroke="#71717a" stroke-dasharray="4 4" stroke-opacity="0.5" stroke-width="1.2" x1="36" x2="750" y1="40" y2="40"></line>
+<line stroke-dasharray="3 3" x1="36" x2="750" y1="120" y2="120"></line>
+<text fill="#71717a" x="0" y="124">$100k</text>
+<line stroke-dasharray="3 3" x1="36" x2="750" y1="170" y2="170"></line>
+<text fill="#71717a" x="0" y="174">$50k</text>
+</g>
+<!-- Milestone Markers (Vertical guides) -->
+<g stroke="#ffffff" stroke-dasharray="2 2" stroke-opacity="0.08">
+<line x1="160" x2="160" y1="20" y2="190"></line>
+<line x1="320" x2="320" y1="20" y2="190"></line>
+<line x1="480" x2="480" y1="20" y2="190"></line>
+<line x1="640" x2="640" y1="20" y2="190"></line>
+</g>
+<!-- Area Fill Shape -->
+<path d="M 40 180 
+                       C 100 170, 140 160, 180 145 
+                       C 230 130, 270 140, 320 115 
+                       C 370 90, 420 95, 480 65 
+                       C 530 40, 580 48, 640 45 
+                       L 740 42 
+                       L 740 190 
+                       L 40 190 Z" fill="url(#areaGrad)"></path>
+<!-- Smooth Bezier Stroke -->
+<path d="M 40 180 
+                       C 100 170, 140 160, 180 145 
+                       C 230 130, 270 140, 320 115 
+                       C 370 90, 420 95, 480 65 
+                       C 530 40, 580 48, 640 45 
+                       L 740 42" fill="none" stroke="url(#strokeGrad)" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Highlighted milestone data nodes -->
+<circle cx="180" cy="145" fill="#1a1d21" r="3.5" stroke="#8b5cf6" stroke-width="2"></circle>
+<circle cx="320" cy="115" fill="#1a1d21" r="3.5" stroke="#8b5cf6" stroke-width="2"></circle>
+<circle cx="480" cy="65" fill="#a78bfa" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<circle cx="640" cy="45" fill="#1a1d21" r="3.5" stroke="#8b5cf6" stroke-width="2"></circle>
+<!-- X-Axis Labels -->
+<g class="text-[10px] font-mono fill-zinc-400" transform="translate(0, 206)">
+<text text-anchor="middle" x="40">Aug 01</text>
+<text text-anchor="middle" x="180">Aug 08</text>
+<text text-anchor="middle" x="320">Aug 15</text>
+<text text-anchor="middle" x="480">Aug 22</text>
+<text text-anchor="middle" x="640">Aug 29</text>
+<text text-anchor="middle" x="735">Sep 05</text>
+</g>
+</svg>
+</div>
+<!-- Bottom Summary Metrics Bar -->
+<div class="mt-4 pt-3.5 border-t border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+<div class="flex flex-col">
+<span class="text-zinc-500 text-[10px] uppercase font-sans">Contracted Backlog</span>
+<span class="text-white font-semibold text-sm mt-0.5">$420,000.00</span>
+<span class="text-[10px] text-zinc-400">14 Active Work Orders</span>
+</div>
+<div class="flex flex-col">
+<span class="text-zinc-500 text-[10px] uppercase font-sans">Weighted Pipeline</span>
+<span class="text-white font-semibold text-sm mt-0.5">$290,000.00</span>
+<span class="text-[10px] text-violet-400">65% Win Probability</span>
+</div>
+<div class="flex flex-col">
+<span class="text-zinc-500 text-[10px] uppercase font-sans">Gross Agency Margin</span>
+<span class="text-emerald-400 font-semibold text-sm mt-0.5">64.2%</span>
+<span class="text-[10px] text-zinc-400">+3.1% YoY Operational Efficiency</span>
+</div>
+</div>
+</div>
+<!-- Right 4 Columns: Active Time & Billable Utilization Gadget -->
+<div class="lg:col-span-4 bg-[#1a1d21] rounded-[20px] border border-white/[0.08] p-6 flex flex-col justify-between">
+<div>
+<!-- Header -->
+<div class="flex items-center justify-between pb-3 border-b border-white/[0.06]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">timer</span>
+<h3 class="font-headline-sm text-base text-white font-semibold">Live Session Tracker</h3>
+</div>
+<span class="flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                RUNNING
+              </span>
+</div>
+<!-- Stopwatch Controller Box -->
+<div class="mt-4 p-4 rounded-xl bg-[#141619] border border-white/[0.06] space-y-3">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-medium text-white truncate">Sony Venice Commercial</span>
+<span class="text-[10px] font-mono text-zinc-400 bg-white/[0.06] px-1.5 py-0.5 rounded">Suite 4</span>
+</div>
+<p class="text-[11px] text-zinc-400 mt-0.5">Color Grading &amp; Final Conform</p>
+</div>
+<!-- Main Stopwatch Display -->
+<div class="py-2 px-3 rounded-lg bg-black/40 border border-white/[0.04] text-center">
+<div class="font-mono text-3xl font-semibold text-emerald-400 tracking-widest tabular-nums">
+                  01:24:08
+                </div>
+<div class="text-[10px] font-mono text-zinc-500 mt-0.5">Billable Rate: $185.00/hr</div>
+</div>
+<!-- Action Controls -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="py-1.5 px-2 rounded-lg bg-surface-container hover:bg-surface-variant text-zinc-200 text-xs font-medium border border-white/[0.06] flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[15px]">pause</span>
+<span>Pause</span>
+</button>
+<button class="py-1.5 px-2 rounded-lg bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 text-xs font-medium border border-rose-500/30 flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[15px]">stop_circle</span>
+<span>Stop &amp; Log</span>
+</button>
+</div>
+<!-- Quick Task Switcher -->
+<button class="w-full py-1 px-2 text-[11px] text-zinc-400 hover:text-white flex items-center justify-between transition-colors border-t border-white/[0.04] pt-2">
+<span class="truncate">Switch to: Nike Rough Cut QC</span>
+<span class="material-symbols-outlined text-[14px]">swap_horiz</span>
+</button>
+</div>
+</div>
+<!-- Week-to-Date Billable Meter -->
+<div class="mt-5 pt-4 border-t border-white/[0.06] space-y-3">
+<div class="flex items-center justify-between text-xs">
+<span class="text-zinc-400 font-medium">Week-to-Date Billable Load</span>
+<span class="font-mono font-semibold text-white">34.5 / 40.0 hrs</span>
+</div>
+<!-- Meter Progress Bar -->
+<div class="w-full h-2 rounded-full bg-black/50 overflow-hidden flex border border-white/[0.06]">
+<div class="h-full bg-violet-500" style="width: 76.5%" title="Billable Client Hours: 76.5%"></div>
+<div class="h-full bg-indigo-400" style="width: 9.7%" title="Internal Creative R&amp;D: 9.7%"></div>
+<div class="h-full bg-zinc-600" style="width: 13.8%" title="Unallocated / Admin"></div>
+</div>
+<!-- Breakdown Legend -->
+<div class="flex items-center justify-between text-[11px] font-mono text-zinc-400">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-violet-500"></span>
+<span>86.2% Billable</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+<span>13.8% Non-billable</span>
+</div>
+</div>
+<!-- Manual Log Button -->
+<button class="w-full py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-xs text-zinc-300 font-medium border border-white/[0.06] flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+<span>+ Log Manual Time</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. BOTTOM BENTO TIER (TWO 6-COLUMN CARDS) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+<!-- Left 6 Columns: Active Projects Health & Milestones -->
+<div class="lg:col-span-6 bg-[#1a1d21] rounded-[20px] border border-white/[0.08] p-6 flex flex-col justify-between">
+<div>
+<!-- Header -->
+<div class="flex items-center justify-between pb-3 border-b border-white/[0.06]">
+<div>
+<h3 class="font-headline-sm text-base text-white font-semibold">Active Projects Health &amp; Milestones</h3>
+<p class="text-xs text-zinc-400 mt-0.5">Live status and delivery progress across active client accounts</p>
+</div>
+<a class="text-xs text-violet-400 hover:text-violet-300 flex items-center gap-1 font-medium transition-colors" href="#projects">
+                View All 12 Projects
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- High-Density Project List -->
+<div class="divide-y divide-white/[0.04] mt-2">
+<!-- Project 1: Nike SS27 -->
+<div class="py-3 flex items-center justify-between gap-3 group hover:bg-white/[0.02] px-2 rounded-lg transition-colors">
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-white truncate">Nike SS27 Campaign</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] font-mono bg-white/[0.06] text-zinc-400">Global Master</span>
+</div>
+<div class="flex items-center gap-3 text-[11px] text-zinc-400 mt-1">
+<span>Client: Nike Global</span>
+<span>•</span>
+<span class="font-mono text-zinc-300">Due: Oct 28</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-white/[0.06] h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<span class="font-mono text-xs text-zinc-400">75%</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    ON TRACK
+                  </span>
+<button class="text-zinc-500 hover:text-white transition-colors" title="Open Nike Details">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Project 2: Sony FX6 -->
+<div class="py-3 flex items-center justify-between gap-3 group hover:bg-white/[0.02] px-2 rounded-lg transition-colors">
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-white truncate">Sony FX6 Media Launch</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] font-mono bg-white/[0.06] text-zinc-400">4K Director's Cut</span>
+</div>
+<div class="flex items-center gap-3 text-[11px] text-zinc-400 mt-1">
+<span>Client: Sony Electronics</span>
+<span>•</span>
+<span class="font-mono text-amber-400/90">Due: Nov 04</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-white/[0.06] h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-amber-400 h-full rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<span class="font-mono text-xs text-zinc-400">40%</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    AT RISK
+                  </span>
+<button class="text-zinc-500 hover:text-white transition-colors" title="Open Sony Details">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Project 3: Red Bull Dailies -->
+<div class="py-3 flex items-center justify-between gap-3 group hover:bg-white/[0.02] px-2 rounded-lg transition-colors">
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-white truncate">Red Bull Mountain Dailies</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] font-mono bg-white/[0.06] text-zinc-400">Sound &amp; VFX</span>
+</div>
+<div class="flex items-center gap-3 text-[11px] text-zinc-400 mt-1">
+<span>Client: Red Bull Media</span>
+<span>•</span>
+<span class="font-mono text-zinc-300">Due: Oct 22</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-white/[0.06] h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<span class="font-mono text-xs text-zinc-400">90%</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    ON TRACK
+                  </span>
+<button class="text-zinc-500 hover:text-white transition-colors" title="Open Red Bull Details">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Project 4: Aura FinTech Rebrand -->
+<div class="py-3 flex items-center justify-between gap-3 group hover:bg-white/[0.02] px-2 rounded-lg transition-colors">
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-white truncate">Aura FinTech Rebrand</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] font-mono bg-white/[0.06] text-zinc-400">3D Key Visuals</span>
+</div>
+<div class="flex items-center gap-3 text-[11px] text-zinc-400 mt-1">
+<span>Client: Aura Capital</span>
+<span>•</span>
+<span class="font-mono text-rose-400">Due: Oct 19</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-white/[0.06] h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-rose-500 h-full rounded-full" style="width: 20%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<span class="font-mono text-xs text-zinc-400">20%</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    CRITICAL
+                  </span>
+<button class="text-zinc-500 hover:text-white transition-colors" title="Open Aura Details">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Footer Note -->
+<div class="mt-2 pt-3 border-t border-white/[0.04] flex items-center justify-between text-[11px] text-zinc-500">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              9 of 12 Projects within nominal SLA variance
+            </span>
+<span class="font-mono">Next delivery in 48h</span>
+</div>
+</div>
+<!-- Right 6 Columns: Upcoming Deadlines & Deliverables Agenda -->
+<div class="lg:col-span-6 bg-[#1a1d21] rounded-[20px] border border-white/[0.08] p-6 flex flex-col justify-between">
+<div>
+<!-- Header -->
+<div class="flex items-center justify-between pb-3 border-b border-white/[0.06]">
+<div>
+<h3 class="font-headline-sm text-base text-white font-semibold">Deliverables &amp; Operational Agenda</h3>
+<p class="text-xs text-zinc-400 mt-0.5">Critical production gates, client review deadlines, and vault custody</p>
+</div>
+<button class="text-xs text-zinc-400 hover:text-white flex items-center gap-1 font-medium transition-colors">
+<span class="material-symbols-outlined text-[14px]">sync</span>
+                Sync Calendar
+              </button>
+</div>
+<!-- Agenda items list -->
+<div class="divide-y divide-white/[0.04] mt-2">
+<!-- Item 1: Call Sheet Sign-off -->
+<div class="py-3 flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-2.5">
+<div class="mt-0.5 w-6 h-6 rounded bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 text-emerald-400">
+<span class="material-symbols-outlined text-[14px]">assignment_turned_in</span>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-white leading-tight">Commercial Call Sheet #4 Sign-off</h4>
+<p class="text-[11px] text-zinc-400 mt-0.5">Assigned to: Marcus Vance (Stage A Soundstage)</p>
+<span class="inline-block mt-1 text-[10px] font-mono text-emerald-400">Due: Today, 17:00</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 text-xs font-medium transition-colors flex-shrink-0">
+                  Confirm Crew
+                </button>
+</div>
+<!-- Item 2: Rough Cut Review -->
+<div class="py-3 flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-2.5">
+<div class="mt-0.5 w-6 h-6 rounded bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0 text-violet-400">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-white leading-tight">Rough Cut v2 Client Review Room</h4>
+<p class="text-[11px] text-zinc-400 mt-0.5">Project: Nike SS27 Campaign · Suite 2 Virtual Stream</p>
+<span class="inline-block mt-1 text-[10px] font-mono text-violet-300">Due: Tomorrow, 11:30</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 border border-violet-500/20 text-xs font-medium transition-colors flex-shrink-0">
+                  Open Room
+                </button>
+</div>
+<!-- Item 3: Camera Package Vault Custody -->
+<div class="py-3 flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-2.5">
+<div class="mt-0.5 w-6 h-6 rounded bg-white/[0.06] border border-white/10 flex items-center justify-center flex-shrink-0 text-zinc-400">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-white leading-tight">Camera Vault Custody Check-in</h4>
+<p class="text-[11px] text-zinc-400 mt-0.5">ARRI Alexa Mini LF + Cooke Anamorphic Set · Marcus Chen</p>
+<span class="inline-block mt-1 text-[10px] font-mono text-zinc-400">Due: Oct 24, 09:00</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-white/[0.04] hover:bg-white/[0.08] text-zinc-300 border border-white/[0.08] text-xs font-medium transition-colors flex-shrink-0">
+                  Inspect Gear
+                </button>
+</div>
+<!-- Item 4: Retainer Invoice Due -->
+<div class="py-3 flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-2.5">
+<div class="mt-0.5 w-6 h-6 rounded bg-rose-500/10 border border-rose-500/20 flex items-center justify-center flex-shrink-0 text-rose-400">
+<span class="material-symbols-outlined text-[14px]">receipt_long</span>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-white leading-tight">Q3 Retainer Invoice #1048 Due ($28,500.00)</h4>
+<p class="text-[11px] text-zinc-400 mt-0.5">Client: Sovereign Media · Terms: Net 15</p>
+<span class="inline-block mt-1 text-[10px] font-mono text-rose-400">Due: Oct 26</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20 text-xs font-medium transition-colors flex-shrink-0">
+                  Send Ping
+                </button>
+</div>
+</div>
+</div>
+<!-- Quick Event Creation Prompt -->
+<div class="mt-2 pt-3 border-t border-white/[0.04] flex items-center justify-between text-[11px] text-zinc-400">
+<span>Synchronized with 3 soundstages and 8 suite calendars</span>
+<button class="text-violet-400 hover:text-violet-300 transition-colors font-medium">+ Add Milestone</button>
+</div>
+</div>
+</section>
+<!-- Subordinate Status Ticker / System Latency Strip -->
+<footer class="pt-2 pb-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-zinc-500 border-t border-white/[0.04]">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-emerald-400">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            ALL SYSTEMS OPERATIONAL
+          </span>
+<span>•</span>
+<span>Vault Sync: 12ms</span>
+<span>•</span>
+<span>Vanguard Cloud Render Node: 4.8 TFLOPS</span>
+</div>
+<div class="flex items-center gap-4 text-zinc-600">
+<span>003VXA / BusinessOS v4.12.8</span>
+<span>Security Protocol Tier 1</span>
+</div>
+</footer>
+</main>
+</div>
+<!-- Micro-interaction JavaScript -->
+<script>
+    // Stopwatch live increment micro-interaction
+    let seconds = 8;
+    let minutes = 24;
+    let hours = 1;
+
+    const timerElements = document.querySelectorAll('.font-mono.tabular-nums');
+    
+    setInterval(() => {
+      seconds++;
+      if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+          minutes = 0;
+          hours++;
+        }
+      }
+      const pad = (n) => String(n).padStart(2, '0');
+      const timeStr = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+      
+      // Update topbar timer
+      const topbarTimer = document.querySelector('header .tabular-nums');
+      if (topbarTimer) topbarTimer.textContent = timeStr;
+      
+      // Update controller card timer
+      const controllerTimer = document.querySelector('.bg-\\[\\#141619\\] .tabular-nums');
+      if (controllerTimer) controllerTimer.textContent = timeStr;
+    }, 1000);
+
+    // Keyboard shortcut handler for Cmd+K visual feedback
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const searchInput = document.querySelector('header button kbd');
+        if (searchInput) {
+          searchInput.classList.add('bg-violet-500', 'text-white');
+          setTimeout(() => {
+            searchInput.classList.remove('bg-violet-500', 'text-white');
+          }, 300);
+        }
+      }
+    });
+  </script>
+</body></html>
